@@ -1,14 +1,30 @@
-import { navigate } from '../router.js';
-
-const navLinks = [
-  { label: 'Home', path: '/' },
-  { label: 'About', path: '/about' },
-  { label: 'Products', path: '/products' },
-  { label: 'News', path: '/news' },
-  { label: 'Contact', path: '/contact' },
-];
+import { t, getLang } from '../i18n/index.js';
 
 export function renderHeader() {
+  const lang = getLang();
+  const navLinks = [
+    { label: t('header.home'), path: '/' },
+    { label: t('header.about'), path: '/about' },
+    { label: t('header.products'), path: '/products' },
+    { label: t('header.news'), path: '/news' },
+    { label: t('header.contact'), path: '/contact' },
+  ];
+
+  const langToggle = `
+    <div class="flex items-center rounded-full border border-white/20 overflow-hidden">
+      <button data-lang-switch="en"
+              class="px-3 py-1 text-xs font-semibold uppercase tracking-wider transition-all duration-200
+                     ${lang === 'en' ? 'bg-brand-gold text-brand-black' : 'text-white/70 hover:text-white'}">
+        EN
+      </button>
+      <button data-lang-switch="vi"
+              class="px-3 py-1 text-xs font-semibold uppercase tracking-wider transition-all duration-200
+                     ${lang === 'vi' ? 'bg-brand-gold text-brand-black' : 'text-white/70 hover:text-white'}">
+        VI
+      </button>
+    </div>
+  `;
+
   return `
     <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
       <div class="container-custom">
@@ -29,8 +45,11 @@ export function renderHeader() {
                              transition-all duration-300 group-hover:w-full"></span>
               </a>
             `).join('')}
+            <div class="ml-3">
+              ${langToggle}
+            </div>
             <a href="#/contact" class="btn-primary ml-4 text-xs tracking-widest uppercase">
-              Get Quote
+              ${t('header.getQuote')}
             </a>
           </div>
 
@@ -57,8 +76,11 @@ export function renderHeader() {
               ${link.label}
             </a>
           `).join('')}
+          <div class="mt-2">
+            ${langToggle}
+          </div>
           <a href="#/contact" data-mobile-link class="btn-primary btn-lg mt-4 text-sm tracking-widest uppercase">
-            Get Quote
+            ${t('header.getQuote')}
           </a>
         </div>
       </div>
@@ -87,7 +109,6 @@ export function initHeader() {
   // Mobile menu toggle
   hamburger.addEventListener('click', () => {
     isOpen = !isOpen;
-    hamburger.parentElement; // just to reference
     if (isOpen) {
       hamburger.querySelector('div').classList.add('hamburger-active');
       mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
@@ -110,4 +131,17 @@ export function initHeader() {
   document.querySelectorAll('[data-mobile-link]').forEach(link => {
     link.addEventListener('click', closeMobileMenu);
   });
+
+  // Language switch
+  document.querySelectorAll('[data-lang-switch]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.langSwitch;
+      window.dispatchEvent(new CustomEvent('lang-change', { detail: { lang } }));
+    });
+  });
+
+  // Return cleanup function
+  return () => {
+    window.removeEventListener('scroll', updateHeader);
+  };
 }

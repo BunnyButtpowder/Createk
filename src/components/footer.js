@@ -1,21 +1,23 @@
-const productLinks = [
-  'Engine Spare Parts',
-  'Electrical Parts',
-  'Gears & Bearings',
-  'Shock Absorbers',
-  'Rubber Parts',
-  'Friction Materials',
-];
-
-const quickLinks = [
-  { label: 'Home', path: '#/' },
-  { label: 'About Us', path: '#/about' },
-  { label: 'Products', path: '#/products' },
-  { label: 'News', path: '#/news' },
-  { label: 'Contact', path: '#/contact' },
-];
+import { t } from '../i18n/index.js';
 
 export function renderFooter() {
+  const productLinks = [
+    t('footer.engineParts'),
+    t('footer.electricalParts'),
+    t('footer.gearsBearings'),
+    t('footer.shockAbsorbers'),
+    t('footer.rubberParts'),
+    t('footer.frictionMaterials'),
+  ];
+
+  const quickLinks = [
+    { label: t('footer.home'), path: '#/' },
+    { label: t('footer.aboutUs'), path: '#/about' },
+    { label: t('footer.productsLink'), path: '#/products' },
+    { label: t('footer.news'), path: '#/news' },
+    { label: t('footer.contactLink'), path: '#/contact' },
+  ];
+
   return `
     <footer class="bg-brand-dark border-t border-white/5">
       <!-- Main Footer -->
@@ -28,8 +30,7 @@ export function renderFooter() {
               <img src="/logo.png" alt="Createk" class="h-auto w-auto" />
             </a>
             <p class="text-brand-gray-light text-sm leading-relaxed mb-6">
-              Specializing in premium auto parts for large vehicles.
-              Trusted by workshops and fleet operators worldwide.
+              ${t('footer.brandDesc')}
             </p>
             <div class="flex items-center gap-4">
               <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center
@@ -52,7 +53,7 @@ export function renderFooter() {
 
           <!-- Quick Links -->
           <div>
-            <h4 class="font-heading text-lg uppercase tracking-wider mb-6 text-white">Quick Links</h4>
+            <h4 class="font-heading text-lg uppercase tracking-wider mb-6 text-white">${t('footer.quickLinks')}</h4>
             <ul class="space-y-3">
               ${quickLinks.map(link => `
                 <li>
@@ -70,7 +71,7 @@ export function renderFooter() {
 
           <!-- Products -->
           <div>
-            <h4 class="font-heading text-lg uppercase tracking-wider mb-6 text-white">Products</h4>
+            <h4 class="font-heading text-lg uppercase tracking-wider mb-6 text-white">${t('footer.products')}</h4>
             <ul class="space-y-3">
               ${productLinks.map(name => `
                 <li>
@@ -88,7 +89,7 @@ export function renderFooter() {
 
           <!-- Contact Info -->
           <div>
-            <h4 class="font-heading text-lg uppercase tracking-wider mb-6 text-white">Contact Us</h4>
+            <h4 class="font-heading text-lg uppercase tracking-wider mb-6 text-white">${t('footer.contactUs')}</h4>
             <ul class="space-y-4">
               <li class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-brand-gold mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -117,10 +118,10 @@ export function renderFooter() {
       <!-- Bottom Bar -->
       <div class="border-t border-white/5">
         <div class="container-custom py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p class="text-brand-gray-mid text-xs">&copy; ${new Date().getFullYear()} Createk. All rights reserved.</p>
+          <p class="text-brand-gray-mid text-xs">${t('footer.copyright')}</p>
           <div class="flex items-center gap-6">
-            <a href="#" class="text-brand-gray-mid text-xs hover:text-brand-gold transition-colors">Privacy Policy</a>
-            <a href="#" class="text-brand-gray-mid text-xs hover:text-brand-gold transition-colors">Terms of Service</a>
+            <a href="#" class="text-brand-gray-mid text-xs hover:text-brand-gold transition-colors">${t('footer.privacyPolicy')}</a>
+            <a href="#" class="text-brand-gray-mid text-xs hover:text-brand-gold transition-colors">${t('footer.termsOfService')}</a>
           </div>
         </div>
       </div>

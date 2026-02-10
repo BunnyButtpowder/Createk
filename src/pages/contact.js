@@ -1,27 +1,28 @@
 import { initPageAnimations } from '../animations.js';
+import { t } from '../i18n/index.js';
 import gsap from 'gsap';
 
 const offices = [
   {
-    city: 'Bangkok',
-    country: 'Thailand (HQ)',
-    address: '123 Industrial Zone, Bangna-Trad Rd, Bangkok 10260',
-    phone: '+66 2 123 4567',
+    city: 'Hanoi',
+    country: 'Vietnam (HQ)',
+    address: '123 Industrial Zone, Hanoi, Vietnam',
+    phone: '+84 90 123 4567',
     email: 'info@createk.com',
   },
   {
-    city: 'Dubai',
-    country: 'UAE',
-    address: 'Jebel Ali Free Zone, Dubai, UAE',
-    phone: '+971 4 123 4567',
-    email: 'dubai@createk.com',
+    city: 'Ho Chi Minh City',
+    country: 'Vietnam',
+    address: '123 Industrial Zone, Ho Chi Minh City, Vietnam',
+    phone: '+84 90 123 4567',
+    email: 'info@createk.com',
   },
   {
-    city: 'Lagos',
+    city: 'Da Nang',
     country: 'Nigeria',
-    address: '45 Apapa-Oshodi Expressway, Lagos',
-    phone: '+234 1 234 5678',
-    email: 'lagos@createk.com',
+    address: '123 Industrial Zone, Da Nang, Vietnam',
+    phone: '+84 90 123 4567',
+    email: 'info@createk.com',
   },
 ];
 
@@ -36,14 +37,13 @@ export function contactPage() {
       </div>
       <div class="container-custom relative z-10 pt-12">
         <div class="reveal">
-          <span class="badge-gold mb-4">Contact Us</span>
+          <span class="badge-gold mb-4">${t('contact.hero.badge')}</span>
           <h1 class="heading-xl text-white mt-4 mb-6">
-            Let's <span class="text-gradient-gold">Talk</span><br/>
-            Business
+            ${t('contact.hero.heading1')} <span class="text-gradient-gold">${t('contact.hero.headingHighlight')}</span><br/>
+            ${t('contact.hero.heading2')}
           </h1>
           <p class="text-brand-gray-light text-lg max-w-2xl leading-relaxed">
-            Whether you need a quote, technical support, or want to become a distributor —
-            our team is ready to help.
+            ${t('contact.hero.subtitle')}
           </p>
         </div>
       </div>
@@ -56,50 +56,50 @@ export function contactPage() {
 
           <!-- Form -->
           <div class="lg:col-span-3 reveal-left">
-            <h2 class="heading-md text-white mb-2">Send Us a Message</h2>
-            <p class="text-brand-gray-light mb-8">Fill out the form and we'll respond within 24 hours.</p>
+            <h2 class="heading-md text-white mb-2">${t('contact.form.heading')}</h2>
+            <p class="text-brand-gray-light mb-8">${t('contact.form.subtitle')}</p>
 
             <form id="contact-form" class="space-y-6" onsubmit="event.preventDefault()">
               <div class="grid sm:grid-cols-2 gap-6">
                 <div>
-                  <label class="block text-sm text-brand-gray-light mb-2">Full Name *</label>
-                  <input type="text" placeholder="John Doe" class="input" required />
+                  <label class="block text-sm text-brand-gray-light mb-2">${t('contact.form.fullName')}</label>
+                  <input type="text" placeholder="${t('contact.form.placeholderName')}" class="input" required />
                 </div>
                 <div>
-                  <label class="block text-sm text-brand-gray-light mb-2">Company</label>
-                  <input type="text" placeholder="Your Company Ltd." class="input" />
+                  <label class="block text-sm text-brand-gray-light mb-2">${t('contact.form.company')}</label>
+                  <input type="text" placeholder="${t('contact.form.placeholderCompany')}" class="input" />
                 </div>
               </div>
 
               <div class="grid sm:grid-cols-2 gap-6">
                 <div>
-                  <label class="block text-sm text-brand-gray-light mb-2">Email *</label>
-                  <input type="email" placeholder="john@company.com" class="input" required />
+                  <label class="block text-sm text-brand-gray-light mb-2">${t('contact.form.email')}</label>
+                  <input type="email" placeholder="${t('contact.form.placeholderEmail')}" class="input" required />
                 </div>
                 <div>
-                  <label class="block text-sm text-brand-gray-light mb-2">Phone</label>
-                  <input type="tel" placeholder="+1 234 567 890" class="input" />
+                  <label class="block text-sm text-brand-gray-light mb-2">${t('contact.form.phone')}</label>
+                  <input type="tel" placeholder="${t('contact.form.placeholderPhone')}" class="input" />
                 </div>
               </div>
 
               <div>
-                <label class="block text-sm text-brand-gray-light mb-2">Subject *</label>
+                <label class="block text-sm text-brand-gray-light mb-2">${t('contact.form.subject')}</label>
                 <select class="input appearance-none cursor-pointer">
-                  <option value="">Select a subject...</option>
-                  <option value="quote">Request a Quote</option>
-                  <option value="technical">Technical Support</option>
-                  <option value="distributor">Become a Distributor</option>
-                  <option value="general">General Inquiry</option>
+                  <option value="">${t('contact.form.selectSubject')}</option>
+                  <option value="quote">${t('contact.form.requestQuote')}</option>
+                  <option value="technical">${t('contact.form.technicalSupport')}</option>
+                  <option value="distributor">${t('contact.form.becomeDistributor')}</option>
+                  <option value="general">${t('contact.form.generalInquiry')}</option>
                 </select>
               </div>
 
               <div>
-                <label class="block text-sm text-brand-gray-light mb-2">Message *</label>
-                <textarea placeholder="Tell us about your requirements..." class="textarea" rows="5" required></textarea>
+                <label class="block text-sm text-brand-gray-light mb-2">${t('contact.form.message')}</label>
+                <textarea placeholder="${t('contact.form.placeholderMessage')}" class="textarea" rows="5" required></textarea>
               </div>
 
               <button type="submit" id="submit-btn" class="btn-primary btn-lg text-sm uppercase tracking-widest w-full sm:w-auto">
-                Send Message
+                ${t('contact.form.sendMessage')}
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
                 </svg>
@@ -111,14 +111,14 @@ export function contactPage() {
               <svg class="w-12 h-12 text-green-400 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
               </svg>
-              <h3 class="text-white font-heading text-lg uppercase mb-2">Message Sent!</h3>
-              <p class="text-brand-gray-light text-sm">Thank you for reaching out. We'll get back to you within 24 hours.</p>
+              <h3 class="text-white font-heading text-lg uppercase mb-2">${t('contact.form.successTitle')}</h3>
+              <p class="text-brand-gray-light text-sm">${t('contact.form.successMessage')}</p>
             </div>
           </div>
 
           <!-- Contact Info -->
           <div class="lg:col-span-2 reveal-right">
-            <h2 class="heading-md text-white mb-8">Get in Touch</h2>
+            <h2 class="heading-md text-white mb-8">${t('contact.info.heading')}</h2>
 
             <div class="space-y-6 mb-12">
               <div class="flex items-start gap-4 group">
@@ -129,7 +129,7 @@ export function contactPage() {
                   </svg>
                 </div>
                 <div>
-                  <div class="text-white font-semibold text-sm mb-1">Email</div>
+                  <div class="text-white font-semibold text-sm mb-1">${t('contact.info.email')}</div>
                   <a href="mailto:info@createk.com" class="text-brand-gray-light text-sm hover:text-brand-gold transition-colors">
                     info@createk.com
                   </a>
@@ -144,7 +144,7 @@ export function contactPage() {
                   </svg>
                 </div>
                 <div>
-                  <div class="text-white font-semibold text-sm mb-1">Phone</div>
+                  <div class="text-white font-semibold text-sm mb-1">${t('contact.info.phone')}</div>
                   <a href="tel:+6621234567" class="text-brand-gray-light text-sm hover:text-brand-gold transition-colors">
                     +66 2 123 4567
                   </a>
@@ -159,9 +159,9 @@ export function contactPage() {
                   </svg>
                 </div>
                 <div>
-                  <div class="text-white font-semibold text-sm mb-1">Business Hours</div>
-                  <p class="text-brand-gray-light text-sm">Mon-Fri: 8:00 AM - 6:00 PM (ICT)</p>
-                  <p class="text-brand-gray-light text-sm">Sat: 9:00 AM - 1:00 PM</p>
+                  <div class="text-white font-semibold text-sm mb-1">${t('contact.info.businessHours')}</div>
+                  <p class="text-brand-gray-light text-sm">${t('contact.info.hours1')}</p>
+                  <p class="text-brand-gray-light text-sm">${t('contact.info.hours2')}</p>
                 </div>
               </div>
             </div>
@@ -177,7 +177,7 @@ export function contactPage() {
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                     </svg>
-                    <span class="text-white text-sm font-medium">View on Google Maps</span>
+                    <span class="text-white text-sm font-medium">${t('contact.info.viewMap')}</span>
                   </div>
                 </div>
               </div>
@@ -191,9 +191,9 @@ export function contactPage() {
     <section class="section-dark">
       <div class="container-custom">
         <div class="text-center mb-12 reveal">
-          <span class="badge-gold mb-4">Global Presence</span>
+          <span class="badge-gold mb-4">${t('contact.offices.badge')}</span>
           <h2 class="heading-lg text-white mt-4">
-            Our <span class="text-gradient-gold">Offices</span>
+            ${t('contact.offices.heading1')} <span class="text-gradient-gold">${t('contact.offices.headingHighlight')}</span>
           </h2>
         </div>
         <div class="grid md:grid-cols-3 gap-6" data-stagger>
@@ -235,7 +235,7 @@ export function contactPage() {
         form.addEventListener('submit', (e) => {
           e.preventDefault();
           submitBtn.disabled = true;
-          submitBtn.textContent = 'Sending...';
+          submitBtn.textContent = t('contact.form.sending');
 
           setTimeout(() => {
             gsap.to(form, {
