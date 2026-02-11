@@ -26,8 +26,8 @@ export function renderFooter() {
 
           <!-- Brand -->
           <div class="lg:col-span-1">
-            <a href="#/" class="inline-block mb-6">
-              <img src="/logo.png" alt="Createk" class="h-auto w-auto" />
+            <a href="#/" class="flex justify-center mb-6">
+              <img src="/logo-text.png" alt="Createk" class="h-20 w-auto" />
             </a>
             <p class="text-brand-gray-light text-sm leading-relaxed mb-6">
               ${t('footer.brandDesc')}

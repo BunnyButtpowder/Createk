@@ -31,7 +31,7 @@ export function renderHeader() {
         <nav class="flex items-center justify-between h-20 lg:h-24">
           <!-- Logo -->
           <a href="#/" class="relative z-50 flex items-center gap-3 group">
-            <img src="/logo.png" alt="Createk" class="h-8 lg:h-20 transition-transform duration-300 group-hover:scale-105" />
+            <img src="/logo.png" alt="Createk" class="h-16 lg:h-20 transition-transform duration-300 group-hover:scale-105" />
           </a>
 
           <!-- Desktop Nav -->
