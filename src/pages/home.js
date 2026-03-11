@@ -7,37 +7,25 @@ export function homePage() {
       titleKey: 'home.categories.engine.title',
       descKey: 'home.categories.engine.desc',
       icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>`,
-      img: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=600&h=400&fit=crop',
+      img: '/engine-assemblies-and-components.jpg',
     },
     {
-      titleKey: 'home.categories.electrical.title',
-      descKey: 'home.categories.electrical.desc',
+      titleKey: 'home.categories.chassis.title',
+      descKey: 'home.categories.chassis.desc',
       icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>`,
-      img: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&h=260&fit=crop',
+      img: '/chassis-system.jpg',
     },
     {
-      titleKey: 'home.categories.gears.title',
-      descKey: 'home.categories.gears.desc',
+      titleKey: 'home.categories.break.title',
+      descKey: 'home.categories.break.desc',
       icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>`,
-      img: 'https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?w=600&h=400&fit=crop',
+      img: 'break-system.jpg',
     },
     {
-      titleKey: 'home.categories.rubber.title',
-      descKey: 'home.categories.rubber.desc',
+      titleKey: 'home.categories.cabin.title',
+      descKey: 'home.categories.cabin.desc',
       icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>`,
-      img: 'https://images.unsplash.com/photo-1565043666747-69f6646db940?w=600&h=400&fit=crop',
-    },
-    {
-      titleKey: 'home.categories.friction.title',
-      descKey: 'home.categories.friction.desc',
-      icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
-      img: 'https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?w=600&h=400&fit=crop',
-    },
-    {
-      titleKey: 'home.categories.suspension.title',
-      descKey: 'home.categories.suspension.desc',
-      icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>`,
-      img: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&h=400&fit=crop',
+      img: 'cabin-system.jpg',
     },
   ];
 
@@ -48,15 +36,14 @@ export function homePage() {
     { value: 99, suffix: '%', labelKey: 'home.stats.customerSatisfaction' },
   ];
 
-  const testimonials = t('home.testimonials.items');
-  const testimonialNames = ['David Chen', 'Maria Santos', 'Ahmed Al-Rashid'];
+  const newsArticles = t('news.articles.items');
 
   const html = `
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center overflow-hidden">
       <!-- Background Image -->
       <div class="absolute inset-0">
-        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1920&h=1080&fit=crop"
+        <img src="/banner-home.jpg"
              alt="Heavy duty truck"
              class="w-full h-full object-cover" data-parallax="0.2" />
         <div class="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/80 to-brand-black/30"></div>
@@ -71,15 +58,11 @@ export function homePage() {
             <span class="text-brand-gold text-sm font-medium tracking-wide">${t('home.hero.badge')}</span>
           </div>
 
-          <h1 class="hero-title heading-xl text-white mb-6">
+          <h1 class="hero-title heading-xl text-white mb-6 py-3">
             ${t('home.hero.title1')} <br/>
             <span class="text-gradient-gold">${t('home.hero.title2')}</span><br/>
             ${t('home.hero.title3')}
           </h1>
-
-          <p class="hero-subtitle text-lg md:text-xl text-brand-gray-light max-w-xl mb-10 leading-relaxed">
-            ${t('home.hero.subtitle')}
-          </p>
 
           <div class="hero-cta flex flex-wrap gap-4">
             <a href="#/products" class="btn-primary btn-lg text-sm uppercase tracking-widest">
@@ -88,8 +71,8 @@ export function homePage() {
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
               </svg>
             </a>
-            <a href="#/contact" class="btn-outline btn-lg text-sm uppercase tracking-widest">
-              ${t('home.hero.getQuote')}
+            <a href="#/about" class="btn-outline btn-lg text-sm uppercase tracking-widest">
+              ${t('home.hero.learnMore')}
             </a>
           </div>
         </div>
@@ -124,7 +107,7 @@ export function homePage() {
           <div class="reveal-left">
             <span class="badge-gold mb-4">${t('home.about.badge')}</span>
             <h2 class="heading-lg text-white mt-4 mb-6">
-              ${t('home.about.heading1')} <span class="text-gradient-gold">${t('home.about.headingHighlight')}</span>,<br/>
+              ${t('home.about.heading1')} <span class="text-gradient-gold inline-block mb-3 py-1">${t('home.about.headingHighlight')}</span>,<br/>
               ${t('home.about.heading2')}
             </h2>
             <p class="text-brand-gray-light leading-relaxed mb-6">
@@ -142,7 +125,7 @@ export function homePage() {
           </div>
           <div class="reveal-right relative">
             <div class="img-hover-zoom rounded-2xl overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1504222490345-c075b6008014?w=800&h=600&fit=crop"
+              <img src="/R&D-2.webp"
                    alt="Createk warehouse" class="w-full h-[400px] lg:h-[500px] object-cover" />
             </div>
             <div class="absolute -bottom-6 -left-6 bg-brand-gold text-brand-black p-6 rounded-xl">
@@ -150,6 +133,28 @@ export function homePage() {
               <div class="text-sm font-semibold">${t('home.about.yearsLabel')}</div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Principle Banner -->
+    <section class="relative py-24 overflow-hidden">
+      <div class="absolute inset-0">
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-gold/20 via-brand-gold/10 to-brand-gold/20"></div>
+        <div class="absolute inset-0 bg-brand-black/90"></div>
+      </div>
+      <div class="container-custom relative z-10 text-center reveal">
+        <div class="max-w-3xl mx-auto">
+          <svg class="w-12 h-12 text-brand-gold mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+          </svg>
+          <h2 class="heading-lg text-white mb-4">
+            <span class="text-gradient-gold">${t('home.principle.heading')}</span>
+          </h2>
+          <div class="w-20 h-1 bg-brand-gold mx-auto mb-6 rounded-full"></div>
+          <p class="text-brand-gray-light text-lg leading-relaxed">
+            ${t('home.principle.subtitle')}
+          </p>
         </div>
       </div>
     </section>
@@ -167,23 +172,23 @@ export function homePage() {
           </p>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" data-stagger>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6" data-stagger>
           ${productCategories.map(cat => `
-            <a href="#/products" class="card-hover group block">
-              <div class="relative h-48 overflow-hidden img-hover-zoom">
+            <a href="#/products" class="card-hover group block cursor-pointer">
+              <div class="relative h-44 overflow-hidden img-hover-zoom">
                 <img src="${cat.img}" alt="${t(cat.titleKey)}"
                      class="w-full h-full object-cover transition-transform duration-500" />
                 <div class="overlay-gradient absolute inset-0"></div>
-                <div class="absolute top-4 left-4 w-12 h-12 rounded-lg bg-brand-gold/20 backdrop-blur-sm
+                <div class="absolute top-3 left-3 w-10 h-10 rounded-lg bg-brand-gold/20 backdrop-blur-sm
                             flex items-center justify-center text-brand-gold
                             group-hover:bg-brand-gold group-hover:text-brand-black transition-all duration-300">
                   ${cat.icon}
                 </div>
               </div>
-              <div class="p-6">
-                <h3 class="font-heading text-xl font-semibold uppercase text-white mb-2
+              <div class="p-5">
+                <h3 class="font-heading text-lg font-semibold uppercase text-white mb-1.5
                            group-hover:text-brand-gold transition-colors">${t(cat.titleKey)}</h3>
-                <p class="text-brand-gray-light text-sm">${t(cat.descKey)}</p>
+                <p class="text-brand-gray-light text-sm line-clamp-2">${t(cat.descKey)}</p>
               </div>
             </a>
           `).join('')}
@@ -211,105 +216,140 @@ export function homePage() {
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6" data-stagger>
-          <div class="card p-8 text-center group hover:border-brand-gold/30 transition-all">
-            <div class="w-16 h-16 rounded-2xl bg-brand-gold/10 flex items-center justify-center mx-auto mb-6
-                        group-hover:bg-brand-gold/20 transition-colors">
-              <svg class="w-8 h-8 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-              </svg>
+          <div class="why-card relative overflow-hidden rounded-2xl group hover:border-brand-gold/30 transition-all border border-white/10 min-h-[280px]">
+            <img src="/research.jpg" alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-brand-black/75 group-hover:bg-brand-black/65 transition-colors duration-500"></div>
+            <div class="relative z-10 p-8 text-center h-full flex flex-col items-center justify-center">
+              <div class="w-16 h-16 rounded-2xl bg-brand-gold/10 backdrop-blur-sm flex items-center justify-center mx-auto mb-6
+                          group-hover:bg-brand-gold/20 transition-colors">
+                <svg class="w-8 h-8 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                </svg>
+              </div>
+              <h4 class="font-heading text-lg uppercase text-white mb-3">${t('home.why.premiumQuality.title')}</h4>
+              <p class="text-brand-gray-light text-sm">${t('home.why.premiumQuality.desc')}</p>
             </div>
-            <h4 class="font-heading text-lg uppercase text-white mb-3">${t('home.why.premiumQuality.title')}</h4>
-            <p class="text-brand-gray-light text-sm">${t('home.why.premiumQuality.desc')}</p>
           </div>
 
-          <div class="card p-8 text-center group hover:border-brand-gold/30 transition-all">
-            <div class="w-16 h-16 rounded-2xl bg-brand-gold/10 flex items-center justify-center mx-auto mb-6
-                        group-hover:bg-brand-gold/20 transition-colors">
-              <svg class="w-8 h-8 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              </svg>
+          <div class="why-card relative overflow-hidden rounded-2xl group hover:border-brand-gold/30 transition-all border border-white/10 min-h-[280px]">
+            <img src="/manufacture.jpg" alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-brand-black/75 group-hover:bg-brand-black/65 transition-colors duration-500"></div>
+            <div class="relative z-10 p-8 text-center h-full flex flex-col items-center justify-center">
+              <div class="w-16 h-16 rounded-2xl bg-brand-gold/10 backdrop-blur-sm flex items-center justify-center mx-auto mb-6
+                          group-hover:bg-brand-gold/20 transition-colors">
+                <svg class="w-8 h-8 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <h4 class="font-heading text-lg uppercase text-white mb-3">${t('home.why.globalReach.title')}</h4>
+              <p class="text-brand-gray-light text-sm">${t('home.why.globalReach.desc')}</p>
             </div>
-            <h4 class="font-heading text-lg uppercase text-white mb-3">${t('home.why.globalReach.title')}</h4>
-            <p class="text-brand-gray-light text-sm">${t('home.why.globalReach.desc')}</p>
           </div>
 
-          <div class="card p-8 text-center group hover:border-brand-gold/30 transition-all">
-            <div class="w-16 h-16 rounded-2xl bg-brand-gold/10 flex items-center justify-center mx-auto mb-6
-                        group-hover:bg-brand-gold/20 transition-colors">
-              <svg class="w-8 h-8 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
-              </svg>
+          <div class="why-card relative overflow-hidden rounded-2xl group hover:border-brand-gold/30 transition-all border border-white/10 min-h-[280px]">
+            <img src="/assembly.jpg" alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-brand-black/75 group-hover:bg-brand-black/65 transition-colors duration-500"></div>
+            <div class="relative z-10 p-8 text-center h-full flex flex-col items-center justify-center">
+              <div class="w-16 h-16 rounded-2xl bg-brand-gold/10 backdrop-blur-sm flex items-center justify-center mx-auto mb-6
+                          group-hover:bg-brand-gold/20 transition-colors">
+                <svg class="w-8 h-8 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                </svg>
+              </div>
+              <h4 class="font-heading text-lg uppercase text-white mb-3">${t('home.why.wideRange.title')}</h4>
+              <p class="text-brand-gray-light text-sm">${t('home.why.wideRange.desc')}</p>
             </div>
-            <h4 class="font-heading text-lg uppercase text-white mb-3">${t('home.why.wideRange.title')}</h4>
-            <p class="text-brand-gray-light text-sm">${t('home.why.wideRange.desc')}</p>
           </div>
 
-          <div class="card p-8 text-center group hover:border-brand-gold/30 transition-all">
-            <div class="w-16 h-16 rounded-2xl bg-brand-gold/10 flex items-center justify-center mx-auto mb-6
-                        group-hover:bg-brand-gold/20 transition-colors">
-              <svg class="w-8 h-8 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
-              </svg>
+          <div class="why-card relative overflow-hidden rounded-2xl group hover:border-brand-gold/30 transition-all border border-white/10 min-h-[280px]">
+            <img src="/QA.jpg" alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            <div class="absolute inset-0 bg-brand-black/75 group-hover:bg-brand-black/65 transition-colors duration-500"></div>
+            <div class="relative z-10 p-8 text-center h-full flex flex-col items-center justify-center">
+              <div class="w-16 h-16 rounded-2xl bg-brand-gold/10 backdrop-blur-sm flex items-center justify-center mx-auto mb-6
+                          group-hover:bg-brand-gold/20 transition-colors">
+                <svg class="w-8 h-8 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
+                </svg>
+              </div>
+              <h4 class="font-heading text-lg uppercase text-white mb-3">${t('home.why.expertSupport.title')}</h4>
+              <p class="text-brand-gray-light text-sm">${t('home.why.expertSupport.desc')}</p>
             </div>
-            <h4 class="font-heading text-lg uppercase text-white mb-3">${t('home.why.expertSupport.title')}</h4>
-            <p class="text-brand-gray-light text-sm">${t('home.why.expertSupport.desc')}</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Video Section -->
-    <section class="relative py-32 overflow-hidden">
-      <div class="absolute inset-0">
-        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&h=280&fit=crop"
-             alt="Manufacturing" class="w-full h-full object-cover" />
-        <div class="absolute inset-0 bg-brand-black/80"></div>
-      </div>
-      <div class="container-custom relative z-10 text-center">
-        <div class="reveal">
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener"
-             class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-brand-gold
-                    text-brand-black hover:scale-110 transition-transform duration-300 mb-8 group">
-            <svg class="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M8 5v14l11-7z"/>
-            </svg>
-          </a>
-          <h2 class="heading-lg text-white mb-4">${t('home.video.heading1')} <span class="text-gradient-gold">${t('home.video.headingHighlight')}</span> ${t('home.video.heading2')}</h2>
-          <p class="text-brand-gray-light max-w-xl mx-auto">
-            ${t('home.video.subtitle')}
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials -->
+    <!-- Recent News -->
     <section class="section-darker">
       <div class="container-custom">
         <div class="text-center mb-16 reveal">
-          <span class="badge-gold mb-4">${t('home.testimonials.badge')}</span>
+          <span class="badge-gold mb-4">${t('home.news.badge')}</span>
           <h2 class="heading-lg text-white mt-4">
-            ${t('home.testimonials.heading1')} <span class="text-gradient-gold">${t('home.testimonials.headingHighlight')}</span>
+            ${t('home.news.heading1')} <span class="text-gradient-gold">${t('home.news.headingHighlight')}</span>
           </h2>
+          <p class="text-brand-gray-light max-w-2xl mx-auto mt-4">
+            ${t('home.news.subtitle')}
+          </p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-6" data-stagger>
-          ${testimonials.map((item, i) => `
-            <div class="card p-8 relative">
-              <svg class="w-10 h-10 text-brand-gold/20 mb-4" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-              </svg>
-              <p class="text-brand-gray-light leading-relaxed mb-6">${item.text}</p>
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold font-heading font-bold">
-                  ${testimonialNames[i].charAt(0)}
-                </div>
-                <div>
-                  <div class="text-white text-sm font-semibold">${testimonialNames[i]}</div>
-                  <div class="text-brand-gray-light text-xs">${item.role}</div>
+        <div class="grid lg:grid-cols-2 gap-6" data-stagger>
+          <a href="#/news" class="news-featured-card group card-hover block cursor-pointer overflow-hidden rounded-2xl">
+            <div class="relative h-full min-h-[420px]">
+              <img src="/banner-product.jpg" alt="${newsArticles[0].title}"
+                   class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/60 to-transparent"></div>
+              <div class="absolute inset-0 flex flex-col justify-end p-8">
+                <span class="badge-gold self-start mb-4">${t('news.categories.' + newsArticles[0].categoryId)}</span>
+                <h3 class="font-heading text-2xl font-semibold uppercase text-white mb-3
+                           group-hover:text-brand-gold transition-colors">${newsArticles[0].title}</h3>
+                <p class="text-brand-gray-light text-sm leading-relaxed mb-4 line-clamp-2">${newsArticles[0].excerpt}</p>
+                <div class="flex items-center justify-between">
+                  <span class="text-brand-gray-light text-xs">${newsArticles[0].date}</span>
+                  <span class="text-brand-gold text-sm font-medium flex items-center gap-2
+                               group-hover:gap-3 transition-all">
+                    ${t('home.news.readArticle')}
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                  </span>
                 </div>
               </div>
             </div>
-          `).join('')}
+          </a>
+
+          <div class="flex flex-col gap-6">
+            ${newsArticles.slice(1, 4).map(article => `
+              <a href="#/news" class="news-article-card group card-hover block cursor-pointer">
+                <div class="p-6 flex gap-6 items-start">
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-center gap-3 mb-3">
+                      <span class="text-brand-gold text-xs font-medium uppercase tracking-wider">${t('news.categories.' + article.categoryId)}</span>
+                      <span class="w-1 h-1 rounded-full bg-brand-gray-light/50"></span>
+                      <span class="text-brand-gray-light text-xs">${article.date}</span>
+                    </div>
+                    <h3 class="font-heading text-lg font-semibold uppercase text-white mb-2
+                               group-hover:text-brand-gold transition-colors line-clamp-2">${article.title}</h3>
+                    <p class="text-brand-gray-light text-sm leading-relaxed line-clamp-2">${article.excerpt}</p>
+                  </div>
+                  <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-brand-gold/10 flex items-center justify-center
+                              group-hover:bg-brand-gold/20 transition-colors mt-1">
+                    <svg class="w-5 h-5 text-brand-gold transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            `).join('')}
+          </div>
+        </div>
+
+        <div class="text-center mt-12 reveal">
+          <a href="#/news" class="btn-primary btn-lg text-sm uppercase tracking-widest cursor-pointer">
+            ${t('home.news.viewAll')}
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
         </div>
       </div>
     </section>
@@ -322,20 +362,14 @@ export function homePage() {
           <div class="absolute top-0 right-0 w-64 h-64 bg-brand-gold/5 rounded-full blur-3xl"></div>
           <div class="absolute bottom-0 left-0 w-48 h-48 bg-brand-gold/5 rounded-full blur-3xl"></div>
           <div class="relative z-10">
-            <h2 class="heading-lg text-white mb-6">
-              ${t('home.cta.heading1')} <span class="text-gradient-gold">${t('home.cta.headingHighlight')}</span>?
+            <h2 class="heading-lg text-white mb-10">
+              ${t('home.cta.heading1')} <span class="text-gradient-gold">${t('home.cta.headingHighlight')}</span>
+              <div class="mt-3"/>
+              ${t('home.cta.heading2')}
             </h2>
-            <p class="text-brand-gray-light max-w-xl mx-auto mb-10 text-lg">
-              ${t('home.cta.subtitle')}
-            </p>
-            <div class="flex flex-wrap justify-center gap-4">
-              <a href="#/contact" class="btn-primary btn-lg text-sm uppercase tracking-widest">
-                ${t('home.cta.contactUs')}
-              </a>
-              <a href="#/products" class="btn-outline btn-lg text-sm uppercase tracking-widest">
-                ${t('home.cta.browseCatalog')}
-              </a>
-            </div>
+            <a href="#/contact" class="btn-primary btn-lg text-sm uppercase tracking-widest cursor-pointer">
+              ${t('home.cta.contactUs')}
+            </a>
           </div>
         </div>
       </div>

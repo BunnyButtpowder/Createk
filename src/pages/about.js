@@ -5,6 +5,33 @@ export function aboutPage() {
   const milestoneYears = ['1998', '2005', '2012', '2018', '2023'];
   const milestones = t('about.milestones.items');
 
+  const productCategories = [
+    {
+      titleKey: 'home.categories.engine.title',
+      descKey: 'home.categories.engine.desc',
+      icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>`,
+      img: '/engine-assemblies-and-components.jpg',
+    },
+    {
+      titleKey: 'home.categories.chassis.title',
+      descKey: 'home.categories.chassis.desc',
+      icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>`,
+      img: '/chassis-system.jpg',
+    },
+    {
+      titleKey: 'home.categories.break.title',
+      descKey: 'home.categories.break.desc',
+      icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>`,
+      img: 'break-system.jpg',
+    },
+    {
+      titleKey: 'home.categories.cabin.title',
+      descKey: 'home.categories.cabin.desc',
+      icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>`,
+      img: 'cabin-system.jpg',
+    },
+  ];
+
   const valueKeys = ['qualityFirst', 'reliability', 'partnership', 'innovation'];
   const valueIcons = [
     `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>`,
@@ -24,140 +51,105 @@ export function aboutPage() {
     <!-- Hero -->
     <section class="relative pt-32 pb-20 overflow-hidden">
       <div class="absolute inset-0">
-        <img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?w=1920&h=600&fit=crop"
+        <img src="/banner-about.jpg"
              alt="Workshop" class="w-full h-full object-cover opacity-20" />
-        <div class="absolute inset-0 bg-gradient-to-b from-brand-black via-brand-black/95 to-brand-black"></div>
       </div>
       <div class="container-custom relative z-10 pt-12">
         <div class="reveal">
           <span class="badge-gold mb-4">${t('about.hero.badge')}</span>
           <h1 class="heading-xl text-white mt-4 mb-6">
             ${t('about.hero.heading1')}<br/>
+            <div class="mt-3"/>
             <span class="text-gradient-gold">${t('about.hero.headingHighlight')}</span>
           </h1>
-          <p class="text-brand-gray-light text-lg max-w-2xl leading-relaxed">
+          <p class="text-brand-gray-light text-lg max-w-3xl leading-relaxed">
             ${t('about.hero.subtitle')}
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Mission -->
+    <!-- Our Story -->
     <section class="section-darker">
       <div class="container-custom">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
-          <div class="reveal-left">
+          <div class="reveal-left space-y-6">
             <div class="relative">
               <div class="img-hover-zoom rounded-2xl overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&h=600&fit=crop"
-                     alt="Createk facility" class="w-full h-[400px] lg:h-[500px] object-cover" />
+                <img src="/1.jpg"
+                     alt="Createk facility" class="facility-image w-full h-[300px] lg:h-[360px] object-cover" />
               </div>
               <div class="absolute -bottom-4 -right-4 w-32 h-32 border-2 border-brand-gold/30 rounded-2xl"></div>
             </div>
+            <div class="rd-video-wrapper relative rounded-2xl overflow-hidden mt-8">
+              <video class="rd-process-video w-full h-[240px] lg:h-[280px] object-cover rounded-2xl" 
+                     autoplay loop muted playsinline preload="auto" poster="/1.jpg">
+                <source src="/R&D-createk-process.mp4" type="video/mp4" />
+              </video>
+            </div>
           </div>
           <div class="reveal-right">
-            <span class="badge-gold mb-4">${t('about.mission.badge')}</span>
+            <span class="badge-gold mb-4">${t('about.story.badge')}</span>
             <h2 class="heading-lg text-white mt-4 mb-6">
-              ${t('about.mission.heading1')}<br/>
-              <span class="text-gradient-gold">${t('about.mission.headingHighlight')}</span> ${t('about.mission.heading2')}
+              ${t('about.story.heading1')}<br/>
+              <span class="text-gradient-gold">${t('about.story.headingHighlight')}</span>
             </h2>
             <p class="text-brand-gray-light leading-relaxed mb-6">
-              ${t('about.mission.p1')}
+              ${t('about.story.p1')}
             </p>
-            <p class="text-brand-gray-light leading-relaxed mb-8">
-              ${t('about.mission.p2')}
+            <p class="text-brand-gray-light leading-relaxed mb-6">
+              ${t('about.story.p2')}
             </p>
-            <div class="grid grid-cols-2 gap-4">
-              <div class="bg-brand-gray p-4 rounded-xl">
-                <div class="font-heading text-2xl font-bold text-brand-gold">ISO 9001</div>
-                <div class="text-sm text-brand-gray-light mt-1">${t('about.mission.certifiedQuality')}</div>
-              </div>
-              <div class="bg-brand-gray p-4 rounded-xl">
-                <div class="font-heading text-2xl font-bold text-brand-gold">15,000m²</div>
-                <div class="text-sm text-brand-gray-light mt-1">${t('about.mission.warehouseSpace')}</div>
-              </div>
-            </div>
+            <p class="text-brand-gold font-semibold leading-relaxed text-lg italic">
+              ${t('about.story.p3')}
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Values -->
-    <section class="section-dark">
-      <div class="container-custom">
-        <div class="text-center mb-16 reveal">
-          <span class="badge-gold mb-4">${t('about.values.badge')}</span>
-          <h2 class="heading-lg text-white mt-4">
-            ${t('about.values.heading1')} <span class="text-gradient-gold">${t('about.values.headingHighlight')}</span> ${t('about.values.heading2')}
-          </h2>
-        </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6" data-stagger>
-          ${valueKeys.map((key, i) => `
-            <div class="card p-8 group hover:border-brand-gold/30">
-              <div class="w-14 h-14 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold mb-6
-                          group-hover:bg-brand-gold group-hover:text-brand-black transition-all duration-300">
-                ${valueIcons[i]}
-              </div>
-              <h3 class="font-heading text-lg uppercase text-white mb-3">${t(`about.values.${key}.title`)}</h3>
-              <p class="text-brand-gray-light text-sm leading-relaxed">${t(`about.values.${key}.desc`)}</p>
-            </div>
-          `).join('')}
-        </div>
-      </div>
-    </section>
-
-    <!-- Timeline -->
+    <!-- Product Categories -->
     <section class="section-darker">
       <div class="container-custom">
         <div class="text-center mb-16 reveal">
-          <span class="badge-gold mb-4">${t('about.milestones.badge')}</span>
-          <h2 class="heading-lg text-white mt-4">
-            ${t('about.milestones.heading1')} <span class="text-gradient-gold">${t('about.milestones.headingHighlight')}</span>
+          <span class="badge-gold mb-4">${t('home.products.badge')}</span>
+          <h2 class="heading-lg text-white mt-4 mb-4">
+            ${t('home.products.heading1')} <span class="text-gradient-gold">${t('home.products.headingHighlight')}</span>
           </h2>
+          <p class="text-brand-gray-light max-w-2xl mx-auto">
+            ${t('home.products.subtitle')}
+          </p>
         </div>
-        <div class="relative">
-          <!-- Timeline line -->
-          <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-white/10"></div>
-          <div class="space-y-12">
-            ${milestones.map((m, i) => `
-              <div class="reveal relative md:flex items-center ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}">
-                <div class="md:w-1/2 ${i % 2 === 0 ? 'md:pr-16 md:text-right' : 'md:pl-16'}">
-                  <div class="font-heading text-3xl font-bold text-brand-gold mb-2">${milestoneYears[i]}</div>
-                  <h3 class="font-heading text-xl uppercase text-white mb-2">${m.title}</h3>
-                  <p class="text-brand-gray-light text-sm">${m.desc}</p>
-                </div>
-                <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-brand-gold border-4 border-brand-dark"></div>
-                <div class="md:w-1/2"></div>
-              </div>
-            `).join('')}
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Team -->
-    <section class="section-dark">
-      <div class="container-custom">
-        <div class="text-center mb-16 reveal">
-          <span class="badge-gold mb-4">${t('about.team.badge')}</span>
-          <h2 class="heading-lg text-white mt-4">
-            ${t('about.team.heading1')} <span class="text-gradient-gold">${t('about.team.headingHighlight')}</span>
-          </h2>
-        </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" data-stagger>
-          ${team.map(member => `
-            <div class="card group overflow-hidden">
-              <div class="relative h-64 overflow-hidden img-hover-zoom">
-                <img src="${member.img}" alt="${member.name}"
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6" data-stagger>
+          ${productCategories.map(cat => `
+            <a href="#/products" class="card-hover group block cursor-pointer">
+              <div class="relative h-44 overflow-hidden img-hover-zoom">
+                <img src="${cat.img}" alt="${t(cat.titleKey)}"
                      class="w-full h-full object-cover transition-transform duration-500" />
                 <div class="overlay-gradient absolute inset-0"></div>
+                <div class="absolute top-3 left-3 w-10 h-10 rounded-lg bg-brand-gold/20 backdrop-blur-sm
+                            flex items-center justify-center text-brand-gold
+                            group-hover:bg-brand-gold group-hover:text-brand-black transition-all duration-300">
+                  ${cat.icon}
+                </div>
               </div>
-              <div class="p-6 text-center">
-                <h3 class="font-heading text-lg uppercase text-white group-hover:text-brand-gold transition-colors">${member.name}</h3>
-                <p class="text-brand-gold text-sm mt-1">${t(`about.team.roles.${member.roleKey}`)}</p>
+              <div class="p-5">
+                <h3 class="font-heading text-lg font-semibold uppercase text-white mb-1.5
+                           group-hover:text-brand-gold transition-colors">${t(cat.titleKey)}</h3>
+                <p class="text-brand-gray-light text-sm line-clamp-2">${t(cat.descKey)}</p>
               </div>
-            </div>
+            </a>
           `).join('')}
+        </div>
+
+        <div class="text-center mt-12 reveal">
+          <a href="#/products" class="btn-primary btn-lg text-sm uppercase tracking-widest">
+            ${t('home.products.viewAll')}
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
         </div>
       </div>
     </section>
@@ -165,10 +157,9 @@ export function aboutPage() {
     <!-- CTA -->
     <section class="section-darker">
       <div class="container-custom text-center reveal">
-        <h2 class="heading-lg text-white mb-6">${t('about.cta.heading1')} <span class="text-gradient-gold">${t('about.cta.headingHighlight')}</span>?</h2>
-        <p class="text-brand-gray-light max-w-xl mx-auto mb-10">
-          ${t('about.cta.subtitle')}
-        </p>
+        <h2 class="heading-lg text-white mb-6">${t('about.cta.heading1')} <span class="text-gradient-gold">${t('about.cta.headingHighlight')}</span> 
+        <div class="mt-3"/>
+        ${t('about.cta.heading2')}</h2>
         <a href="#/contact" class="btn-primary btn-lg text-sm uppercase tracking-widest">
           ${t('about.cta.button')}
         </a>

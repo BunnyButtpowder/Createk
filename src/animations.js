@@ -147,11 +147,11 @@ export function initHeroAnimation() {
     { opacity: 0, y: 60, clipPath: 'inset(0 0 100% 0)' },
     { opacity: 1, y: 0, clipPath: 'inset(0 0 0% 0)', duration: 1, ease: 'power4.out' }
   )
-  .fromTo('.hero-subtitle',
-    { opacity: 0, y: 30 },
-    { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' },
-    '-=0.4'
-  )
+  // .fromTo('.hero-subtitle',
+  //   { opacity: 0, y: 30 },
+  //   { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' },
+  //   '-=0.4'
+  // )
   .fromTo('.hero-cta',
     { opacity: 0, y: 20 },
     { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' },

@@ -10,16 +10,17 @@ const articleImages = [
   'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&h=400&fit=crop',
 ];
 
+const ARTICLES_PER_PAGE = 12;
+
 const categoryColorMap = {
-  'company_news': 'bg-blue-500/10 text-blue-400 border-blue-500/20',
-  'product_launch': 'bg-green-500/10 text-green-400 border-green-500/20',
-  'industry_insights': 'bg-purple-500/10 text-purple-400 border-purple-500/20',
-  'events': 'bg-orange-500/10 text-orange-400 border-orange-500/20',
-  'technical_guide': 'bg-brand-gold/10 text-brand-gold border-brand-gold/20',
+  'products': 'bg-green-500/10 text-green-400 border-green-500/20',
+  'business': 'bg-blue-500/10 text-blue-400 border-blue-500/20',
+  'news': 'bg-orange-500/10 text-orange-400 border-orange-500/20',
+  'guides': 'bg-brand-gold/10 text-brand-gold border-brand-gold/20',
 };
 
 export function newsPage() {
-  const featuredCategoryId = 'company_news';
+  const featuredCategoryId = 'business';
   const articles = t('news.articles.items');
 
   const html = `
@@ -35,6 +36,7 @@ export function newsPage() {
           <span class="badge-gold mb-4">${t('news.hero.badge')}</span>
           <h1 class="heading-xl text-white mt-4 mb-6">
             ${t('news.hero.heading1')}<br/>
+            <div class="mt-3"/>
             <span class="text-gradient-gold">${t('news.hero.headingHighlight')}</span>
           </h1>
           <p class="text-brand-gray-light text-lg max-w-2xl leading-relaxed">
@@ -85,21 +87,22 @@ export function newsPage() {
     <!-- Articles Grid -->
     <section class="section-dark">
       <div class="container-custom">
-        <div class="flex items-center justify-between mb-12 reveal">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-12 reveal">
           <h2 class="heading-md text-white">${t('news.articles.heading')}</h2>
-          <div class="hidden md:flex items-center gap-2">
-            <button class="filter-btn btn-ghost text-xs uppercase tracking-widest bg-white/5" data-filter="all">${t('news.articles.filterAll')}</button>
-            <button class="filter-btn btn-ghost text-xs uppercase tracking-widest" data-filter="company_news">${t('news.articles.filterNews')}</button>
-            <button class="filter-btn btn-ghost text-xs uppercase tracking-widest" data-filter="product_launch">${t('news.articles.filterProducts')}</button>
-            <button class="filter-btn btn-ghost text-xs uppercase tracking-widest" data-filter="industry_insights">${t('news.articles.filterInsights')}</button>
+          <div class="flex items-center gap-2 flex-wrap">
+            <button class="filter-btn btn-ghost text-xs uppercase tracking-widest bg-white/5 cursor-pointer" data-filter="all">${t('news.articles.filterAll')}</button>
+            <button class="filter-btn btn-ghost text-xs uppercase tracking-widest cursor-pointer" data-filter="products">${t('news.articles.filterProducts')}</button>
+            <button class="filter-btn btn-ghost text-xs uppercase tracking-widest cursor-pointer" data-filter="business">${t('news.articles.filterBusiness')}</button>
+            <button class="filter-btn btn-ghost text-xs uppercase tracking-widest cursor-pointer" data-filter="news">${t('news.articles.filterNews')}</button>
+            <button class="filter-btn btn-ghost text-xs uppercase tracking-widest cursor-pointer" data-filter="guides">${t('news.articles.filterGuides')}</button>
           </div>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="articles-grid" data-stagger>
           ${articles.map((a, i) => `
-            <article class="card-hover group block article-card" data-article-category="${a.categoryId}">
+            <article class="card-hover group block article-card" data-article-category="${a.categoryId}" data-article-index="${i}">
               <div class="relative h-48 overflow-hidden img-hover-zoom">
-                <img src="${articleImages[i]}" alt="${a.title}"
+                <img src="${articleImages[i % articleImages.length]}" alt="${a.title}"
                      class="w-full h-full object-cover transition-transform duration-500" />
                 <div class="absolute top-3 left-3">
                   <span class="badge ${categoryColorMap[a.categoryId] || 'badge-gold'}">
@@ -122,6 +125,26 @@ export function newsPage() {
               </div>
             </article>
           `).join('')}
+        </div>
+
+        <!-- Pagination -->
+        <div id="pagination-container" class="flex items-center justify-center gap-3 mt-12 reveal">
+          <button id="prev-page-btn" class="pagination-prev-btn btn-ghost px-4 py-2 text-sm rounded-lg border border-white/10 
+                     hover:border-brand-gold/30 hover:text-brand-gold transition-all cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
+                  disabled>
+            <svg class="w-4 h-4 inline-block mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+            </svg>
+            ${t('news.articles.prevPage')}
+          </button>
+          <div id="page-numbers" class="flex items-center gap-1"></div>
+          <button id="next-page-btn" class="pagination-next-btn btn-ghost px-4 py-2 text-sm rounded-lg border border-white/10 
+                     hover:border-brand-gold/30 hover:text-brand-gold transition-all cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed">
+            ${t('news.articles.nextPage')}
+            <svg class="w-4 h-4 inline-block ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </button>
         </div>
       </div>
     </section>
@@ -152,26 +175,78 @@ export function newsPage() {
       initPageAnimations();
       animateImageHover();
 
-      // Filter functionality
       const filterBtns = document.querySelectorAll('.filter-btn');
-      const articleCards = document.querySelectorAll('.article-card');
+      const articleCards = Array.from(document.querySelectorAll('.article-card'));
+      const prevBtn = document.getElementById('prev-page-btn');
+      const nextBtn = document.getElementById('next-page-btn');
+      const pageNumbers = document.getElementById('page-numbers');
+      const paginationContainer = document.getElementById('pagination-container');
+
+      let currentFilter = 'all';
+      let currentPage = 1;
+
+      function getFilteredCards() {
+        if (currentFilter === 'all') return articleCards;
+        return articleCards.filter(c => c.dataset.articleCategory === currentFilter);
+      }
+
+      function getTotalPages() {
+        return Math.max(1, Math.ceil(getFilteredCards().length / ARTICLES_PER_PAGE));
+      }
+
+      function renderPageNumbers() {
+        const total = getTotalPages();
+        pageNumbers.innerHTML = '';
+        if (total <= 1) {
+          paginationContainer.style.display = 'none';
+          return;
+        }
+        paginationContainer.style.display = '';
+        for (let i = 1; i <= total; i++) {
+          const btn = document.createElement('button');
+          btn.textContent = i;
+          btn.className = `page-number-btn w-10 h-10 rounded-lg text-sm font-medium transition-all cursor-pointer ${
+            i === currentPage
+              ? 'bg-brand-gold text-brand-black'
+              : 'text-white/60 hover:text-white hover:bg-white/10'
+          }`;
+          btn.addEventListener('click', () => { currentPage = i; render(); });
+          pageNumbers.appendChild(btn);
+        }
+      }
+
+      function render() {
+        const filtered = getFilteredCards();
+        const total = getTotalPages();
+        if (currentPage > total) currentPage = total;
+
+        const start = (currentPage - 1) * ARTICLES_PER_PAGE;
+        const end = start + ARTICLES_PER_PAGE;
+
+        articleCards.forEach(card => card.style.display = 'none');
+        filtered.forEach((card, i) => {
+          card.style.display = (i >= start && i < end) ? '' : 'none';
+        });
+
+        prevBtn.disabled = currentPage <= 1;
+        nextBtn.disabled = currentPage >= total;
+        renderPageNumbers();
+      }
 
       filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-          const filter = btn.dataset.filter;
-
+          currentFilter = btn.dataset.filter;
+          currentPage = 1;
           filterBtns.forEach(b => b.classList.remove('bg-white/5'));
           btn.classList.add('bg-white/5');
-
-          articleCards.forEach(card => {
-            if (filter === 'all' || card.dataset.articleCategory === filter) {
-              card.style.display = '';
-            } else {
-              card.style.display = 'none';
-            }
-          });
+          render();
         });
       });
+
+      prevBtn.addEventListener('click', () => { if (currentPage > 1) { currentPage--; render(); } });
+      nextBtn.addEventListener('click', () => { if (currentPage < getTotalPages()) { currentPage++; render(); } });
+
+      render();
     },
   };
 }
