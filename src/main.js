@@ -11,8 +11,12 @@ import { homePage } from './pages/home.js';
 import { aboutPage } from './pages/about.js';
 import { productsPage } from './pages/products.js';
 import { newsPage } from './pages/news.js';
+import { newsDetailPage } from './pages/news-detail.js';
 import { contactPage } from './pages/contact.js';
+import { privacyPage } from './pages/privacy.js';
+import { termsPage } from './pages/terms.js';
 import { initI18n, setLang } from './i18n/index.js';
+import { getCurrentRoute } from './router.js';
 
 // Initialize i18n before anything renders
 initI18n();
@@ -61,12 +65,38 @@ function renderAppShell() {
 // Initial render
 renderAppShell();
 
+// Scroll-to-top button
+function initScrollToTop() {
+  const btn = document.getElementById('scroll-to-top-button');
+  if (!btn) return;
+
+  lenis.on('scroll', ({ scroll }) => {
+    if (scroll > 400) {
+      btn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+      btn.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+    } else {
+      btn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+      btn.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+    }
+  });
+
+  btn.addEventListener('click', () => {
+    lenis.scrollTo(0, { duration: 1.2 });
+  });
+}
+initScrollToTop();
+
 // Register routes
 registerRoute('/', homePage);
 registerRoute('/about', aboutPage);
 registerRoute('/products', productsPage);
-registerRoute('/news', newsPage);
+registerRoute('/news', () => {
+  const route = getCurrentRoute();
+  return route.startsWith('/news/') ? newsDetailPage() : newsPage();
+});
 registerRoute('/contact', contactPage);
+registerRoute('/privacy', privacyPage);
+registerRoute('/terms', termsPage);
 
 // Start router
 initRouter();
@@ -76,5 +106,6 @@ window.addEventListener('lang-change', (e) => {
   const { lang } = e.detail;
   setLang(lang);
   renderAppShell();
+  initScrollToTop();
   handleRoute();
 });

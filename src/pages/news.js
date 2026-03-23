@@ -1,4 +1,5 @@
 import { initPageAnimations, animateImageHover } from '../animations.js';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { t } from '../i18n/index.js';
 
 const articleImages = [
@@ -13,10 +14,10 @@ const articleImages = [
 const ARTICLES_PER_PAGE = 12;
 
 const categoryColorMap = {
-  'products': 'bg-green-500/10 text-green-400 border-green-500/20',
-  'business': 'bg-blue-500/10 text-blue-400 border-blue-500/20',
+  'products': 'bg-brand-gold/10 text-brand-gold border-brand-gold/20',
+  'business': 'bg-amber-500/10 text-amber-400 border-amber-500/20',
   'news': 'bg-orange-500/10 text-orange-400 border-orange-500/20',
-  'guides': 'bg-brand-gold/10 text-brand-gold border-brand-gold/20',
+  'guides': 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20',
 };
 
 export function newsPage() {
@@ -25,7 +26,7 @@ export function newsPage() {
 
   const html = `
     <!-- Hero -->
-    <section class="relative pt-32 pb-20 overflow-hidden">
+    <section class="relative pt-32 pb-12 sm:pb-20 overflow-hidden">
       <div class="absolute inset-0">
         <img src="https://images.unsplash.com/photo-1504711434969-e33886168d5c?w=1920&h=600&fit=crop"
              alt="News" class="w-full h-full object-cover opacity-15" />
@@ -36,7 +37,7 @@ export function newsPage() {
           <span class="badge-gold mb-4">${t('news.hero.badge')}</span>
           <h1 class="heading-xl text-white mt-4 mb-6">
             ${t('news.hero.heading1')}<br/>
-            <div class="mt-3"/>
+            <div class="mt-5"/>
             <span class="text-gradient-gold">${t('news.hero.headingHighlight')}</span>
           </h1>
           <p class="text-brand-gray-light text-lg max-w-2xl leading-relaxed">
@@ -50,7 +51,7 @@ export function newsPage() {
     <section class="section-darker">
       <div class="container-custom">
         <div class="reveal-scale">
-          <a href="#" class="card-hover group block overflow-hidden">
+          <a href="#/news/featured" class="card-hover group block overflow-hidden">
             <div class="grid lg:grid-cols-2">
               <div class="relative h-64 lg:h-auto overflow-hidden img-hover-zoom">
                 <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&h=600&fit=crop" alt="${t('news.featured.title')}"
@@ -100,7 +101,7 @@ export function newsPage() {
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="articles-grid" data-stagger>
           ${articles.map((a, i) => `
-            <article class="card-hover group block article-card" data-article-category="${a.categoryId}" data-article-index="${i}">
+            <a href="#/news/${i}" class="card-hover group block article-card" data-article-category="${a.categoryId}" data-article-index="${i}">
               <div class="relative h-48 overflow-hidden img-hover-zoom">
                 <img src="${articleImages[i % articleImages.length]}" alt="${a.title}"
                      class="w-full h-full object-cover transition-transform duration-500" />
@@ -114,7 +115,6 @@ export function newsPage() {
                 <span class="text-brand-gray-mid text-xs">${a.date}</span>
                 <h3 class="font-heading text-lg uppercase text-white mt-2 mb-3
                            group-hover:text-brand-gold transition-colors leading-tight">${a.title}</h3>
-                <p class="text-brand-gray-light text-sm leading-relaxed mb-4">${a.excerpt}</p>
                 <span class="text-brand-gold text-xs font-semibold uppercase tracking-wider
                              flex items-center gap-1 group-hover:gap-2 transition-all">
                   ${t('news.articles.readArticle')}
@@ -123,7 +123,7 @@ export function newsPage() {
                   </svg>
                 </span>
               </div>
-            </article>
+            </a>
           `).join('')}
         </div>
 
@@ -153,7 +153,7 @@ export function newsPage() {
     <section class="section-darker">
       <div class="container-custom">
         <div class="bg-gradient-to-br from-brand-gold/10 via-brand-gray-dark to-brand-gray-dark
-                    border border-brand-gold/20 rounded-3xl p-12 md:p-16 text-center reveal-scale">
+                    border border-brand-gold/20 rounded-3xl p-6 sm:p-10 md:p-16 text-center reveal-scale">
           <h2 class="heading-md text-white mb-4">${t('news.newsletter.heading1')} <span class="text-gradient-gold">${t('news.newsletter.headingHighlight')}</span></h2>
           <p class="text-brand-gray-light max-w-lg mx-auto mb-8">
             ${t('news.newsletter.subtitle')}
@@ -231,6 +231,8 @@ export function newsPage() {
         prevBtn.disabled = currentPage <= 1;
         nextBtn.disabled = currentPage >= total;
         renderPageNumbers();
+
+        requestAnimationFrame(() => ScrollTrigger.refresh());
       }
 
       filterBtns.forEach(btn => {

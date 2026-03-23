@@ -3,12 +3,10 @@
 @tailwind utilities;
 
 @layer base {
-  html {
+  html, body {
     scroll-behavior: auto; /* Lenis handles smooth scrolling */
-  }
-
-  body {
     overflow-x: hidden;
+    max-width: 100vw;
   }
 
   ::selection {
@@ -94,7 +92,7 @@
 
   /* Text styles */
   .heading-xl {
-    @apply font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tight leading-[0.95];
+    @apply font-heading text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold uppercase tracking-tight leading-[0.95];
   }
 
   .heading-lg {

@@ -1,0 +1,85 @@
+<!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40">
+        <span class="text-xs uppercase tracking-widest">${t('home.hero.scroll')}</span>
+        <div class="w-px h-12 bg-gradient-to-b from-brand-gold to-transparent"></div>
+      </div>
+
+<!-- Timeline -->
+    <section class="section-darker">
+      <div class="container-custom">
+        <div class="text-center mb-16 reveal">
+          <span class="badge-gold mb-4">${t('about.milestones.badge')}</span>
+          <h2 class="heading-lg text-white mt-4">
+            ${t('about.milestones.heading1')} <span class="text-gradient-gold">${t('about.milestones.headingHighlight')}</span>
+          </h2>
+        </div>
+        <div class="relative">
+          <!-- Timeline line -->
+          <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-white/10"></div>
+          <div class="space-y-12">
+            ${milestones.map((m, i) => `
+              <div class="reveal relative md:flex items-center ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}">
+                <div class="md:w-1/2 ${i % 2 === 0 ? 'md:pr-16 md:text-right' : 'md:pl-16'}">
+                  <div class="font-heading text-3xl font-bold text-brand-gold mb-2">${milestoneYears[i]}</div>
+                  <h3 class="font-heading text-xl uppercase text-white mb-2">${m.title}</h3>
+                  <p class="text-brand-gray-light text-sm">${m.desc}</p>
+                </div>
+                <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-brand-gold border-4 border-brand-dark"></div>
+                <div class="md:w-1/2"></div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="section-dark">
+      <div class="container-custom">
+        <div class="text-center mb-16 reveal">
+          <span class="badge-gold mb-4">${t('about.team.badge')}</span>
+          <h2 class="heading-lg text-white mt-4">
+            ${t('about.team.heading1')} <span class="text-gradient-gold">${t('about.team.headingHighlight')}</span>
+          </h2>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" data-stagger>
+          ${team.map(member => `
+            <div class="card group overflow-hidden">
+              <div class="relative h-64 overflow-hidden img-hover-zoom">
+                <img src="${member.img}" alt="${member.name}"
+                     class="w-full h-full object-cover transition-transform duration-500" />
+                <div class="overlay-gradient absolute inset-0"></div>
+              </div>
+              <div class="p-6 text-center">
+                <h3 class="font-heading text-lg uppercase text-white group-hover:text-brand-gold transition-colors">${member.name}</h3>
+                <p class="text-brand-gold text-sm mt-1">${t(`about.team.roles.${member.roleKey}`)}</p>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </section>
+
+<!-- Values -->
+    <section class="section-dark">
+      <div class="container-custom">
+        <div class="text-center mb-16 reveal">
+          <span class="badge-gold mb-4">${t('about.values.badge')}</span>
+          <h2 class="heading-lg text-white mt-4">
+            ${t('about.values.heading1')} <span class="text-gradient-gold">${t('about.values.headingHighlight')}</span> ${t('about.values.heading2')}
+          </h2>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6" data-stagger>
+          ${valueKeys.map((key, i) => `
+            <div class="card p-8 group hover:border-brand-gold/30">
+              <div class="w-14 h-14 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold mb-6
+                          group-hover:bg-brand-gold group-hover:text-brand-black transition-all duration-300">
+                ${valueIcons[i]}
+              </div>
+              <h3 class="font-heading text-lg uppercase text-white mb-3">${t(`about.values.${key}.title`)}</h3>
+              <p class="text-brand-gray-light text-sm leading-relaxed">${t(`about.values.${key}.desc`)}</p>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </section>

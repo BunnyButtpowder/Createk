@@ -49,20 +49,21 @@ export function aboutPage() {
 
   const html = `
     <!-- Hero -->
-    <section class="relative pt-32 pb-20 overflow-hidden">
+    <section class="relative pt-32 pb-12 sm:pb-20 overflow-hidden">
       <div class="absolute inset-0">
         <img src="/banner-about.jpg"
-             alt="Workshop" class="w-full h-full object-cover opacity-20" />
+             alt="Workshop" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-black/60 via-brand-black/30 to-brand-black/0"></div>
       </div>
       <div class="container-custom relative z-10 pt-12">
         <div class="reveal">
-          <span class="badge-gold mb-4">${t('about.hero.badge')}</span>
+          <span class="badge-gold mb-4 text-base">${t('about.hero.badge')}</span>
           <h1 class="heading-xl text-white mt-4 mb-6">
             ${t('about.hero.heading1')}<br/>
-            <div class="mt-3"/>
+            <div class="mt-5"/>
             <span class="text-gradient-gold">${t('about.hero.headingHighlight')}</span>
           </h1>
-          <p class="text-brand-gray-light text-lg max-w-3xl leading-relaxed">
+          <p class="text-white text-lg max-w-3xl leading-relaxed">
             ${t('about.hero.subtitle')}
           </p>
         </div>
@@ -73,31 +74,26 @@ export function aboutPage() {
     <section class="section-darker">
       <div class="container-custom">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
-          <div class="reveal-left space-y-6">
-            <div class="relative">
+          <div class="reveal-left">
+            <div class="relative overflow-hidden pr-4 pb-4">
               <div class="img-hover-zoom rounded-2xl overflow-hidden">
                 <img src="/1.jpg"
-                     alt="Createk facility" class="facility-image w-full h-[300px] lg:h-[360px] object-cover" />
+                     alt="Createk facility" class="facility-image w-full h-[300px] lg:h-[460px] object-cover" />
               </div>
-              <div class="absolute -bottom-4 -right-4 w-32 h-32 border-2 border-brand-gold/30 rounded-2xl"></div>
-            </div>
-            <div class="rd-video-wrapper relative rounded-2xl overflow-hidden mt-8">
-              <video class="rd-process-video w-full h-[240px] lg:h-[280px] object-cover rounded-2xl" 
-                     autoplay loop muted playsinline preload="auto" poster="/1.jpg">
-                <source src="/R&D-createk-process.mp4" type="video/mp4" />
-              </video>
+              <div class="absolute bottom-0 right-0 w-32 h-32 border-2 border-brand-gold/30 rounded-2xl"></div>
             </div>
           </div>
           <div class="reveal-right">
-            <span class="badge-gold mb-4">${t('about.story.badge')}</span>
+            <span class="badge-gold mb-4 text-base">${t('about.story.badge')}</span>
             <h2 class="heading-lg text-white mt-4 mb-6">
               ${t('about.story.heading1')}<br/>
+              <div class="mt-4"/>
               <span class="text-gradient-gold">${t('about.story.headingHighlight')}</span>
             </h2>
-            <p class="text-brand-gray-light leading-relaxed mb-6">
+            <p class="text-white leading-relaxed mb-6">
               ${t('about.story.p1')}
             </p>
-            <p class="text-brand-gray-light leading-relaxed mb-6">
+            <p class="text-white leading-relaxed mb-6">
               ${t('about.story.p2')}
             </p>
             <p class="text-brand-gold font-semibold leading-relaxed text-lg italic">
@@ -108,11 +104,23 @@ export function aboutPage() {
       </div>
     </section>
 
+    <!-- R&D Process Video -->
+    <section class="section-darker pt-0">
+      <div class="container-custom reveal">
+        <div class="rd-video-wrapper relative rounded-2xl overflow-hidden">
+          <video class="rd-process-video w-full h-[220px] sm:h-[300px] lg:h-full object-cover rounded-2xl"
+                 autoplay loop muted playsinline preload="auto" poster="/1.jpg">
+            <source src="/R&D-createk-process.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </section>
+
     <!-- Product Categories -->
-    <section class="section-darker">
+    <section class="section-darker pt-2">
       <div class="container-custom">
         <div class="text-center mb-16 reveal">
-          <span class="badge-gold mb-4">${t('home.products.badge')}</span>
+          <span class="badge-gold mb-4 text-base">${t('home.products.badge')}</span>
           <h2 class="heading-lg text-white mt-4 mb-4">
             ${t('home.products.heading1')} <span class="text-gradient-gold">${t('home.products.headingHighlight')}</span>
           </h2>

@@ -5,14 +5,14 @@ import gsap from 'gsap';
 export function contactPage() {
   const html = `
     <!-- Hero -->
-    <section class="relative pt-32 pb-20 overflow-hidden">
+    <section class="relative pt-32 pb-12 sm:pb-20 overflow-hidden">
       <div class="absolute inset-0">
         <img src="/anthai.jpg"
              alt="An Thai - Createk Distributor" class="w-full h-full object-cover opacity-15" />
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-black via-brand-black/95 to-brand-black"></div>
       </div>
       <div class="container-custom relative z-10 pt-12">
         <div class="reveal">
-          <span class="badge-gold mb-4">${t('contact.hero.badge')}</span>
           <h1 class="heading-xl text-white mt-4 mb-6">
             ${t('contact.hero.heading1')} <span class="text-gradient-gold">${t('contact.hero.headingHighlight')}</span><br/>
             <div class="mt-3"/>
@@ -26,14 +26,12 @@ export function contactPage() {
     </section>
 
     <!-- An Thai Distributor Showcase -->
-    <section class="relative z-10 -mt-1 bg-brand-dark border-y border-white/5">
-      <div class="container-custom py-0">
-        <div class="grid lg:grid-cols-2 items-stretch -mx-4 sm:-mx-6 lg:-mx-8">
-          <div class="an-thai-image-wrapper relative h-[320px] lg:h-auto overflow-hidden reveal-left">
+    <section class="relative z-10 bg-brand-dark border-y border-white/5">
+      <div class="container-custom py-10">
+        <div class="grid lg:grid-cols-2 items-stretch">
+          <div class="an-thai-image-wrapper relative h-[320px] lg:h-auto overflow-hidden reveal-left rounded-2xl">
             <img src="/anthai.jpg" alt="An Thai - Createk Distributor"
                  class="an-thai-hero-image w-full h-full object-cover" />
-            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent lg:hidden"></div>
-            <div class="absolute inset-0 bg-gradient-to-r from-transparent to-brand-dark/60 hidden lg:block"></div>
           </div>
           <div class="an-thai-info-section flex flex-col justify-center py-12 lg:py-16 px-4 sm:px-6 lg:pl-12 lg:pr-8 reveal-right">
             <h2 class="font-heading text-2xl lg:text-3xl font-bold uppercase text-white leading-tight mb-8">
@@ -71,86 +69,14 @@ export function contactPage() {
                   </span>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Form -->
-    <section class="section-darker">
-      <div class="container-custom">
-        <div class="max-w-3xl mx-auto">
-          <div class="text-center mb-12 reveal">
-            <span class="badge-gold mb-4">${t('contact.form.heading')}</span>
-            <h2 class="heading-lg text-white mt-4 mb-4">
-              ${t('contact.hero.heading1')} <span class="text-gradient-gold">${t('contact.hero.headingHighlight')}</span> ${t('contact.hero.heading2')}
-            </h2>
-            <p class="text-brand-gray-light max-w-xl mx-auto">
-              ${t('contact.form.subtitle')}
-            </p>
-          </div>
-
-          <div class="relative reveal">
-            <div class="absolute -top-8 -left-8 w-40 h-40 bg-brand-gold/5 rounded-full blur-3xl"></div>
-            <div class="absolute -bottom-8 -right-8 w-32 h-32 bg-brand-gold/5 rounded-full blur-3xl"></div>
-            <div class="contact-form-card relative bg-brand-gray-dark/80 border border-white/10 rounded-3xl p-8 md:p-12 backdrop-blur-sm">
-              <form id="contact-form" class="space-y-6" onsubmit="event.preventDefault()">
-                <div class="grid sm:grid-cols-2 gap-6">
-                  <div class="form-field-wrapper">
-                    <label class="block text-sm text-brand-gray-light mb-2 font-medium">${t('contact.form.fullName')}</label>
-                    <input type="text" placeholder="${t('contact.form.placeholderName')}" class="input" required />
-                  </div>
-                  <div class="form-field-wrapper">
-                    <label class="block text-sm text-brand-gray-light mb-2 font-medium">${t('contact.form.company')}</label>
-                    <input type="text" placeholder="${t('contact.form.placeholderCompany')}" class="input" />
-                  </div>
-                </div>
-
-                <div class="grid sm:grid-cols-2 gap-6">
-                  <div class="form-field-wrapper">
-                    <label class="block text-sm text-brand-gray-light mb-2 font-medium">${t('contact.form.email')}</label>
-                    <input type="email" placeholder="${t('contact.form.placeholderEmail')}" class="input" required />
-                  </div>
-                  <div class="form-field-wrapper">
-                    <label class="block text-sm text-brand-gray-light mb-2 font-medium">${t('contact.form.phone')}</label>
-                    <input type="tel" placeholder="${t('contact.form.placeholderPhone')}" class="input" />
-                  </div>
-                </div>
-
-                <div class="form-field-wrapper">
-                  <label class="block text-sm text-brand-gray-light mb-2 font-medium">${t('contact.form.subject')}</label>
-                  <select class="input appearance-none cursor-pointer">
-                    <option value="">${t('contact.form.selectSubject')}</option>
-                    <option value="quote">${t('contact.form.requestQuote')}</option>
-                    <option value="technical">${t('contact.form.technicalSupport')}</option>
-                    <option value="distributor">${t('contact.form.becomeDistributor')}</option>
-                    <option value="general">${t('contact.form.generalInquiry')}</option>
-                  </select>
-                </div>
-
-                <div class="form-field-wrapper">
-                  <label class="block text-sm text-brand-gray-light mb-2 font-medium">${t('contact.form.message')}</label>
-                  <textarea placeholder="${t('contact.form.placeholderMessage')}" class="textarea" rows="5" required></textarea>
-                </div>
-
-                <div class="pt-2">
-                  <button type="submit" id="submit-btn" class="btn-primary btn-lg text-sm uppercase tracking-widest w-full cursor-pointer">
-                    ${t('contact.form.sendMessage')}
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
-                    </svg>
-                  </button>
-                </div>
-              </form>
-
-              <div id="form-success" class="hidden mt-8 bg-green-500/10 border border-green-500/20 rounded-2xl p-8 text-center">
-                <svg class="w-16 h-16 text-green-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              <a href="https://zalo.me/2822820424446155302"
+                 target="_blank" rel="noopener noreferrer"
+                 class="contact-zalo-button btn-primary btn-lg text-sm uppercase tracking-widest w-full justify-center cursor-pointer rounded-2xl">
+                ${t('contact.info.contactUs')}
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
                 </svg>
-                <h3 class="text-white font-heading text-xl uppercase mb-3">${t('contact.form.successTitle')}</h3>
-                <p class="text-brand-gray-light">${t('contact.form.successMessage')}</p>
-              </div>
+              </a>
             </div>
           </div>
         </div>

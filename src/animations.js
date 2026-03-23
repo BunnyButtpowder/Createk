@@ -3,18 +3,24 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export function initPageAnimations() {
+export function initPageAnimations({ fast = false } = {}) {
   // Kill previous ScrollTriggers for clean page transitions
   ScrollTrigger.getAll().forEach(st => st.kill());
+
+  const dur = fast ? 0.3 : 0.8;
+  const staggerDur = fast ? 0.2 : 0.6;
+  const staggerGap = fast ? 0.04 : 0.1;
+  const yOffset = fast ? 15 : 40;
+  const xOffset = fast ? 25 : 60;
 
   // Reveal animations (bottom-up)
   const reveals = document.querySelectorAll('.reveal');
   reveals.forEach((el, i) => {
     gsap.fromTo(el,
-      { opacity: 0, y: 40 },
+      { opacity: 0, y: yOffset },
       {
         opacity: 1, y: 0,
-        duration: 0.8,
+        duration: dur,
         ease: 'power3.out',
         scrollTrigger: {
           trigger: el,
@@ -29,10 +35,10 @@ export function initPageAnimations() {
   // Reveal from left
   document.querySelectorAll('.reveal-left').forEach(el => {
     gsap.fromTo(el,
-      { opacity: 0, x: -60 },
+      { opacity: 0, x: -xOffset },
       {
         opacity: 1, x: 0,
-        duration: 0.8,
+        duration: dur,
         ease: 'power3.out',
         scrollTrigger: {
           trigger: el,
@@ -46,10 +52,10 @@ export function initPageAnimations() {
   // Reveal from right
   document.querySelectorAll('.reveal-right').forEach(el => {
     gsap.fromTo(el,
-      { opacity: 0, x: 60 },
+      { opacity: 0, x: xOffset },
       {
         opacity: 1, x: 0,
-        duration: 0.8,
+        duration: dur,
         ease: 'power3.out',
         scrollTrigger: {
           trigger: el,
@@ -63,10 +69,10 @@ export function initPageAnimations() {
   // Scale reveal
   document.querySelectorAll('.reveal-scale').forEach(el => {
     gsap.fromTo(el,
-      { opacity: 0, scale: 0.9 },
+      { opacity: 0, scale: fast ? 0.95 : 0.9 },
       {
         opacity: 1, scale: 1,
-        duration: 0.8,
+        duration: dur,
         ease: 'power3.out',
         scrollTrigger: {
           trigger: el,
@@ -81,11 +87,11 @@ export function initPageAnimations() {
   document.querySelectorAll('[data-stagger]').forEach(container => {
     const children = container.children;
     gsap.fromTo(children,
-      { opacity: 0, y: 30 },
+      { opacity: 0, y: fast ? 10 : 30 },
       {
         opacity: 1, y: 0,
-        duration: 0.6,
-        stagger: 0.1,
+        duration: staggerDur,
+        stagger: staggerGap,
         ease: 'power3.out',
         scrollTrigger: {
           trigger: container,

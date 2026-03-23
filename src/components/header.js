@@ -4,10 +4,10 @@ export function renderHeader() {
   const lang = getLang();
 
   const productSubLinks = [
-    { label: t('header.subEngine'), path: '/products' },
-    { label: t('header.subChassis'), path: '/products' },
-    { label: t('header.subBraking'), path: '/products' },
-    { label: t('header.subCabin'), path: '/products' },
+    { label: t('header.subEngine'), path: '/products?cat=engine' },
+    { label: t('header.subChassis'), path: '/products?cat=chassis' },
+    { label: t('header.subBraking'), path: '/products?cat=brake' },
+    { label: t('header.subCabin'), path: '/products?cat=cabin' },
   ];
 
   const navLinks = [
@@ -17,7 +17,12 @@ export function renderHeader() {
     { label: t('header.contact'), path: '/contact' },
   ];
 
-  const langToggle = `
+  const mobileNavLinks = [
+    { label: t('header.home'), path: '/' },
+    ...navLinks,
+  ];
+
+  const langToggleDesktop = `
     <div class="flex items-center rounded-full border border-white/20 overflow-hidden">
       <button data-lang-switch="en"
               class="px-3 py-1 text-xs font-semibold uppercase tracking-wider transition-all duration-200 cursor-pointer
@@ -26,6 +31,21 @@ export function renderHeader() {
       </button>
       <button data-lang-switch="vi"
               class="px-3 py-1 text-xs font-semibold uppercase tracking-wider transition-all duration-200 cursor-pointer
+                     ${lang === 'vi' ? 'bg-brand-gold text-brand-black' : 'text-white/70 hover:text-white'}">
+        VI
+      </button>
+    </div>
+  `;
+
+  const langToggleMobile = `
+    <div class="flex items-center rounded-full border border-white/20 overflow-hidden">
+      <button data-lang-switch="en"
+              class="px-5 py-2.5 text-sm font-semibold uppercase tracking-wider transition-all duration-200 cursor-pointer
+                     ${lang === 'en' ? 'bg-brand-gold text-brand-black' : 'text-white/70 hover:text-white'}">
+        EN
+      </button>
+      <button data-lang-switch="vi"
+              class="px-5 py-2.5 text-sm font-semibold uppercase tracking-wider transition-all duration-200 cursor-pointer
                      ${lang === 'vi' ? 'bg-brand-gold text-brand-black' : 'text-white/70 hover:text-white'}">
         VI
       </button>
@@ -82,7 +102,7 @@ export function renderHeader() {
         <div class="products-mobile-dropdown flex flex-col items-center">
           <div class="flex items-center gap-3">
             <a href="#${link.path}" data-nav-link data-mobile-link
-               class="text-white font-heading text-3xl uppercase tracking-widest
+               class="text-white font-heading text-2xl sm:text-3xl uppercase tracking-widest
                       hover:text-brand-gold transition-colors duration-300">
               ${link.label}
             </a>
@@ -94,10 +114,10 @@ export function renderHeader() {
               </svg>
             </button>
           </div>
-          <div id="mobile-products-submenu" class="flex-col items-center gap-3 mt-4 hidden">
+          <div id="mobile-products-submenu" class="flex-col items-center gap-1 mt-3 hidden">
             ${link.subLinks.map(sub => `
               <a href="#${sub.path}" data-nav-link data-mobile-link
-                 class="mobile-product-sublink text-brand-gray-light text-lg
+                 class="mobile-product-sublink text-brand-gray-light text-base sm:text-lg py-2 px-4
                         hover:text-brand-gold transition-colors duration-300 cursor-pointer">
                 ${sub.label}
               </a>
@@ -108,7 +128,7 @@ export function renderHeader() {
     }
     return `
       <a href="#${link.path}" data-nav-link data-mobile-link
-         class="text-white font-heading text-3xl uppercase tracking-widest
+         class="text-white font-heading text-2xl sm:text-3xl uppercase tracking-widest
                 hover:text-brand-gold transition-colors duration-300">
         ${link.label}
       </a>
@@ -117,8 +137,8 @@ export function renderHeader() {
 
   return `
     <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
-      <div class="container-custom">
-        <nav class="flex items-center justify-between h-20 lg:h-24">
+      <div class="mx-5">
+        <nav class="flex items-center justify-between h-16 sm:h-20 lg:h-24">
           <!-- Logo -->
           <a href="#/" class="relative z-50 flex items-center gap-3 group">
             <img src="/logo.png" alt="Createk" class="h-16 lg:h-20 transition-transform duration-300 group-hover:scale-105" />
@@ -128,7 +148,7 @@ export function renderHeader() {
           <div class="hidden lg:flex items-center gap-1">
             ${navLinks.map(renderDesktopLink).join('')}
             <div class="ml-3">
-              ${langToggle}
+              ${langToggleDesktop}
             </div>
           </div>
 
@@ -142,19 +162,20 @@ export function renderHeader() {
           </button>
         </nav>
       </div>
+    </header>
 
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="fixed inset-0 bg-brand-black/98 backdrop-blur-lg z-40
-                                     flex items-center justify-center
-                                     opacity-0 pointer-events-none transition-all duration-500">
-        <div class="flex flex-col items-center gap-6">
-          ${navLinks.map(renderMobileLink).join('')}
-          <div class="mt-2">
-            ${langToggle}
-          </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-brand-black/98 backdrop-blur-lg z-40
+                                   flex items-center justify-center overflow-y-auto
+                                   opacity-0 pointer-events-none transition-all duration-500"
+         style="padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)">
+      <div class="flex flex-col items-center gap-5 sm:gap-6 py-20 sm:py-24 w-full px-4">
+        ${mobileNavLinks.map(renderMobileLink).join('')}
+        <div class="mt-4">
+          ${langToggleMobile}
         </div>
       </div>
-    </header>
+    </div>
   `;
 }
 
@@ -184,6 +205,7 @@ export function initHeader() {
       mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
       mobileMenu.classList.add('opacity-100');
       document.body.style.overflow = 'hidden';
+      if (window.__lenis) window.__lenis.stop();
     } else {
       closeMobileMenu();
     }
@@ -195,6 +217,7 @@ export function initHeader() {
     mobileMenu.classList.add('opacity-0', 'pointer-events-none');
     mobileMenu.classList.remove('opacity-100');
     document.body.style.overflow = '';
+    if (window.__lenis) window.__lenis.start();
     const submenu = document.getElementById('mobile-products-submenu');
     const chevron = document.querySelector('.mobile-products-chevron');
     if (submenu) submenu.classList.add('hidden');
@@ -226,9 +249,16 @@ export function initHeader() {
     link.addEventListener('click', closeMobileMenu);
   });
 
-  // Language switch
+  // Close mobile menu on any route change (browser back/forward)
+  const onHashChange = () => {
+    if (isOpen) closeMobileMenu();
+  };
+  window.addEventListener('hashchange', onHashChange);
+
+  // Language switch — close menu first to restore scroll before re-render
   document.querySelectorAll('[data-lang-switch]').forEach(btn => {
     btn.addEventListener('click', () => {
+      if (isOpen) closeMobileMenu();
       const lang = btn.dataset.langSwitch;
       window.dispatchEvent(new CustomEvent('lang-change', { detail: { lang } }));
     });
@@ -237,5 +267,11 @@ export function initHeader() {
   // Return cleanup function
   return () => {
     window.removeEventListener('scroll', updateHeader);
+    window.removeEventListener('hashchange', onHashChange);
+    // Ensure scroll is restored if header is cleaned up while menu is open
+    if (isOpen) {
+      document.body.style.overflow = '';
+      if (window.__lenis) window.__lenis.start();
+    }
   };
 }

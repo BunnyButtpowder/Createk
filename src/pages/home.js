@@ -40,27 +40,28 @@ export function homePage() {
 
   const html = `
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center overflow-hidden">
+    <section class="relative min-h-[85vh] sm:min-h-screen flex items-center overflow-hidden">
       <!-- Background Image -->
       <div class="absolute inset-0">
         <img src="/banner-home.jpg"
              alt="Heavy duty truck"
              class="w-full h-full object-cover" data-parallax="0.2" />
-        <div class="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/80 to-brand-black/30"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-brand-black/50"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/30 to-brand-black/0"></div>
       </div>
 
-      <div class="container-custom relative z-10 pt-32 pb-20">
+      <div class="relative z-10 pt-32 pb-20 px-4 sm:px-8 lg:px-20 xl:px-10 2xl:px-32">
         <div class="max-w-3xl">
           <div class="hero-badge inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30
                       rounded-full px-4 py-2 mb-8">
             <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
-            <span class="text-brand-gold text-sm font-medium tracking-wide">${t('home.hero.badge')}</span>
+            <span class="text-brand-gold text-basee font-medium tracking-wide">${t('home.hero.badge')}</span>
           </div>
 
           <h1 class="hero-title heading-xl text-white mb-6 py-3">
             ${t('home.hero.title1')} <br/>
+            <div class="mt-4"/>
             <span class="text-gradient-gold">${t('home.hero.title2')}</span><br/>
+            <div class="mt-4"/>
             ${t('home.hero.title3')}
           </h1>
 
@@ -77,27 +78,6 @@ export function homePage() {
           </div>
         </div>
       </div>
-
-      <!-- Scroll indicator -->
-      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40">
-        <span class="text-xs uppercase tracking-widest">${t('home.hero.scroll')}</span>
-        <div class="w-px h-12 bg-gradient-to-b from-brand-gold to-transparent"></div>
-      </div>
-    </section>
-
-    <!-- Stats Bar -->
-    <section class="relative z-10 -mt-1 bg-brand-dark border-y border-white/5">
-      <div class="container-custom py-12">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-          ${stats.map(stat => `
-            <div class="text-center">
-              <div class="font-heading text-3xl md:text-4xl font-bold text-brand-gold"
-                   data-count="${stat.value}" data-suffix="${stat.suffix}">0</div>
-              <div class="text-sm text-brand-gray-light mt-2 uppercase tracking-wider">${t(stat.labelKey)}</div>
-            </div>
-          `).join('')}
-        </div>
-      </div>
     </section>
 
     <!-- About Preview -->
@@ -105,7 +85,7 @@ export function homePage() {
       <div class="container-custom">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
           <div class="reveal-left">
-            <span class="badge-gold mb-4">${t('home.about.badge')}</span>
+            <span class="badge-gold mb-4 text-base">${t('home.about.badge')}</span>
             <h2 class="heading-lg text-white mt-4 mb-6">
               ${t('home.about.heading1')} <span class="text-gradient-gold inline-block mb-3 py-1">${t('home.about.headingHighlight')}</span>,<br/>
               ${t('home.about.heading2')}
@@ -126,7 +106,7 @@ export function homePage() {
           <div class="reveal-right relative">
             <div class="img-hover-zoom rounded-2xl overflow-hidden">
               <img src="/R&D-2.webp"
-                   alt="Createk warehouse" class="w-full h-[400px] lg:h-[500px] object-cover" />
+                   alt="Createk warehouse" class="w-full h-[250px] sm:h-[350px] lg:h-[500px] object-cover" />
             </div>
             <div class="absolute -bottom-6 -left-6 bg-brand-gold text-brand-black p-6 rounded-xl">
               <div class="font-heading text-4xl font-bold">${t('home.about.yearsNumber')}</div>
@@ -163,22 +143,18 @@ export function homePage() {
     <section class="section-darker">
       <div class="container-custom">
         <div class="text-center mb-16 reveal">
-          <span class="badge-gold mb-4">${t('home.products.badge')}</span>
+          <span class="badge-gold mb-4 text-base">${t('home.products.badge')}</span>
           <h2 class="heading-lg text-white mt-4 mb-4">
             ${t('home.products.heading1')} <span class="text-gradient-gold">${t('home.products.headingHighlight')}</span>
           </h2>
-          <p class="text-brand-gray-light max-w-2xl mx-auto">
-            ${t('home.products.subtitle')}
-          </p>
         </div>
 
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6" data-stagger>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6" data-stagger>
           ${productCategories.map(cat => `
             <a href="#/products" class="card-hover group block cursor-pointer">
               <div class="relative h-44 overflow-hidden img-hover-zoom">
                 <img src="${cat.img}" alt="${t(cat.titleKey)}"
                      class="w-full h-full object-cover transition-transform duration-500" />
-                <div class="overlay-gradient absolute inset-0"></div>
                 <div class="absolute top-3 left-3 w-10 h-10 rounded-lg bg-brand-gold/20 backdrop-blur-sm
                             flex items-center justify-center text-brand-gold
                             group-hover:bg-brand-gold group-hover:text-brand-black transition-all duration-300">
@@ -209,7 +185,7 @@ export function homePage() {
     <section class="section-dark">
       <div class="container-custom">
         <div class="text-center mb-16 reveal">
-          <span class="badge-gold mb-4">${t('home.why.badge')}</span>
+          <span class="badge-gold mb-4 text-base">${t('home.why.badge')}</span>
           <h2 class="heading-lg text-white mt-4">
             ${t('home.why.heading1')} <span class="text-gradient-gold">${t('home.why.headingHighlight')}</span> ${t('home.why.heading2')}
           </h2>
@@ -219,60 +195,60 @@ export function homePage() {
           <div class="why-card relative overflow-hidden rounded-2xl group hover:border-brand-gold/30 transition-all border border-white/10 min-h-[280px]">
             <img src="/research.jpg" alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
             <div class="absolute inset-0 bg-brand-black/75 group-hover:bg-brand-black/65 transition-colors duration-500"></div>
-            <div class="relative z-10 p-8 text-center h-full flex flex-col items-center justify-center">
+            <div class="relative z-10 p-8 pt-12 text-center h-full flex flex-col items-center">
               <div class="w-16 h-16 rounded-2xl bg-brand-gold/10 backdrop-blur-sm flex items-center justify-center mx-auto mb-6
                           group-hover:bg-brand-gold/20 transition-colors">
                 <svg class="w-8 h-8 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                 </svg>
               </div>
-              <h4 class="font-heading text-lg uppercase text-white mb-3">${t('home.why.premiumQuality.title')}</h4>
-              <p class="text-brand-gray-light text-sm">${t('home.why.premiumQuality.desc')}</p>
+              <h4 class="font-heading text-lg uppercase text-white mb-3 min-h-[3.5rem] flex items-center">${t('home.why.premiumQuality.title')}</h4>
+              <p class="text-brand-white text-sm">${t('home.why.premiumQuality.desc')}</p>
             </div>
           </div>
 
           <div class="why-card relative overflow-hidden rounded-2xl group hover:border-brand-gold/30 transition-all border border-white/10 min-h-[280px]">
             <img src="/manufacture.jpg" alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
             <div class="absolute inset-0 bg-brand-black/75 group-hover:bg-brand-black/65 transition-colors duration-500"></div>
-            <div class="relative z-10 p-8 text-center h-full flex flex-col items-center justify-center">
+            <div class="relative z-10 p-8 pt-12 text-center h-full flex flex-col items-center">
               <div class="w-16 h-16 rounded-2xl bg-brand-gold/10 backdrop-blur-sm flex items-center justify-center mx-auto mb-6
                           group-hover:bg-brand-gold/20 transition-colors">
                 <svg class="w-8 h-8 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
               </div>
-              <h4 class="font-heading text-lg uppercase text-white mb-3">${t('home.why.globalReach.title')}</h4>
-              <p class="text-brand-gray-light text-sm">${t('home.why.globalReach.desc')}</p>
+              <h4 class="font-heading text-lg uppercase text-white mb-3 min-h-[3.5rem] flex items-center">${t('home.why.globalReach.title')}</h4>
+              <p class="text-brand-white text-sm">${t('home.why.globalReach.desc')}</p>
             </div>
           </div>
 
           <div class="why-card relative overflow-hidden rounded-2xl group hover:border-brand-gold/30 transition-all border border-white/10 min-h-[280px]">
             <img src="/assembly.jpg" alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
             <div class="absolute inset-0 bg-brand-black/75 group-hover:bg-brand-black/65 transition-colors duration-500"></div>
-            <div class="relative z-10 p-8 text-center h-full flex flex-col items-center justify-center">
+            <div class="relative z-10 p-8 pt-12 text-center h-full flex flex-col items-center">
               <div class="w-16 h-16 rounded-2xl bg-brand-gold/10 backdrop-blur-sm flex items-center justify-center mx-auto mb-6
                           group-hover:bg-brand-gold/20 transition-colors">
                 <svg class="w-8 h-8 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
                 </svg>
               </div>
-              <h4 class="font-heading text-lg uppercase text-white mb-3">${t('home.why.wideRange.title')}</h4>
-              <p class="text-brand-gray-light text-sm">${t('home.why.wideRange.desc')}</p>
+              <h4 class="font-heading text-lg uppercase text-white mb-3 min-h-[3.5rem] flex items-center">${t('home.why.wideRange.title')}</h4>
+              <p class="text-brand-white text-sm">${t('home.why.wideRange.desc')}</p>
             </div>
           </div>
 
           <div class="why-card relative overflow-hidden rounded-2xl group hover:border-brand-gold/30 transition-all border border-white/10 min-h-[280px]">
             <img src="/QA.jpg" alt="" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
             <div class="absolute inset-0 bg-brand-black/75 group-hover:bg-brand-black/65 transition-colors duration-500"></div>
-            <div class="relative z-10 p-8 text-center h-full flex flex-col items-center justify-center">
+            <div class="relative z-10 p-8 pt-12 text-center h-full flex flex-col items-center">
               <div class="w-16 h-16 rounded-2xl bg-brand-gold/10 backdrop-blur-sm flex items-center justify-center mx-auto mb-6
                           group-hover:bg-brand-gold/20 transition-colors">
                 <svg class="w-8 h-8 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
                 </svg>
               </div>
-              <h4 class="font-heading text-lg uppercase text-white mb-3">${t('home.why.expertSupport.title')}</h4>
-              <p class="text-brand-gray-light text-sm">${t('home.why.expertSupport.desc')}</p>
+              <h4 class="font-heading text-lg uppercase text-white mb-3 min-h-[3.5rem] flex items-center">${t('home.why.expertSupport.title')}</h4>
+              <p class="text-brand-white text-sm">${t('home.why.expertSupport.desc')}</p>
             </div>
           </div>
         </div>
@@ -283,18 +259,15 @@ export function homePage() {
     <section class="section-darker">
       <div class="container-custom">
         <div class="text-center mb-16 reveal">
-          <span class="badge-gold mb-4">${t('home.news.badge')}</span>
+          <span class="badge-gold mb-4 text-base">${t('home.news.badge')}</span>
           <h2 class="heading-lg text-white mt-4">
             ${t('home.news.heading1')} <span class="text-gradient-gold">${t('home.news.headingHighlight')}</span>
           </h2>
-          <p class="text-brand-gray-light max-w-2xl mx-auto mt-4">
-            ${t('home.news.subtitle')}
-          </p>
         </div>
 
         <div class="grid lg:grid-cols-2 gap-6" data-stagger>
           <a href="#/news" class="news-featured-card group card-hover block cursor-pointer overflow-hidden rounded-2xl">
-            <div class="relative h-full min-h-[420px]">
+            <div class="relative h-full min-h-[280px] sm:min-h-[420px]">
               <img src="/banner-product.jpg" alt="${newsArticles[0].title}"
                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/60 to-transparent"></div>
@@ -358,7 +331,7 @@ export function homePage() {
     <section class="section-dark">
       <div class="container-custom">
         <div class="relative bg-gradient-to-br from-brand-gold/10 via-brand-gray-dark to-brand-gray-dark
-                    border border-brand-gold/20 rounded-3xl p-12 md:p-20 text-center overflow-hidden reveal-scale">
+                    border border-brand-gold/20 rounded-3xl p-6 sm:p-12 md:p-20 text-center overflow-hidden reveal-scale">
           <div class="absolute top-0 right-0 w-64 h-64 bg-brand-gold/5 rounded-full blur-3xl"></div>
           <div class="absolute bottom-0 left-0 w-48 h-48 bg-brand-gold/5 rounded-full blur-3xl"></div>
           <div class="relative z-10">
