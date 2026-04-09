@@ -93,7 +93,7 @@ export default {
       viewAll: 'View All News',
     },
     cta: {
-      heading1: 'An Thai — Exclusive',
+      heading1: 'An Thai - Exclusive',
       headingHighlight: 'Createk',
       heading2: 'Distributor in Vietnam',
       contactUs: 'Contact for Details',
@@ -111,7 +111,7 @@ export default {
       heading1: 'Where Quality',
       headingHighlight: 'Begins',
       p1: 'At Createk, quality goes beyond the production line — it is established from the very start of the Research & Development (R&D) stage. We conduct in-depth analysis of material structures and technical specifications, ensuring every component achieves perfect compatibility and delivers OEM-equivalent performance upon installation.',
-      p2: 'By mastering production processes on European-standard manufacturing lines and performing precision inspections down to the micrometer, Createk completely eliminates technical errors and operational risks for every vehicle model.',
+      p2: 'By mastering production processes on European-standard manufacturing lines and performing precision inspections down to the micrometer, Createk completely avoids technical errors and operational risks for every vehicle model.',
       p3: 'For us, quality is the top priority — because it is the foundation for our customers\' sustainable journey.',
     },
     values: {
@@ -412,7 +412,7 @@ export default {
       heading1: 'An Thai - Exclusive',
       headingHighlight: 'Createk',
       heading2: 'Distributor in Vietnam',
-      subtitle: 'Contact our technical team and we\'ll help source the exact part you need.',
+      subtitle: 'Contact our technical team and we\'ll help source the exact part you need',
       button: 'Contact Now',
     },
   },
@@ -578,7 +578,7 @@ export default {
     newsletter: {
       heading1: 'Stay',
       headingHighlight: 'Updated',
-      subtitle: 'Subscribe to our newsletter for the latest product releases, industry news, and technical guides.',
+      subtitle: 'Subscribe to our newsletter for the latest product releases, industry news, and technical guides',
       placeholder: 'Enter your email',
       subscribe: 'Subscribe',
     },
@@ -674,10 +674,10 @@ export default {
   },
   terms: {
     title: 'Terms of Service',
-    intro: 'Please read these Terms of Use carefully before using our website. By using this website, you acknowledge that you have read, understood, and accepted the Terms of Use below. If you do not agree with these terms, please stop using the website.',
+    intro: 'Please read these Terms of Service carefully before using our website. By using this website, you acknowledge that you have read, understood, and accepted the Terms of Service below. If you do not agree with these terms, please stop using the website.',
     changes: {
-      title: 'Changes to Terms of Use',
-      p1: '<strong>Createk Vietnam</strong> reserves the right to change these Terms of Use at any time, in part or in whole, without prior notice. You should regularly check this page to understand your current rights and responsibilities. Continued use of the website after changes are posted will be considered your binding acceptance of the updated Terms of Use. If at any time you feel these terms are no longer appropriate, you should immediately cease all activities on the website.',
+      title: 'Changes to Terms of Service',
+      p1: '<strong>Createk Vietnam</strong> reserves the right to change these Terms of Service at any time, in part or in whole, without prior notice. You should regularly check this page to understand your current rights and responsibilities. Continued use of the website after changes are posted will be considered your binding acceptance of the updated Terms of Service. If at any time you feel these terms are no longer appropriate, you should immediately cease all activities on the website.',
     },
     trademarks: {
       title: 'Trademarks',
@@ -736,7 +736,7 @@ export default {
     },
     contactUs: {
       title: 'Contact Information',
-      p1: 'If you have any questions about these Terms of Use, please contact:',
+      p1: 'If you have any questions about these Terms of Service, please contact:',
       phoneLabel: 'Phone:',
       addressLabel: 'Address:',
     },

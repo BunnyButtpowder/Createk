@@ -2,9 +2,7 @@ import { initPageAnimations, animateImageHover } from '../animations.js';
 import { t } from '../i18n/index.js';
 import { getRouteParam } from '../router.js';
 
-export function productsPage() {
-  // ── Product Data ──
-  const categories = [
+export const categories = [
     {
       id: 'engine',
       mothers: [
@@ -235,24 +233,30 @@ export function productsPage() {
         ]},
       ],
     },
-  ];
+];
 
+export function findCategory(catId) {
+  return categories.find(c => c.id === catId);
+}
+
+export function findMother(catId, motherId) {
+  const cat = findCategory(catId);
+  return cat ? cat.mothers.find(m => m.id === motherId) : null;
+}
+
+export function findChild(catId, motherId, childKey) {
+  const mother = findMother(catId, motherId);
+  return mother ? mother.children.find(c => c.key === childKey) : null;
+}
+
+export function productsPage() {
   // ── State ──
-  const ITEMS_PER_PAGE = 8;
   let activeCategory = 'engine';
-  let activeMotherId = null;
-  let activeChildKey = null;
-  let currentPage = 0;
   let searchQuery = '';
 
   // ── Helpers ──
   function getCat() {
     return categories.find(c => c.id === activeCategory);
-  }
-
-  function getMother() {
-    const cat = getCat();
-    return cat ? cat.mothers.find(m => m.id === activeMotherId) : null;
   }
 
   function getFilteredMothers() {
@@ -285,10 +289,7 @@ export function productsPage() {
     if (!cat) return '';
 
     const filtered = getFilteredMothers();
-    const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
-    if (currentPage >= totalPages) currentPage = Math.max(0, totalPages - 1);
-    const start = currentPage * ITEMS_PER_PAGE;
-    const pageMothers = filtered.slice(start, start + ITEMS_PER_PAGE);
+    const pageMothers = filtered;
 
     return `
       <section class="section-dark">
@@ -304,7 +305,6 @@ export function productsPage() {
                 <div class="relative h-52 overflow-hidden img-hover-zoom">
                   <img src="${m.img}" alt="${t(`products.mothers.${m.id}`)}"
                        class="w-full h-full object-cover transition-transform duration-500" />
-                  <div class="absolute inset-0 bg-gradient-to-t from-brand-black/70 via-transparent to-transparent"></div>
                 </div>
                 <div class="p-5">
                   <h3 class="font-heading text-lg uppercase text-white
@@ -328,214 +328,6 @@ export function productsPage() {
             </div>
           ` : ''}
 
-          ${totalPages > 1 ? `
-            <div class="flex items-center justify-center gap-3 mt-12">
-              <button data-page-prev
-                      class="px-4 py-2 text-sm font-medium rounded-lg transition-all cursor-pointer
-                             ${currentPage === 0
-                               ? 'text-brand-gray-mid/40 pointer-events-none'
-                               : 'text-brand-gray-light hover:text-white hover:bg-white/5'}">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-                </svg>
-              </button>
-
-              ${Array.from({ length: totalPages }, (_, i) => `
-                <button data-page-num="${i}"
-                        class="w-10 h-10 text-sm font-medium rounded-lg transition-all cursor-pointer
-                               ${i === currentPage
-                                 ? 'bg-brand-gold text-brand-black'
-                                 : 'text-brand-gray-light hover:text-white hover:bg-white/5'}">
-                  ${i + 1}
-                </button>
-              `).join('')}
-
-              <button data-page-next
-                      class="px-4 py-2 text-sm font-medium rounded-lg transition-all cursor-pointer
-                             ${currentPage === totalPages - 1
-                               ? 'text-brand-gray-mid/40 pointer-events-none'
-                               : 'text-brand-gray-light hover:text-white hover:bg-white/5'}">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                </svg>
-              </button>
-            </div>
-          ` : ''}
-        </div>
-      </section>
-    `;
-  }
-
-  function renderChildren() {
-    const cat = getCat();
-    const mother = getMother();
-    if (!cat || !mother) return '';
-
-    return `
-      <section class="section-dark">
-        <div class="container-custom">
-          <!-- Breadcrumb -->
-          <div class="flex items-center gap-2 text-sm mb-8 reveal">
-            <button class="back-to-mothers text-brand-gray-light hover:text-brand-gold transition-colors cursor-pointer">
-              ${t(`products.categories.${cat.id}.title`)}
-            </button>
-            <svg class="w-4 h-4 text-brand-gray-light/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-            </svg>
-            <span class="text-white font-medium">${t(`products.mothers.${mother.id}`)}</span>
-          </div>
-
-          <!-- Back button -->
-          <button class="back-to-mothers flex items-center gap-2 text-brand-gold text-sm font-semibold uppercase tracking-wider
-                         mb-8 hover:gap-3 transition-all cursor-pointer reveal">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"/>
-            </svg>
-            ${t('products.ui.back')}
-          </button>
-
-          <div class="mb-10 reveal">
-            <h2 class="heading-lg text-white mb-4">${t(`products.mothers.${mother.id}`)}</h2>
-          </div>
-
-          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8" data-stagger>
-            ${mother.children.map(child => `
-              <div class="card-hover group cursor-pointer" data-view-child="${child.key}">
-                <div class="relative h-56 overflow-hidden img-hover-zoom">
-                  <img src="${child.img}" alt="${t(`products.items.${child.key}.name`)}"
-                       class="w-full h-full object-cover transition-transform duration-500" />
-                  <div class="absolute top-3 right-3">
-                    <span class="bg-brand-black/80 backdrop-blur-sm text-brand-gold text-xs font-mono px-3 py-1.5 rounded-lg">
-                      ${child.code}
-                    </span>
-                  </div>
-                </div>
-                <div class="p-5">
-                  <h3 class="font-heading text-base uppercase text-white mb-1
-                             group-hover:text-brand-gold transition-colors">
-                    ${t(`products.items.${child.key}.name`)}
-                  </h3>
-                  <p class="text-brand-gray-light text-xs mb-3">${t(`products.items.${child.key}.specs`)}</p>
-                  <span class="text-brand-gold text-xs font-semibold uppercase tracking-wider
-                               flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
-                    ${t('products.ui.detail')}
-                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                    </svg>
-                  </span>
-                </div>
-              </div>
-            `).join('')}
-          </div>
-        </div>
-      </section>
-    `;
-  }
-
-  function renderDetail() {
-    const cat = getCat();
-    const mother = getMother();
-    if (!cat || !mother) return '';
-
-    const child = mother.children.find(c => c.key === activeChildKey);
-    if (!child) return '';
-
-    const siblings = mother.children.filter(c => c.key !== activeChildKey);
-
-    return `
-      <section class="section-dark">
-        <div class="container-custom">
-          <!-- Breadcrumb -->
-          <div class="flex flex-wrap items-center gap-2 text-sm mb-8 reveal">
-            <button class="back-to-mothers text-brand-gray-light hover:text-brand-gold transition-colors cursor-pointer">
-              ${t(`products.categories.${cat.id}.title`)}
-            </button>
-            <svg class="w-4 h-4 text-brand-gray-light/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-            </svg>
-            <button class="back-to-children text-brand-gray-light hover:text-brand-gold transition-colors cursor-pointer">
-              ${t(`products.mothers.${mother.id}`)}
-            </button>
-            <svg class="w-4 h-4 text-brand-gray-light/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-            </svg>
-            <span class="text-white font-medium">${t(`products.items.${child.key}.name`)}</span>
-          </div>
-
-          <!-- Back button -->
-          <button class="back-to-children flex items-center gap-2 text-brand-gold text-sm font-semibold uppercase tracking-wider
-                         mb-8 hover:gap-3 transition-all cursor-pointer reveal">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"/>
-            </svg>
-            ${t('products.ui.back')}
-          </button>
-
-          <!-- Product Detail -->
-          <div class="grid lg:grid-cols-2 gap-6 lg:gap-12 items-start">
-            <!-- Image -->
-            <div class="rounded-xl overflow-hidden reveal-left">
-              <img src="${child.img}" alt="${t(`products.items.${child.key}.name`)}"
-                   class="w-full aspect-[4/3] object-cover" />
-            </div>
-
-            <!-- Info -->
-            <div class="reveal-right">
-              <span class="bg-brand-gold/10 text-brand-gold text-sm font-mono px-3 py-1.5 rounded-lg border border-brand-gold/20">
-                ${child.code}
-              </span>
-              <h1 class="heading-lg text-white mt-4 mb-6">${t(`products.items.${child.key}.name`)}</h1>
-
-              <div class="space-y-6">
-                <div>
-                  <h3 class="text-brand-gold text-xs font-semibold uppercase tracking-widest mb-2">${t('products.ui.productSpecs')}</h3>
-                  <p class="text-brand-gray-light">${t(`products.items.${child.key}.specs`)}</p>
-                </div>
-
-                <div>
-                  <h3 class="text-brand-gold text-xs font-semibold uppercase tracking-widest mb-2">${t('products.ui.productIntro')}</h3>
-                  <p class="text-brand-gray-light leading-relaxed">${t(`products.items.${child.key}.intro`)}</p>
-                </div>
-              </div>
-
-              <a href="#/contact"
-                 class="btn-primary btn-lg text-sm uppercase tracking-widest mt-8 inline-flex">
-                ${t('products.ui.contactQuote')}
-              </a>
-            </div>
-          </div>
-
-          <!-- Related Products -->
-          ${siblings.length > 0 ? `
-            <div class="mt-20 reveal">
-              <div class="flex items-center gap-4 mb-8">
-                <div class="divider-gold"></div>
-                <h3 class="heading-sm text-white">${t('products.ui.relatedProducts')}</h3>
-              </div>
-              <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" data-stagger>
-                ${siblings.map(s => `
-                  <div class="card-hover group cursor-pointer" data-view-child="${s.key}">
-                    <div class="relative h-44 overflow-hidden img-hover-zoom">
-                      <img src="${s.img}" alt="${t(`products.items.${s.key}.name`)}"
-                           class="w-full h-full object-cover transition-transform duration-500" />
-                      <div class="absolute top-3 right-3">
-                        <span class="bg-brand-black/80 backdrop-blur-sm text-brand-gold text-xs font-mono px-2 py-1 rounded">
-                          ${s.code}
-                        </span>
-                      </div>
-                    </div>
-                    <div class="p-4">
-                      <h4 class="text-white text-sm font-heading uppercase
-                                 group-hover:text-brand-gold transition-colors">
-                        ${t(`products.items.${s.key}.name`)}
-                      </h4>
-                      <p class="text-brand-gray-light text-xs mt-1">${t(`products.items.${s.key}.specs`)}</p>
-                    </div>
-                  </div>
-                `).join('')}
-              </div>
-            </div>
-          ` : ''}
         </div>
       </section>
     `;
@@ -544,14 +336,7 @@ export function productsPage() {
   function renderContent() {
     const el = document.getElementById('products-content');
     if (!el) return;
-
-    if (activeChildKey) {
-      el.innerHTML = renderDetail();
-    } else if (activeMotherId) {
-      el.innerHTML = renderChildren();
-    } else {
-      el.innerHTML = renderMothers();
-    }
+    el.innerHTML = renderMothers();
 
     setTimeout(() => {
       initPageAnimations({ fast: true });
@@ -562,76 +347,13 @@ export function productsPage() {
 
   // ── Event Binding ──
   function bindContentEvents() {
-    // Click mother product card
+    // Click mother product card → navigate to children page
     document.querySelectorAll('[data-mother-id]').forEach(card => {
       card.addEventListener('click', () => {
-        activeMotherId = card.dataset.motherId;
-        activeChildKey = null;
-        renderContent();
-        scrollToContent();
+        const motherId = card.dataset.motherId;
+        window.location.hash = `/products/children?cat=${activeCategory}&mother=${motherId}`;
       });
     });
-
-    // Click "Chi tiết" or related product card
-    document.querySelectorAll('[data-view-child]').forEach(el => {
-      el.addEventListener('click', (e) => {
-        e.stopPropagation();
-        activeChildKey = el.dataset.viewChild;
-        renderContent();
-        scrollToContent();
-      });
-    });
-
-    // Back to mothers
-    document.querySelectorAll('.back-to-mothers').forEach(btn => {
-      btn.addEventListener('click', () => {
-        activeMotherId = null;
-        activeChildKey = null;
-        currentPage = 0;
-        renderContent();
-        scrollToContent();
-      });
-    });
-
-    // Back to children
-    document.querySelectorAll('.back-to-children').forEach(btn => {
-      btn.addEventListener('click', () => {
-        activeChildKey = null;
-        renderContent();
-        scrollToContent();
-      });
-    });
-
-    // Pagination
-    document.querySelectorAll('[data-page-num]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        currentPage = parseInt(btn.dataset.pageNum);
-        renderContent();
-        scrollToContent();
-      });
-    });
-    const prevBtn = document.querySelector('[data-page-prev]');
-    if (prevBtn) {
-      prevBtn.addEventListener('click', () => {
-        if (currentPage > 0) {
-          currentPage--;
-          renderContent();
-          scrollToContent();
-        }
-      });
-    }
-    const nextBtn = document.querySelector('[data-page-next]');
-    if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
-        const filtered = getFilteredMothers();
-        const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
-        if (currentPage < totalPages - 1) {
-          currentPage++;
-          renderContent();
-          scrollToContent();
-        }
-      });
-    }
   }
 
   function updateSearchClear() {
@@ -739,7 +461,6 @@ export function productsPage() {
       const catParam = getRouteParam('cat');
       if (catParam && categories.some(c => c.id === catParam)) {
         activeCategory = catParam;
-        currentPage = 0;
       }
 
       initPageAnimations();
@@ -753,9 +474,6 @@ export function productsPage() {
       navBtns.forEach(btn => {
         btn.addEventListener('click', () => {
           activeCategory = btn.dataset.category;
-          activeMotherId = null;
-          activeChildKey = null;
-          currentPage = 0;
           searchQuery = '';
           const searchInput = document.getElementById('product-search');
           if (searchInput) searchInput.value = '';
@@ -772,9 +490,6 @@ export function productsPage() {
       if (searchInput) {
         searchInput.addEventListener('input', () => {
           searchQuery = searchInput.value;
-          currentPage = 0;
-          activeMotherId = null;
-          activeChildKey = null;
           updateSearchClear();
           renderContent();
         });
@@ -783,7 +498,6 @@ export function productsPage() {
         clearBtn.addEventListener('click', () => {
           searchQuery = '';
           if (searchInput) searchInput.value = '';
-          currentPage = 0;
           updateSearchClear();
           renderContent();
         });

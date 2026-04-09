@@ -14,10 +14,10 @@ const articleImages = [
 const ARTICLES_PER_PAGE = 12;
 
 const categoryColorMap = {
-  'products': 'bg-brand-gold/10 text-brand-gold border-brand-gold/20',
-  'business': 'bg-amber-500/10 text-amber-400 border-amber-500/20',
-  'news': 'bg-orange-500/10 text-orange-400 border-orange-500/20',
-  'guides': 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20',
+  'products': 'bg-brand-gold text-black border-black',
+  'business': 'bg-brand-gold text-black border-black',
+  'news': 'bg-brand-gold text-black border-black',
+  'guides': 'bg-brand-gold text-black border-black',
 };
 
 export function newsPage() {
@@ -34,7 +34,7 @@ export function newsPage() {
       </div>
       <div class="container-custom relative z-10 pt-12">
         <div class="reveal">
-          <span class="badge-gold mb-4">${t('news.hero.badge')}</span>
+          <span class="badge-gold mb-4 text-base">${t('news.hero.badge')}</span>
           <h1 class="heading-xl text-white mt-4 mb-6">
             ${t('news.hero.heading1')}<br/>
             <div class="mt-5"/>
@@ -112,10 +112,10 @@ export function newsPage() {
                 </div>
               </div>
               <div class="p-6">
-                <span class="text-brand-gray-mid text-xs">${a.date}</span>
-                <h3 class="font-heading text-lg uppercase text-white mt-2 mb-3
+                <span class="text-brand-gray-mid text-sm">${a.date}</span>
+                <h3 class="font-heading text-xl uppercase text-white mt-2 mb-3
                            group-hover:text-brand-gold transition-colors leading-tight">${a.title}</h3>
-                <span class="text-brand-gold text-xs font-semibold uppercase tracking-wider
+                <span class="text-brand-gold text-sm font-semibold uppercase tracking-wider
                              flex items-center gap-1 group-hover:gap-2 transition-all">
                   ${t('news.articles.readArticle')}
                   <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">

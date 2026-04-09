@@ -28,8 +28,8 @@ export function contactPage() {
     <!-- An Thai Distributor Showcase -->
     <section class="relative z-10 bg-brand-dark border-y border-white/5">
       <div class="container-custom py-10">
-        <div class="grid lg:grid-cols-2 items-stretch">
-          <div class="an-thai-image-wrapper relative h-[320px] lg:h-auto overflow-hidden reveal-left rounded-2xl">
+        <div class="grid lg:grid-cols-[3fr_2fr] items-stretch">
+          <div class="an-thai-image-wrapper relative h-[320px] lg:h-auto lg:my-16 overflow-hidden reveal-left rounded-2xl">
             <img src="/anthai.jpg" alt="An Thai - Createk Distributor"
                  class="an-thai-hero-image w-full h-full object-cover" />
           </div>
@@ -54,20 +54,28 @@ export function contactPage() {
                   </span>
                 </div>
               </a>
-              <div class="an-thai-address flex items-center gap-5
-                          bg-white/[0.02] border border-white/10 rounded-2xl p-5">
-                <div class="w-14 h-14 rounded-xl bg-brand-gold/15 flex items-center justify-center text-brand-gold shrink-0">
-                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                  </svg>
+              <div class="an-thai-address bg-white/[0.02] border border-white/10 rounded-2xl overflow-hidden">
+                <div class="flex items-center gap-5 p-5">
+                  <div class="w-14 h-14 rounded-xl bg-brand-gold/15 flex items-center justify-center text-brand-gold shrink-0">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-brand-gray-light text-xs uppercase tracking-wider mb-1">${t('contact.info.viewMap')}</div>
+                    <span class="text-white text-base font-medium leading-relaxed">
+                      ${t('contact.anThai.address')}
+                    </span>
+                  </div>
                 </div>
-                <div>
-                  <div class="text-brand-gray-light text-xs uppercase tracking-wider mb-1">${t('contact.info.viewMap')}</div>
-                  <span class="text-white text-base font-medium leading-relaxed">
-                    ${t('contact.anThai.address')}
-                  </span>
-                </div>
+                <iframe
+                  src="https://maps.google.com/maps?ll=20.450371,106.334039&z=15&t=m&hl=en&gl=US&mapclient=embed&cid=3950152260773286403&output=embed"
+                  class="w-full h-48 border-t border-white/10"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
               </div>
               <a href="https://zalo.me/2822820424446155302"
                  target="_blank" rel="noopener noreferrer"

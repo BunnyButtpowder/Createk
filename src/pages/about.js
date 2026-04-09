@@ -80,7 +80,6 @@ export function aboutPage() {
                 <img src="/1.jpg"
                      alt="Createk facility" class="facility-image w-full h-[300px] lg:h-[460px] object-cover" />
               </div>
-              <div class="absolute bottom-0 right-0 w-32 h-32 border-2 border-brand-gold/30 rounded-2xl"></div>
             </div>
           </div>
           <div class="reveal-right">
@@ -130,25 +129,26 @@ export function aboutPage() {
         </div>
 
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-6" data-stagger>
-          ${productCategories.map(cat => `
-            <a href="#/products" class="card-hover group block cursor-pointer">
-              <div class="relative h-44 overflow-hidden img-hover-zoom">
-                <img src="${cat.img}" alt="${t(cat.titleKey)}"
-                     class="w-full h-full object-cover transition-transform duration-500" />
-                <div class="overlay-gradient absolute inset-0"></div>
-                <div class="absolute top-3 left-3 w-10 h-10 rounded-lg bg-brand-gold/20 backdrop-blur-sm
-                            flex items-center justify-center text-brand-gold
-                            group-hover:bg-brand-gold group-hover:text-brand-black transition-all duration-300">
-                  ${cat.icon}
-                </div>
+        ${productCategories.map(cat => `
+          <a href="#/products" class="card-hover group block cursor-pointer">
+            <div class="relative h-44 overflow-hidden img-hover-zoom">
+              <img src="${cat.img}" alt="${t(cat.titleKey)}"
+                   class="w-full h-full object-cover transition-transform duration-500" />
+              <div class="absolute top-3 left-3 w-10 h-10 rounded-lg bg-brand-gold/20 backdrop-blur-sm
+                          flex items-center justify-center text-brand-gold
+                          group-hover:bg-brand-gold group-hover:text-brand-black transition-all duration-300">
+                ${cat.icon}
               </div>
-              <div class="p-5">
-                <h3 class="font-heading text-lg font-semibold uppercase text-white mb-1.5
-                           group-hover:text-brand-gold transition-colors">${t(cat.titleKey)}</h3>
-                <p class="text-brand-gray-light text-sm line-clamp-2">${t(cat.descKey)}</p>
-              </div>
-            </a>
-          `).join('')}
+            </div>
+            <div class="p-5">
+              <h3 class="font-heading text-xl font-semibold uppercase text-white mb-1.5
+                         group-hover:text-brand-gold transition-colors pr-5 min-h-[3.5rem] flex items-start">
+                         ${t(cat.titleKey)}
+              </h3>
+              <p class="text-brand-gray-light text-base line-clamp-2 min-h-[2.5rem]">${t(cat.descKey)}</p>
+            </div>
+          </a>
+        `).join('')}
         </div>
 
         <div class="text-center mt-12 reveal">

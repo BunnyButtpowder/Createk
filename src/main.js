@@ -10,6 +10,8 @@ import { renderFooter } from './components/footer.js';
 import { homePage } from './pages/home.js';
 import { aboutPage } from './pages/about.js';
 import { productsPage } from './pages/products.js';
+import { productsChildrenPage } from './pages/products-children.js';
+import { productsDetailPage } from './pages/products-detail.js';
 import { newsPage } from './pages/news.js';
 import { newsDetailPage } from './pages/news-detail.js';
 import { contactPage } from './pages/contact.js';
@@ -90,6 +92,8 @@ initScrollToTop();
 registerRoute('/', homePage);
 registerRoute('/about', aboutPage);
 registerRoute('/products', productsPage);
+registerRoute('/products/children', productsChildrenPage);
+registerRoute('/products/detail', productsDetailPage);
 registerRoute('/news', () => {
   const route = getCurrentRoute();
   return route.startsWith('/news/') ? newsDetailPage() : newsPage();

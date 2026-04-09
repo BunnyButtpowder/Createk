@@ -108,10 +108,6 @@ export function homePage() {
               <img src="/R&D-2.webp"
                    alt="Createk warehouse" class="w-full h-[250px] sm:h-[350px] lg:h-[500px] object-cover" />
             </div>
-            <div class="absolute -bottom-6 -left-6 bg-brand-gold text-brand-black p-6 rounded-xl">
-              <div class="font-heading text-4xl font-bold">${t('home.about.yearsNumber')}</div>
-              <div class="text-sm font-semibold">${t('home.about.yearsLabel')}</div>
-            </div>
           </div>
         </div>
       </div>
@@ -162,9 +158,11 @@ export function homePage() {
                 </div>
               </div>
               <div class="p-5">
-                <h3 class="font-heading text-lg font-semibold uppercase text-white mb-1.5
-                           group-hover:text-brand-gold transition-colors">${t(cat.titleKey)}</h3>
-                <p class="text-brand-gray-light text-sm line-clamp-2">${t(cat.descKey)}</p>
+                <h3 class="font-heading text-xl font-semibold uppercase text-white mb-1.5
+                           group-hover:text-brand-gold transition-colors pr-5 min-h-[3.5rem] flex items-start">
+                           ${t(cat.titleKey)}
+                </h3>
+                <p class="text-brand-gray-light text-base line-clamp-2 min-h-[2.5rem]">${t(cat.descKey)}</p>
               </div>
             </a>
           `).join('')}
@@ -202,8 +200,8 @@ export function homePage() {
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                 </svg>
               </div>
-              <h4 class="font-heading text-lg uppercase text-white mb-3 min-h-[3.5rem] flex items-center">${t('home.why.premiumQuality.title')}</h4>
-              <p class="text-brand-white text-sm">${t('home.why.premiumQuality.desc')}</p>
+              <h4 class="font-heading text-2xl uppercase text-white mb-3 min-h-[3.5rem] flex items-start">${t('home.why.premiumQuality.title')}</h4>
+              <p class="text-brand-white text-base">${t('home.why.premiumQuality.desc')}</p>
             </div>
           </div>
 
@@ -217,8 +215,8 @@ export function homePage() {
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
               </div>
-              <h4 class="font-heading text-lg uppercase text-white mb-3 min-h-[3.5rem] flex items-center">${t('home.why.globalReach.title')}</h4>
-              <p class="text-brand-white text-sm">${t('home.why.globalReach.desc')}</p>
+              <h4 class="font-heading text-2xl uppercase text-white mb-3 min-h-[3.5rem] flex items-start">${t('home.why.globalReach.title')}</h4>
+              <p class="text-brand-white text-base">${t('home.why.globalReach.desc')}</p>
             </div>
           </div>
 
@@ -232,8 +230,8 @@ export function homePage() {
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
                 </svg>
               </div>
-              <h4 class="font-heading text-lg uppercase text-white mb-3 min-h-[3.5rem] flex items-center">${t('home.why.wideRange.title')}</h4>
-              <p class="text-brand-white text-sm">${t('home.why.wideRange.desc')}</p>
+              <h4 class="font-heading text-2xl uppercase text-white mb-3 min-h-[3.5rem] flex items-start">${t('home.why.wideRange.title')}</h4>
+              <p class="text-brand-white text-base">${t('home.why.wideRange.desc')}</p>
             </div>
           </div>
 
@@ -247,8 +245,8 @@ export function homePage() {
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
                 </svg>
               </div>
-              <h4 class="font-heading text-lg uppercase text-white mb-3 min-h-[3.5rem] flex items-center">${t('home.why.expertSupport.title')}</h4>
-              <p class="text-brand-white text-sm">${t('home.why.expertSupport.desc')}</p>
+              <h4 class="font-heading text-2xl uppercase text-white mb-3 min-h-[3.5rem] flex items-start">${t('home.why.expertSupport.title')}</h4>
+              <p class="text-brand-white text-base">${t('home.why.expertSupport.desc')}</p>
             </div>
           </div>
         </div>
@@ -268,17 +266,16 @@ export function homePage() {
         <div class="grid lg:grid-cols-2 gap-6" data-stagger>
           <a href="#/news" class="news-featured-card group card-hover block cursor-pointer overflow-hidden rounded-2xl">
             <div class="relative h-full min-h-[280px] sm:min-h-[420px]">
-              <img src="/banner-product.jpg" alt="${newsArticles[0].title}"
+              <img src="/banner-about.jpg" alt="${newsArticles[0].title}"
                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/60 to-transparent"></div>
               <div class="absolute inset-0 flex flex-col justify-end p-8">
                 <span class="badge-gold self-start mb-4">${t('news.categories.' + newsArticles[0].categoryId)}</span>
-                <h3 class="font-heading text-2xl font-semibold uppercase text-white mb-3
-                           group-hover:text-brand-gold transition-colors">${newsArticles[0].title}</h3>
-                <p class="text-brand-gray-light text-sm leading-relaxed mb-4 line-clamp-2">${newsArticles[0].excerpt}</p>
+                <h3 class="font-heading text-2xl font-semibold uppercase text-black mb-3
+                           group-hover:text-brand-gold transition-colors max-w-sm">${newsArticles[0].title}</h3>
+                <p class="text-black text-base leading-relaxed mb-4 line-clamp-2 max-w-sm">${newsArticles[0].excerpt}</p>
                 <div class="flex items-center justify-between">
-                  <span class="text-brand-gray-light text-xs">${newsArticles[0].date}</span>
-                  <span class="text-brand-gold text-sm font-medium flex items-center gap-2
+                  <span class="text-black text-base">${newsArticles[0].date}</span>
+                  <span class="text-brand-gold text-base font-medium flex items-center gap-2
                                group-hover:gap-3 transition-all">
                     ${t('home.news.readArticle')}
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

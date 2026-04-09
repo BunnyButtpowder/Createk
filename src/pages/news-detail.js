@@ -52,13 +52,13 @@ export function newsDetailPage() {
 
   const html = `
     <!-- Article Detail -->
-    <section class="relative pt-32 pb-12 overflow-hidden">
+    <section class="relative pt-10 md:pt-32 pb-12 overflow-hidden">
       <div class="absolute inset-0">
         <img src="${img}" alt="${article.title}" class="w-full h-full object-cover opacity-10" />
         <div class="absolute inset-0 bg-gradient-to-b from-brand-black via-brand-black/95 to-brand-black"></div>
       </div>
       <div class="container-custom relative z-10 pt-12">
-        <a href="#/news" class="flex items-center gap-2 text-brand-gold text-sm font-semibold uppercase tracking-wider
+        <a href="#/news" class="max-w-4xl mx-auto flex items-center gap-2 text-brand-gold text-sm font-semibold uppercase tracking-wider
                        mb-8 hover:gap-3 transition-all reveal">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"/>
@@ -66,7 +66,7 @@ export function newsDetailPage() {
           ${t('news.detail.backToNews')}
         </a>
 
-        <div class="max-w-4xl reveal">
+        <div class="max-w-4xl mx-auto reveal">
           <div class="flex items-center gap-2 mb-4">
             ${isFeatured ? `<span class="badge-gold">${t('news.featured.badge')}</span>` : ''}
             <span class="badge ${categoryColorMap[article.categoryId] || 'badge-gold'}">
@@ -80,7 +80,7 @@ export function newsDetailPage() {
     </section>
 
     <!-- Article Body -->
-    <section class="section-dark">
+    <section class="section-dark pt-0 md:pt-0">
       <div class="container-custom">
         <div class="max-w-4xl mx-auto">
           <div class="rounded-xl overflow-hidden mb-12 reveal">

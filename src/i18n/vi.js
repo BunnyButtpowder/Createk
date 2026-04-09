@@ -93,7 +93,7 @@ export default {
       viewAll: 'Xem tất cả tin tức',
     },
     cta: {
-      heading1: 'An Thái — Đơn vị phân phối độc quyền',
+      heading1: 'An Thái - Đơn vị phân phối độc quyền',
       headingHighlight: 'Createk',
       heading2: 'tại Việt Nam',
       contactUs: 'Liên hệ tư vấn chi tiết',
@@ -111,7 +111,7 @@ export default {
       heading1: 'Nơi chất lượng',
       headingHighlight: 'Khởi nguồn',
       p1: 'Tại Createk, chất lượng không chỉ nằm ở dây chuyền sản xuất mà được thiết lập ngay từ giai đoạn Nghiên cứu & Phát triển (R&D). Chúng tôi đi sâu phân tích cấu trúc vật liệu và đặc thù kỹ thuật, đảm bảo mỗi linh kiện khi lắp đặt đều đạt độ tương thích hoàn hảo, mang đến khả năng vận hành đồng bộ như nguyên bản.',
-      p2: 'Bằng việc làm chủ quy trình sản xuất trên dây chuyền sản xuất theo tiêu chuẩn Châu Âu và kiểm định chính xác đến từng micromet, Createk loại bỏ hoàn toàn sai số kỹ thuật, triệt tiêu rủi ro vận hành cho mọi dòng xe.',
+      p2: 'Bằng việc làm chủ quy trình sản xuất trên dây chuyền sản xuất theo tiêu chuẩn Châu Âu và kiểm định chính xác đến từng micromet, Createk loại bỏ hoàn toàn sai số kỹ thuật, ngăn ngừa rủi ro vận hành cho mọi dòng xe.',
       p3: 'Với chúng tôi, chất lượng là ưu tiên hàng đầu - bởi đó chính là nền tảng cho hành trình bền vững của khách hàng.',
     },
     values: {
@@ -412,7 +412,7 @@ export default {
       heading1: 'An Thái - Đơn vị phân phối độc quyền',
       headingHighlight: 'Createk',
       heading2: 'tại Việt Nam',
-      subtitle: 'Liên hệ đội ngũ của chúng tôi để được tư vấn và tìm kiếm phụ tùng bạn cần.',
+      subtitle: 'Liên hệ đội ngũ của chúng tôi để được tư vấn và tìm kiếm phụ tùng bạn cần',
       button: 'Liên hệ ngay',
     },
   },
@@ -578,7 +578,7 @@ export default {
     newsletter: {
       heading1: 'Luôn',
       headingHighlight: 'Cập nhật',
-      subtitle: 'Đăng ký nhận bản tin để cập nhật sản phẩm mới, tin tức ngành và hướng dẫn kỹ thuật.',
+      subtitle: 'Đăng ký nhận bản tin để cập nhật sản phẩm mới, tin tức ngành và hướng dẫn kỹ thuật',
       placeholder: 'Nhập email của bạn',
       subscribe: 'Đăng ký',
     },
@@ -626,7 +626,7 @@ export default {
       contactUs: 'Liên hệ ngay',
     },
     anThai: {
-      title: 'An Thái — Đơn vị phân phối độc quyền sản phẩm Createk tại Việt Nam',
+      title: 'An Thái - Đơn vị phân phối độc quyền sản phẩm Createk tại Việt Nam',
       phone: '+84 817 821 821',
       address: 'Số 288 Trần Thái Tông, Phường Thái Bình, Tỉnh Hưng Yên',
     },
@@ -674,10 +674,10 @@ export default {
   },
   terms: {
     title: 'Điều khoản dịch vụ',
-    intro: 'Vui lòng đọc kỹ các Điều khoản Sử dụng này trước khi trải nghiệm website. Việc sử dụng website này đồng nghĩa với việc bạn đã đọc, hiểu và chấp nhận các Điều khoản Sử dụng dưới đây. Nếu bạn không đồng ý với các điều khoản này, vui lòng ngưng sử dụng website.',
+    intro: 'Vui lòng đọc kỹ các Điều khoản Dịch vụ này trước khi trải nghiệm website. Việc sử dụng website này đồng nghĩa với việc bạn đã đọc, hiểu và chấp nhận các Điều khoản Dịch vụ dưới đây. Nếu bạn không đồng ý với các điều khoản này, vui lòng ngưng sử dụng website.',
     changes: {
-      title: 'Thay đổi điều khoản sử dụng',
-      p1: '<strong>Createk Việt Nam</strong> có quyền thay đổi các Điều khoản Sử dụng này tại từng thời điểm, một phần hoặc toàn bộ, mà không cần thông báo trước. Bạn nên thường xuyên kiểm tra trang này để nắm rõ quyền lợi và trách nhiệm hiện tại của mình. Việc tiếp tục sử dụng website sau khi các thay đổi được đăng tải sẽ được coi là sự chấp thuận ràng buộc của bạn đối với các Điều khoản Sử dụng đã cập nhật. Nếu tại bất kỳ thời điểm nào bạn cảm thấy các điều khoản này không còn phù hợp, bạn nên ngay lập tức chấm dứt mọi hoạt động trên website.',
+      title: 'Thay đổi điều khoản dịch vụ',
+      p1: '<strong>Createk Việt Nam</strong> có quyền thay đổi các Điều khoản Dịch vụ này tại từng thời điểm, một phần hoặc toàn bộ, mà không cần thông báo trước. Bạn nên thường xuyên kiểm tra trang này để nắm rõ quyền lợi và trách nhiệm hiện tại của mình. Việc tiếp tục sử dụng website sau khi các thay đổi được đăng tải sẽ được coi là sự chấp thuận ràng buộc của bạn đối với các Điều khoản Dịch vụ đã cập nhật. Nếu tại bất kỳ thời điểm nào bạn cảm thấy các điều khoản này không còn phù hợp, bạn nên ngay lập tức chấm dứt mọi hoạt động trên website.',
     },
     trademarks: {
       title: 'Thương hiệu',
@@ -736,7 +736,7 @@ export default {
     },
     contactUs: {
       title: 'Thông tin liên hệ',
-      p1: 'Nếu bạn có bất kỳ câu hỏi nào về Điều khoản Sử dụng, vui lòng liên hệ:',
+      p1: 'Nếu bạn có bất kỳ câu hỏi nào về Điều khoản Dịch vụ, vui lòng liên hệ:',
       phoneLabel: 'Số điện thoại:',
       addressLabel: 'Địa chỉ:',
     },
