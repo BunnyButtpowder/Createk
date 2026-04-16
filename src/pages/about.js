@@ -50,20 +50,22 @@ export function aboutPage() {
   const html = `
     <!-- Hero -->
     <section class="relative pt-32 pb-12 sm:pb-20 overflow-hidden">
-      <div class="absolute inset-0">
+      <div class="absolute max-h-[30vh] md:max-h-none inset-0">
         <img src="/banner-about.jpg"
-             alt="Workshop" class="w-full h-full object-cover" />
-        <div class="absolute inset-0 bg-gradient-to-r from-brand-black/60 via-brand-black/30 to-brand-black/0"></div>
+             alt="Workshop" class="w-full h-full object-cover hidden md:block" />
+        <img src="/banner-about-mobile.jpg"
+             alt="Workshop" class="w-full h-full object-cover block md:hidden" />
+        <div class="absolute hidden md:block inset-0 bg-gradient-to-r from-brand-black/60 via-brand-black/30 to-brand-black/0"></div>
       </div>
-      <div class="container-custom relative z-10 pt-12">
-        <div class="reveal">
+      <div class="container-custom relative z-10 pt-12 mt-40 md:mt-0">
+        <div class="reveal text-center md:text-left">
           <span class="badge-gold mb-4 text-base">${t('about.hero.badge')}</span>
           <h1 class="heading-xl text-white mt-4 mb-6">
             ${t('about.hero.heading1')}<br/>
             <div class="mt-5"/>
             <span class="text-gradient-gold">${t('about.hero.headingHighlight')}</span>
           </h1>
-          <p class="text-white text-lg max-w-3xl leading-relaxed">
+          <p class="text-white text-lg max-w-3xl leading-relaxed text-balance">
             ${t('about.hero.subtitle')}
           </p>
         </div>
@@ -71,31 +73,31 @@ export function aboutPage() {
     </section>
 
     <!-- Our Story -->
-    <section class="section-darker">
+    <section class="section-darker py-12">
       <div class="container-custom">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
           <div class="reveal-left">
-            <div class="relative overflow-hidden pr-4 pb-4">
+            <div class="relative overflow-hidden md:pr-4 md:pb-4">
               <div class="img-hover-zoom rounded-2xl overflow-hidden">
                 <img src="/1.jpg"
                      alt="Createk facility" class="facility-image w-full h-[300px] lg:h-[460px] object-cover" />
               </div>
             </div>
           </div>
-          <div class="reveal-right">
+          <div class="reveal-right text-center md:text-left">
             <span class="badge-gold mb-4 text-base">${t('about.story.badge')}</span>
             <h2 class="heading-lg text-white mt-4 mb-6">
               ${t('about.story.heading1')}<br/>
               <div class="mt-4"/>
               <span class="text-gradient-gold">${t('about.story.headingHighlight')}</span>
             </h2>
-            <p class="text-white leading-relaxed mb-6">
+            <p class="text-white leading-relaxed mb-6 text-justify">
               ${t('about.story.p1')}
             </p>
-            <p class="text-white leading-relaxed mb-6">
+            <p class="text-white leading-relaxed mb-6 text-justify">
               ${t('about.story.p2')}
             </p>
-            <p class="text-brand-gold font-semibold leading-relaxed text-lg italic">
+            <p class="text-brand-gold font-semibold leading-relaxed text-lg italic text-justify">
               ${t('about.story.p3')}
             </p>
           </div>
@@ -104,7 +106,7 @@ export function aboutPage() {
     </section>
 
     <!-- R&D Process Video -->
-    <section class="section-darker pt-0">
+    <section class="section-darker pt-0 pb-12">
       <div class="container-custom reveal">
         <div class="rd-video-wrapper relative rounded-2xl overflow-hidden">
           <video class="rd-process-video w-full h-[220px] sm:h-[300px] lg:h-full object-cover rounded-2xl"
@@ -116,7 +118,7 @@ export function aboutPage() {
     </section>
 
     <!-- Product Categories -->
-    <section class="section-darker pt-2">
+    <section class="section-darker pt-0 pb-12">
       <div class="container-custom">
         <div class="text-center mb-16 reveal">
           <span class="badge-gold mb-4 text-base">${t('home.products.badge')}</span>
@@ -163,7 +165,7 @@ export function aboutPage() {
     </section>
 
     <!-- CTA -->
-    <section class="section-darker">
+    <section class="section-darker pt-0 pb-12 md:py-12">
       <div class="container-custom text-center reveal">
         <h2 class="heading-lg text-white mb-6">${t('about.cta.heading1')} <span class="text-gradient-gold">${t('about.cta.headingHighlight')}</span> 
         <div class="mt-3"/>

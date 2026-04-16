@@ -11,14 +11,14 @@ export function contactPage() {
              alt="An Thai - Createk Distributor" class="w-full h-full object-cover opacity-15" />
         <div class="absolute inset-0 bg-gradient-to-b from-brand-black via-brand-black/95 to-brand-black"></div>
       </div>
-      <div class="container-custom relative z-10 pt-12">
-        <div class="reveal">
+      <div class="container-custom relative z-10">
+        <div class="reveal text-center md:text-left">
           <h1 class="heading-xl text-white mt-4 mb-6">
             ${t('contact.hero.heading1')} <span class="text-gradient-gold">${t('contact.hero.headingHighlight')}</span><br/>
             <div class="mt-3"/>
             ${t('contact.hero.heading2')}
           </h1>
-          <p class="text-brand-gray-light text-lg max-w-2xl leading-relaxed">
+          <p class="text-brand-gray-light text-lg max-w-2xl leading-relaxed text-balance">
             ${t('contact.hero.subtitle')}
           </p>
         </div>

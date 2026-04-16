@@ -7,74 +7,74 @@ export const categories = [
       id: 'engine',
       mothers: [
         { id: 'crankshaft', img: '/products/crankshaft.jpg', children: [
-          { key: 'crankshaft_wp10', code: 'CK-1001', img: '/products/crankshaft.jpg' },
-          { key: 'crankshaft_wp12', code: 'CK-1002', img: '/products/crankshaft.jpg' },
-          { key: 'crankshaft_wd615', code: 'CK-1003', img: '/products/crankshaft.jpg' },
+          { key: 'crankshaft_wp10', code: 'AT-001.001', img: '/products/crankshaft.jpg' },
+          { key: 'crankshaft_wp12', code: 'AT-001.002', img: '/products/crankshaft.jpg' },
+          { key: 'crankshaft_wd615', code: 'AT-001.003', img: '/products/crankshaft.jpg' },
         ]},
         { id: 'pistonRing', img: '/products/pistonRing.jpg', children: [
-          { key: 'pistonRing_wp10', code: 'CK-1004', img: '/products/pistonRing.jpg' },
-          { key: 'pistonRing_wp12', code: 'CK-1005', img: '/products/pistonRing.jpg' },
-          { key: 'pistonRing_wd615', code: 'CK-1006', img: '/products/pistonRing.jpg' },
+          { key: 'pistonRing_wp10', code: 'AT-001.004', img: '/products/pistonRing.jpg' },
+          { key: 'pistonRing_wp12', code: 'AT-001.005', img: '/products/pistonRing.jpg' },
+          { key: 'pistonRing_wd615', code: 'AT-001.006', img: '/products/pistonRing.jpg' },
         ]},
         { id: 'gasketSet', img: '/products/gasketSet.jpg', children: [
-          { key: 'gasketSet_wp10', code: 'CK-1007', img: '/products/gasketSet.jpg' },
-          { key: 'gasketSet_wp12', code: 'CK-1008', img: '/products/gasketSet.jpg' },
-          { key: 'gasketSet_wd615', code: 'CK-1009', img: '/products/gasketSet.jpg' },
+          { key: 'gasketSet_wp10', code: 'AT-001.007', img: '/products/gasketSet.jpg' },
+          { key: 'gasketSet_wp12', code: 'AT-001.008', img: '/products/gasketSet.jpg' },
+          { key: 'gasketSet_wd615', code: 'AT-001.009', img: '/products/gasketSet.jpg' },
         ]},
         { id: 'conRodBearing', img: '/products/conRodBearing.jpg', children: [
-          { key: 'conRodBearing_wp10', code: 'CK-1010', img: '/products/conRodBearing.jpg' },
-          { key: 'conRodBearing_wp12', code: 'CK-1011', img: '/products/conRodBearing.jpg' },
-          { key: 'conRodBearing_wd615', code: 'CK-1012', img: '/products/conRodBearing.jpg' },
+          { key: 'conRodBearing_wp10', code: 'AT-001.010', img: '/products/conRodBearing.jpg' },
+          { key: 'conRodBearing_wp12', code: 'AT-001.011', img: '/products/conRodBearing.jpg' },
+          { key: 'conRodBearing_wd615', code: 'AT-001.012', img: '/products/conRodBearing.jpg' },
         ]},
         { id: 'turbocharger', img: '/products/turbocharger.jpg', children: [
-          { key: 'turbo_gt35', code: 'CK-1013', img: '/products/turbocharger.jpg' },
-          { key: 'turbo_gt40', code: 'CK-1014', img: '/products/turbocharger.jpg' },
-          { key: 'turbo_hx50', code: 'CK-1015', img: '/products/turbocharger.jpg' },
+          { key: 'turbo_gt35', code: 'AT-001.013', img: '/products/turbocharger.jpg' },
+          { key: 'turbo_gt40', code: 'AT-001.014', img: '/products/turbocharger.jpg' },
+          { key: 'turbo_hx50', code: 'AT-001.015', img: '/products/turbocharger.jpg' },
         ]},
         { id: 'filters', img: '/products/filters.jpg', children: [
-          { key: 'filter_oil', code: 'CK-1016', img: '/products/filters.jpg' },
-          { key: 'filter_fuel', code: 'CK-1017', img: '/products/filters.jpg' },
-          { key: 'filter_hydraulic', code: 'CK-1018', img: '/products/filters.jpg' },
+          { key: 'filter_oil', code: 'AT-001.016', img: '/products/filters.jpg' },
+          { key: 'filter_fuel', code: 'AT-001.017', img: '/products/filters.jpg' },
+          { key: 'filter_hydraulic', code: 'AT-001.018', img: '/products/filters.jpg' },
         ]},
         { id: 'airFilter', img: '/products/airFilter.jpg', children: [
-          { key: 'airFilter_primary', code: 'CK-1019', img: '/products/airFilter.jpg' },
-          { key: 'airFilter_secondary', code: 'CK-1020', img: '/products/airFilter.jpg' },
-          { key: 'airFilter_safety', code: 'CK-1021', img: '/products/airFilter.jpg' },
+          { key: 'airFilter_primary', code: 'AT-001.019', img: '/products/airFilter.jpg' },
+          { key: 'airFilter_secondary', code: 'AT-001.020', img: '/products/airFilter.jpg' },
+          { key: 'airFilter_safety', code: 'AT-001.021', img: '/products/airFilter.jpg' },
         ]},
         { id: 'vBelt', img: '/products/vBelt.jpg', children: [
-          { key: 'vBelt_fan', code: 'CK-1022', img: '/products/vBelt.jpg' },
-          { key: 'vBelt_ac', code: 'CK-1023', img: '/products/vBelt.jpg' },
-          { key: 'vBelt_alternator', code: 'CK-1024', img: '/products/vBelt.jpg' },
+          { key: 'vBelt_fan', code: 'AT-001.022', img: '/products/vBelt.jpg' },
+          { key: 'vBelt_ac', code: 'AT-001.023', img: '/products/vBelt.jpg' },
+          { key: 'vBelt_alternator', code: 'AT-001.024', img: '/products/vBelt.jpg' },
         ]},
         { id: 'waterPump', img: '/products/waterPump.jpg', children: [
-          { key: 'waterPump_wp10', code: 'CK-1025', img: '/products/waterPump.jpg' },
-          { key: 'waterPump_wp12', code: 'CK-1026', img: '/products/waterPump.jpg' },
-          { key: 'waterPump_wd615', code: 'CK-1027', img: '/products/waterPump.jpg' },
+          { key: 'waterPump_wp10', code: 'AT-001.025', img: '/products/waterPump.jpg' },
+          { key: 'waterPump_wp12', code: 'AT-001.026', img: '/products/waterPump.jpg' },
+          { key: 'waterPump_wd615', code: 'AT-001.027', img: '/products/waterPump.jpg' },
         ]},
         { id: 'cylinderKit', img: '/products/cylinderKit.png', children: [
-          { key: 'cylinderKit_wp10', code: 'CK-1028', img: '/products/cylinderKit.png' },
-          { key: 'cylinderKit_wp12', code: 'CK-1029', img: '/products/cylinderKit.png' },
-          { key: 'cylinderKit_wd615', code: 'CK-1030', img: '/products/cylinderKit.png' },
+          { key: 'cylinderKit_wp10', code: 'AT-001.028', img: '/products/cylinderKit.png' },
+          { key: 'cylinderKit_wp12', code: 'AT-001.029', img: '/products/cylinderKit.png' },
+          { key: 'cylinderKit_wd615', code: 'AT-001.030', img: '/products/cylinderKit.png' },
         ]},
         { id: 'flywheel', img: '/products/flywheel.jpg', children: [
-          { key: 'flywheel_wp10', code: 'CK-1031', img: '/products/flywheel.jpg' },
-          { key: 'flywheel_wp12', code: 'CK-1032', img: '/products/flywheel.jpg' },
-          { key: 'flywheel_wd615', code: 'CK-1033', img: '/products/flywheel.jpg' },
+          { key: 'flywheel_wp10', code: 'AT-001.031', img: '/products/flywheel.jpg' },
+          { key: 'flywheel_wp12', code: 'AT-001.032', img: '/products/flywheel.jpg' },
+          { key: 'flywheel_wd615', code: 'AT-001.033', img: '/products/flywheel.jpg' },
         ]},
         { id: 'handPump', img: '/products/handPump.jpg', children: [
-          { key: 'handPump_wp10', code: 'CK-1034', img: '/products/handPump.jpg' },
-          { key: 'handPump_bosch', code: 'CK-1035', img: '/products/handPump.jpg' },
-          { key: 'handPump_universal', code: 'CK-1036', img: '/products/handPump.jpg' },
+          { key: 'handPump_wp10', code: 'AT-001.034', img: '/products/handPump.jpg' },
+          { key: 'handPump_bosch', code: 'AT-001.035', img: '/products/handPump.jpg' },
+          { key: 'handPump_universal', code: 'AT-001.036', img: '/products/handPump.jpg' },
         ]},
         { id: 'oilSeal', img: '/products/oilSeal.jpg', children: [
-          { key: 'oilSeal_front', code: 'CK-1037', img: '/products/oilSeal.jpg' },
-          { key: 'oilSeal_rear', code: 'CK-1038', img: '/products/oilSeal.jpg' },
-          { key: 'oilSeal_camshaft', code: 'CK-1039', img: '/products/oilSeal.jpg' },
+          { key: 'oilSeal_front', code: 'AT-001.037', img: '/products/oilSeal.jpg' },
+          { key: 'oilSeal_rear', code: 'AT-001.038', img: '/products/oilSeal.jpg' },
+          { key: 'oilSeal_camshaft', code: 'AT-001.039', img: '/products/oilSeal.jpg' },
         ]},
         { id: 'coolantReservoir', img: '/products/coolantReservoir.png', children: [
-            { key: 'coolantRes_howo', code: 'CK-1040', img: '/products/coolantReservoir.png' },
-          { key: 'coolantRes_shacman', code: 'CK-1041', img: '/products/coolantReservoir.png' },
-          { key: 'coolantRes_dongfeng', code: 'CK-1042', img: '/products/coolantReservoir.png' },
+            { key: 'coolantRes_howo', code: 'AT-001.040', img: '/products/coolantReservoir.png' },
+          { key: 'coolantRes_shacman', code: 'AT-001.041', img: '/products/coolantReservoir.png' },
+          { key: 'coolantRes_dongfeng', code: 'AT-001.042', img: '/products/coolantReservoir.png' },
         ]},
       ],
     },
@@ -82,74 +82,74 @@ export const categories = [
       id: 'chassis',
       mothers: [
         { id: 'springPin', img: '/products/springPin.jpg', children: [
-          { key: 'springPin_front', code: 'CK-2001', img: '/products/springPin.jpg' },
-          { key: 'springPin_rear', code: 'CK-2002', img: '/products/springPin.jpg' },
-          { key: 'springPin_hd', code: 'CK-2003', img: '/products/springPin.jpg' },
+          { key: 'springPin_front', code: 'AT-002.001', img: '/products/springPin.jpg' },
+          { key: 'springPin_rear', code: 'AT-002.002', img: '/products/springPin.jpg' },
+          { key: 'springPin_hd', code: 'AT-002.003', img: '/products/springPin.jpg' },
         ]},
         { id: 'shackleBushing', img: '/products/shackleBushing.jpg', children: [
-          { key: 'shackleBush_front', code: 'CK-2004', img: '/products/shackleBushing.jpg' },
-          { key: 'shackleBush_rear', code: 'CK-2005', img: '/products/shackleBushing.jpg' },
-          { key: 'shackleBush_hd', code: 'CK-2006', img: '/products/shackleBushing.jpg' },
+          { key: 'shackleBush_front', code: 'AT-002.004', img: '/products/shackleBushing.jpg' },
+          { key: 'shackleBush_rear', code: 'AT-002.005', img: '/products/shackleBushing.jpg' },
+          { key: 'shackleBush_hd', code: 'AT-002.006', img: '/products/shackleBushing.jpg' },
         ]},
         { id: 'springBushing', img: '/products/springBushing.png', children: [
-          { key: 'springBush_front', code: 'CK-2007', img: '/products/springBushing.png' },
-          { key: 'springBush_rear', code: 'CK-2008', img: '/products/springBushing.png' },
-          { key: 'springBush_hd', code: 'CK-2009', img: '/products/springBushing.png' },
+          { key: 'springBush_front', code: 'AT-002.007', img: '/products/springBushing.png' },
+          { key: 'springBush_rear', code: 'AT-002.008', img: '/products/springBushing.png' },
+          { key: 'springBush_hd', code: 'AT-002.009', img: '/products/springBushing.png' },
         ]},
         { id: 'rearHub', img: '/products/rearHub.png', children: [
-          { key: 'rearHub_howo', code: 'CK-2010', img: '/products/rearHub.png' },
-          { key: 'rearHub_shacman', code: 'CK-2011', img: '/products/rearHub.png' },
-          { key: 'rearHub_dongfeng', code: 'CK-2012', img: '/products/rearHub.png' },
+          { key: 'rearHub_howo', code: 'AT-002.010', img: '/products/rearHub.png' },
+          { key: 'rearHub_shacman', code: 'AT-002.011', img: '/products/rearHub.png' },
+          { key: 'rearHub_dongfeng', code: 'AT-002.012', img: '/products/rearHub.png' },
         ]},
         { id: 'bearings', img: '/products/bearings.jpg', children: [
-          { key: 'bearing_wheel', code: 'CK-2013', img: '/products/bearings.jpg' },
-          { key: 'bearing_diff', code: 'CK-2014', img: '/products/bearings.jpg' },
-          { key: 'bearing_transmission', code: 'CK-2015', img: '/products/bearings.jpg' },
+          { key: 'bearing_wheel', code: 'AT-002.013', img: '/products/bearings.jpg' },
+          { key: 'bearing_diff', code: 'AT-002.014', img: '/products/bearings.jpg' },
+          { key: 'bearing_transmission', code: 'AT-002.015', img: '/products/bearings.jpg' },
         ]},
         { id: 'centerBearingRubber', img: '/products/centerBearingRubber.jpg', children: [
-          { key: 'centerBearing_howo', code: 'CK-2016', img: '/products/centerBearingRubber.jpg' },
-          { key: 'centerBearing_shacman', code: 'CK-2017', img: '/products/centerBearingRubber.jpg' },
-          { key: 'centerBearing_faw', code: 'CK-2018', img: '/products/centerBearingRubber.jpg' },
+          { key: 'centerBearing_howo', code: 'AT-002.016', img: '/products/centerBearingRubber.jpg' },
+          { key: 'centerBearing_shacman', code: 'AT-002.017', img: '/products/centerBearingRubber.jpg' },
+          { key: 'centerBearing_faw', code: 'AT-002.018', img: '/products/centerBearingRubber.jpg' },
         ]},
         { id: 'clutchDisc', img: '/products/clutchDisc.jpg', children: [
-          { key: 'clutchDisc_380', code: 'CK-2019', img: '/products/clutchDisc.jpg' },
-          { key: 'clutchDisc_420', code: 'CK-2020', img: '/products/clutchDisc.jpg' },
-          { key: 'clutchDisc_430', code: 'CK-2021', img: '/products/clutchDisc.jpg' },
+          { key: 'clutchDisc_380', code: 'AT-002.019', img: '/products/clutchDisc.jpg' },
+          { key: 'clutchDisc_420', code: 'AT-002.020', img: '/products/clutchDisc.jpg' },
+          { key: 'clutchDisc_430', code: 'AT-002.021', img: '/products/clutchDisc.jpg' },
         ]},
         { id: 'clutchSlaveCylinder', img: '/products/clutchSlaveCylinder.png', children: [
-          { key: 'clutchSlave_howo', code: 'CK-2022', img: '/products/clutchSlaveCylinder.png' },
-          { key: 'clutchSlave_shacman', code: 'CK-2023', img: '/products/clutchSlaveCylinder.png' },
-          { key: 'clutchSlave_dongfeng', code: 'CK-2024', img: '/products/clutchSlaveCylinder.png' },
+          { key: 'clutchSlave_howo', code: 'AT-002.022', img: '/products/clutchSlaveCylinder.png' },
+          { key: 'clutchSlave_shacman', code: 'AT-002.023', img: '/products/clutchSlaveCylinder.png' },
+          { key: 'clutchSlave_dongfeng', code: 'AT-002.024', img: '/products/clutchSlaveCylinder.png' },
         ]},
         { id: 'clutchMasterCylinder', img: '/products/clutchMasterCylinder.jpg', children: [
-          { key: 'clutchMaster_howo', code: 'CK-2025', img: '/products/clutchMasterCylinder.jpg' },
-          { key: 'clutchMaster_shacman', code: 'CK-2026', img: '/products/clutchMasterCylinder.jpg' },
-          { key: 'clutchMaster_dongfeng', code: 'CK-2027', img: '/products/clutchMasterCylinder.jpg' },
+          { key: 'clutchMaster_howo', code: 'AT-002.025', img: '/products/clutchMasterCylinder.jpg' },
+          { key: 'clutchMaster_shacman', code: 'AT-002.026', img: '/products/clutchMasterCylinder.jpg' },
+          { key: 'clutchMaster_dongfeng', code: 'AT-002.027', img: '/products/clutchMasterCylinder.jpg' },
         ]},
         { id: 'universalJoint', img: '/products/universalJoint.jpg', children: [
-          { key: 'uJoint_57', code: 'CK-2028', img: '/products/universalJoint.jpg' },
-          { key: 'uJoint_62', code: 'CK-2029', img: '/products/universalJoint.jpg' },
-          { key: 'uJoint_67', code: 'CK-2030', img: '/products/universalJoint.jpg' },
+          { key: 'uJoint_57', code: 'AT-002.028', img: '/products/universalJoint.jpg' },
+          { key: 'uJoint_62', code: 'AT-002.029', img: '/products/universalJoint.jpg' },
+          { key: 'uJoint_67', code: 'AT-002.030', img: '/products/universalJoint.jpg' },
         ]},
         { id: 'pressurePlate', img: '/products/pressurePlate.jpg', children: [
-          { key: 'pressPlate_380', code: 'CK-2031', img: '/products/pressurePlate.jpg' },
-          { key: 'pressPlate_420', code: 'CK-2032', img: '/products/pressurePlate.jpg' },
-          { key: 'pressPlate_430', code: 'CK-2033', img: '/products/pressurePlate.jpg' },
+          { key: 'pressPlate_380', code: 'AT-002.031', img: '/products/pressurePlate.jpg' },
+          { key: 'pressPlate_420', code: 'AT-002.032', img: '/products/pressurePlate.jpg' },
+          { key: 'pressPlate_430', code: 'AT-002.033', img: '/products/pressurePlate.jpg' },
         ]},
         { id: 'clamp', img: '/products/clamp.jpg', children: [
-          { key: 'clamp_exhaust', code: 'CK-2034', img: '/products/clamp.jpg' },
-          { key: 'clamp_hose', code: 'CK-2035', img: '/products/clamp.jpg' },
-          { key: 'clamp_uBolt', code: 'CK-2036', img: '/products/clamp.jpg' },
+          { key: 'clamp_exhaust', code: 'AT-002.034', img: '/products/clamp.jpg' },
+          { key: 'clamp_hose', code: 'AT-002.035', img: '/products/clamp.jpg' },
+          { key: 'clamp_uBolt', code: 'AT-002.036', img: '/products/clamp.jpg' },
         ]},
         { id: 'driveShaft', img: '/products/driveShaft.jpg', children: [
-          { key: 'driveShaft_front', code: 'CK-2037', img: '/products/driveShaft.jpg' },
-          { key: 'driveShaft_rear', code: 'CK-2038', img: '/products/driveShaft.jpg' },
-          { key: 'driveShaft_inter', code: 'CK-2039', img: '/products/driveShaft.jpg' },
+          { key: 'driveShaft_front', code: 'AT-002.037', img: '/products/driveShaft.jpg' },
+          { key: 'driveShaft_rear', code: 'AT-002.038', img: '/products/driveShaft.jpg' },
+          { key: 'driveShaft_inter', code: 'AT-002.039', img: '/products/driveShaft.jpg' },
         ]},
         { id: 'shockAbsorber', img: '/products/shockAbsorber.jpg', children: [
-          { key: 'shock_front', code: 'CK-2040', img: '/products/shockAbsorber.jpg' },
-          { key: 'shock_rear', code: 'CK-2041', img: '/products/shockAbsorber.jpg' },
-          { key: 'shock_hd', code: 'CK-2042', img: '/products/shockAbsorber.jpg' },
+          { key: 'shock_front', code: 'AT-002.040', img: '/products/shockAbsorber.jpg' },
+          { key: 'shock_rear', code: 'AT-002.041', img: '/products/shockAbsorber.jpg' },
+          { key: 'shock_hd', code: 'AT-002.042', img: '/products/shockAbsorber.jpg' },
         ]},
       ],
     },
@@ -157,39 +157,39 @@ export const categories = [
       id: 'brake',
       mothers: [
         { id: 'springBrakeChamber', img: '/products/springBrakeChamber.png', children: [
-          { key: 'springBrake_t2430', code: 'CK-3001', img: '/products/springBrakeChamber.png' },
-          { key: 'springBrake_t3030', code: 'CK-3002', img: '/products/springBrakeChamber.png' },
-          { key: 'springBrake_t2424', code: 'CK-3003', img: '/products/springBrakeChamber.png' },
+          { key: 'springBrake_t2430', code: 'AT-003.001', img: '/products/springBrakeChamber.png' },
+          { key: 'springBrake_t3030', code: 'AT-003.002', img: '/products/springBrakeChamber.png' },
+          { key: 'springBrake_t2424', code: 'AT-003.003', img: '/products/springBrakeChamber.png' },
         ]},
         { id: 'brakeChamber', img: '/products/brakeChamber.png', children: [
-          { key: 'brakeCh_t20', code: 'CK-3004', img: '/products/brakeChamber.png' },
-          { key: 'brakeCh_t24', code: 'CK-3005', img: '/products/brakeChamber.png' },
-          { key: 'brakeCh_t30', code: 'CK-3006', img: '/products/brakeChamber.png' },
+          { key: 'brakeCh_t20', code: 'AT-003.004', img: '/products/brakeChamber.png' },
+          { key: 'brakeCh_t24', code: 'AT-003.005', img: '/products/brakeChamber.png' },
+          { key: 'brakeCh_t30', code: 'AT-003.006', img: '/products/brakeChamber.png' },
         ]},
         { id: 'brakeAdjuster', img: '/products/brakeAdjuster.jpg', children: [
-          { key: 'adjuster_howo', code: 'CK-3007', img: '/products/brakeAdjuster.jpg' },
-          { key: 'adjuster_shacman', code: 'CK-3008', img: '/products/brakeAdjuster.jpg' },
-          { key: 'adjuster_dongfeng', code: 'CK-3009', img: '/products/brakeAdjuster.jpg' },
+          { key: 'adjuster_howo', code: 'AT-003.007', img: '/products/brakeAdjuster.jpg' },
+          { key: 'adjuster_shacman', code: 'AT-003.008', img: '/products/brakeAdjuster.jpg' },
+          { key: 'adjuster_dongfeng', code: 'AT-003.009', img: '/products/brakeAdjuster.jpg' },
         ]},
         { id: 'brakeLining', img: '/products/brakeLining.jpg', children: [
-          { key: 'lining_front', code: 'CK-3010', img: '/products/brakeLining.jpg' },
-          { key: 'lining_rear', code: 'CK-3011', img: '/products/brakeLining.jpg' },
-          { key: 'lining_trailer', code: 'CK-3012', img: '/products/brakeLining.jpg' },
+          { key: 'lining_front', code: 'AT-003.010', img: '/products/brakeLining.jpg' },
+          { key: 'lining_rear', code: 'AT-003.011', img: '/products/brakeLining.jpg' },
+          { key: 'lining_trailer', code: 'AT-003.012', img: '/products/brakeLining.jpg' },
         ]},
         { id: 'parkingBrake', img: '/products/parkingBrake.png', children: [
-          { key: 'parking_howo', code: 'CK-3013', img: '/products/parkingBrake.png' },
-          { key: 'parking_shacman', code: 'CK-3014', img: '/products/parkingBrake.png' },
-          { key: 'parking_dongfeng', code: 'CK-3015', img: '/products/parkingBrake.png' },
+          { key: 'parking_howo', code: 'AT-003.013', img: '/products/parkingBrake.png' },
+          { key: 'parking_shacman', code: 'AT-003.014', img: '/products/parkingBrake.png' },
+          { key: 'parking_dongfeng', code: 'AT-003.015', img: '/products/parkingBrake.png' },
         ]},
         { id: 'brakeReturnSpring', img: '/products/brakeReturnSpring.png', children: [
-          { key: 'returnSpring_front', code: 'CK-3016', img: '/products/brakeReturnSpring.png' },
-          { key: 'returnSpring_rear', code: 'CK-3017', img: '/products/brakeReturnSpring.png' },
-          { key: 'returnSpring_kit', code: 'CK-3018', img: '/products/brakeReturnSpring.png' },
+          { key: 'returnSpring_front', code: 'AT-003.016', img: '/products/brakeReturnSpring.png' },
+          { key: 'returnSpring_rear', code: 'AT-003.017', img: '/products/brakeReturnSpring.png' },
+          { key: 'returnSpring_kit', code: 'AT-003.018', img: '/products/brakeReturnSpring.png' },
         ]},
         { id: 'brakeLiningRivet', img: '/products/brakeLiningRivet.png', children: [
-          { key: 'rivet_copper', code: 'CK-3019', img: '/products/brakeLiningRivet.png' },
-          { key: 'rivet_aluminum', code: 'CK-3020', img: '/products/brakeLiningRivet.png' },
-          { key: 'rivet_steel', code: 'CK-3021', img: '/products/brakeLiningRivet.png' },
+          { key: 'rivet_copper', code: 'AT-003.019', img: '/products/brakeLiningRivet.png' },
+          { key: 'rivet_aluminum', code: 'AT-003.020', img: '/products/brakeLiningRivet.png' },
+          { key: 'rivet_steel', code: 'AT-003.021', img: '/products/brakeLiningRivet.png' },
         ]},
       ],
     },
@@ -197,39 +197,39 @@ export const categories = [
       id: 'cabin',
       mothers: [
         { id: 'wiperArm', img: '/products/wiperArm.png', children: [
-          { key: 'wiper_left', code: 'CK-4001', img: '/products/wiperArm.png' },
-          { key: 'wiper_right', code: 'CK-4002', img: '/products/wiperArm.png' },
-          { key: 'wiper_bladeSet', code: 'CK-4003', img: '/products/wiperArm.png' },
+          { key: 'wiper_left', code: 'AT-004.001', img: '/products/wiperArm.png' },
+          { key: 'wiper_right', code: 'AT-004.002', img: '/products/wiperArm.png' },
+          { key: 'wiper_bladeSet', code: 'AT-004.003', img: '/products/wiperArm.png' },
         ]},
         { id: 'headlamp', img: '/products/headlamp.png', children: [
-          { key: 'headlamp_left', code: 'CK-4004', img: '/products/headlamp.png' },
-          { key: 'headlamp_right', code: 'CK-4005', img: '/products/headlamp.png' },
-          { key: 'headlamp_led', code: 'CK-4006', img: '/products/headlamp.png' },
+          { key: 'headlamp_left', code: 'AT-004.004', img: '/products/headlamp.png' },
+          { key: 'headlamp_right', code: 'AT-004.005', img: '/products/headlamp.png' },
+          { key: 'headlamp_led', code: 'AT-004.006', img: '/products/headlamp.png' },
         ]},
         { id: 'tailLight', img: '/products/tailLight.png', children: [
-          { key: 'tailLight_left', code: 'CK-4007', img: '/products/tailLight.png' },
-          { key: 'tailLight_right', code: 'CK-4008', img: '/products/tailLight.png' },
-          { key: 'tailLight_led', code: 'CK-4009', img: '/products/tailLight.png' },
+          { key: 'tailLight_left', code: 'AT-004.007', img: '/products/tailLight.png' },
+          { key: 'tailLight_right', code: 'AT-004.008', img: '/products/tailLight.png' },
+          { key: 'tailLight_led', code: 'AT-004.009', img: '/products/tailLight.png' },
         ]},
         { id: 'cabinLock', img: '/products/cabinLock.png', children: [
-          { key: 'cabinLock_left', code: 'CK-4010', img: '/products/cabinLock.png' },
-          { key: 'cabinLock_right', code: 'CK-4011', img: '/products/cabinLock.png' },
-          { key: 'cabinLock_set', code: 'CK-4012', img: '/products/cabinLock.png' },
+          { key: 'cabinLock_left', code: 'AT-004.010', img: '/products/cabinLock.png' },
+          { key: 'cabinLock_right', code: 'AT-004.011', img: '/products/cabinLock.png' },
+          { key: 'cabinLock_set', code: 'AT-004.012', img: '/products/cabinLock.png' },
         ]},
         { id: 'cabinShockAbsorber', img: '/products/cabinShockAbsorber.png', children: [
-          { key: 'cabinShock_front', code: 'CK-4013', img: '/products/cabinShockAbsorber.png' },
-          { key: 'cabinShock_rear', code: 'CK-4014', img: '/products/cabinShockAbsorber.png' },
-          { key: 'cabinShock_hd', code: 'CK-4015', img: '/products/cabinShockAbsorber.png' },
+          { key: 'cabinShock_front', code: 'AT-004.013', img: '/products/cabinShockAbsorber.png' },
+          { key: 'cabinShock_rear', code: 'AT-004.014', img: '/products/cabinShockAbsorber.png' },
+          { key: 'cabinShock_hd', code: 'AT-004.015', img: '/products/cabinShockAbsorber.png' },
         ]},
         { id: 'cabinTiltCylinder', img: '/products/cabinTiltCylinder.png', children: [
-          { key: 'tiltCyl_howo', code: 'CK-4016', img: '/products/cabinTiltCylinder.png' },
-          { key: 'tiltCyl_shacman', code: 'CK-4017', img: '/products/cabinTiltCylinder.png' },
-          { key: 'tiltCyl_dongfeng', code: 'CK-4018', img: '/products/cabinTiltCylinder.png' },
+          { key: 'tiltCyl_howo', code: 'AT-004.016', img: '/products/cabinTiltCylinder.png' },
+          { key: 'tiltCyl_shacman', code: 'AT-004.017', img: '/products/cabinTiltCylinder.png' },
+          { key: 'tiltCyl_dongfeng', code: 'AT-004.018', img: '/products/cabinTiltCylinder.png' },
         ]},
         { id: 'relays', img: '/products/relays.png', children: [
-          { key: 'relay_starter', code: 'CK-4022', img: '/products/relays.png' },
-          { key: 'relay_headlamp', code: 'CK-4023', img: '/products/relays.png' },
-          { key: 'relay_horn', code: 'CK-4024', img: '/products/relays.png' },
+          { key: 'relay_starter', code: 'AT-004.022', img: '/products/relays.png' },
+          { key: 'relay_headlamp', code: 'AT-004.023', img: '/products/relays.png' },
+          { key: 'relay_horn', code: 'AT-004.024', img: '/products/relays.png' },
         ]},
       ],
     },
@@ -292,11 +292,11 @@ export function productsPage() {
     const pageMothers = filtered;
 
     return `
-      <section class="section-dark">
+      <section class="section-dark py-12">
         <div class="container-custom">
           <div class="mb-12 reveal">
-            <h2 class="heading-lg text-white mb-4">${t(`products.categories.${cat.id}.title`)}</h2>
-            <p class="text-brand-gray-light max-w-2xl">${t(`products.categories.${cat.id}.desc`)}</p>
+            <h2 class="heading-lg text-white mb-4 text-center md:text-left text-balance">${t(`products.categories.${cat.id}.title`)}</h2>
+            <p class="text-brand-gray-light max-w-2xl text-center md:text-left text-balance">${t(`products.categories.${cat.id}.desc`)}</p>
           </div>
 
           <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" data-stagger>
@@ -380,19 +380,21 @@ export function productsPage() {
   const html = `
     <!-- Hero -->
     <section class="relative pt-32 pb-12 sm:pb-20 overflow-hidden">
-      <div class="absolute inset-0">
+      <div class="absolute max-h-[30vh] md:max-h-none inset-0">
         <img src="/banner-product.jpg"
-             alt="Auto parts" class="w-full h-full object-cover" />
+             alt="Auto parts" class="w-full h-full object-cover hidden md:block" />
+        <img src="/banner-product-mobile.jpg"
+             alt="Auto parts" class="w-full h-full object-cover block md:hidden" />
       </div>
-      <div class="container-custom relative z-10 pt-12">
-        <div class="reveal">
+      <div class="container-custom relative z-10 pt-12 mt-20 md:mt-0">
+        <div class="reveal mt-5 md:mt-0 text-center md:text-left">
           <span class="badge-gold mb-4 text-base">${t('products.hero.badge')}</span>
           <h1 class="heading-xl text-white mt-4 mb-6">
             ${t('products.hero.heading1')}<br/>
             <div class="mt-5"/>
             <span class="text-gradient-gold">${t('products.hero.headingHighlight')}</span>
           </h1>
-          <p class="text-white text-lg max-w-xl leading-relaxed">
+          <p class="text-white text-lg max-w-xl leading-relaxed text-balance">
             ${t('products.hero.subtitle')}
           </p>
         </div>

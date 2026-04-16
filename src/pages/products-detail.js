@@ -29,7 +29,7 @@ export function productsDetailPage() {
   const childrenHref = `#/products/children?cat=${cat.id}&mother=${mother.id}`;
 
   const html = `
-    <section class="section-dark pt-32">
+    <section class="section-dark pt-22">
       <div class="container-custom">
         <!-- Breadcrumb -->
         <div class="flex flex-wrap items-center gap-2 text-sm mb-8 reveal">

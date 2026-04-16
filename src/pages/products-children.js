@@ -24,7 +24,7 @@ export function productsChildrenPage() {
   }
 
   const html = `
-    <section class="section-dark pt-32">
+    <section class="section-dark pt-22">
       <div class="container-custom">
         <!-- Breadcrumb -->
         <div class="flex items-center gap-2 text-sm mb-8 reveal">
@@ -59,18 +59,18 @@ export function productsChildrenPage() {
                 <img src="${child.img}" alt="${t(`products.items.${child.key}.name`)}"
                      class="w-full h-full object-cover transition-transform duration-500" />
                 <div class="absolute top-3 right-3">
-                  <span class="bg-brand-black/80 backdrop-blur-sm text-brand-gold text-xs font-mono px-3 py-1.5 rounded-lg">
+                  <span class="bg-brand-black/80 backdrop-blur-sm text-brand-gold text-base font-mono px-3 py-1.5 rounded-lg">
                     ${child.code}
                   </span>
                 </div>
               </div>
               <div class="p-5">
-                <h3 class="font-heading text-base uppercase text-white mb-1
+                <h3 class="font-heading text-lg uppercase text-white mb-1
                            group-hover:text-brand-gold transition-colors">
                   ${t(`products.items.${child.key}.name`)}
                 </h3>
-                <p class="text-brand-gray-light text-xs mb-3">${t(`products.items.${child.key}.specs`)}</p>
-                <span class="text-brand-gold text-xs font-semibold uppercase tracking-wider
+                <p class="text-brand-gray-light text-base mb-3">${t(`products.items.${child.key}.specs`)}</p>
+                <span class="text-brand-gold text-base font-semibold uppercase tracking-wider
                              flex items-center gap-1.5 group-hover:gap-2.5 transition-all">
                   ${t('products.ui.detail')}
                   <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

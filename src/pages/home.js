@@ -40,24 +40,24 @@ export function homePage() {
 
   const html = `
     <!-- Hero Section -->
-    <section class="relative min-h-[85vh] sm:min-h-screen flex items-center overflow-hidden">
+    <section class="relative sm:min-h-[35vh] md:min-h-[85vh] flex items-center justify-center md:justify-start overflow-hidden">
       <!-- Background Image -->
-      <div class="absolute inset-0">
+      <div class="absolute inset-0 mt-10 2xl:mt-0">
         <img src="/banner-home.jpg"
              alt="Heavy duty truck"
-             class="w-full h-full object-cover" data-parallax="0.2" />
-        <div class="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/30 to-brand-black/0"></div>
+             class="object-cover" data-parallax="0.2" />
+        <div class="absolute hidden md:block inset-0 bg-gradient-to-r from-brand-black via-brand-black/30 to-brand-black/0"></div>
       </div>
 
-      <div class="relative z-10 pt-32 pb-20 px-4 sm:px-8 lg:px-20 xl:px-10 2xl:px-32">
+      <div class="relative z-10 mt-28 pt-32 md:pb-20 sm:px-8 lg:px-20 xl:px-10 2xl:px-32">
         <div class="max-w-3xl">
           <div class="hero-badge inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/30
                       rounded-full px-4 py-2 mb-8">
             <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
-            <span class="text-brand-gold text-basee font-medium tracking-wide">${t('home.hero.badge')}</span>
+            <span class="text-brand-gold text-base font-medium">${t('home.hero.badge')}</span>
           </div>
 
-          <h1 class="hero-title heading-xl text-white mb-6 py-3">
+          <h1 class="hero-title heading-xl text-white mb-6 py-3 text-center md:text-left">
             ${t('home.hero.title1')} <br/>
             <div class="mt-4"/>
             <span class="text-gradient-gold">${t('home.hero.title2')}</span><br/>
@@ -65,14 +65,14 @@ export function homePage() {
             ${t('home.hero.title3')}
           </h1>
 
-          <div class="hero-cta flex flex-wrap gap-4">
-            <a href="#/products" class="btn-primary btn-lg text-sm uppercase tracking-widest">
+          <div class="hero-cta flex w-full flex-col gap-3 md:flex-row md:flex-wrap md:gap-4">
+            <a href="#/products" class="btn-primary btn-lg w-full justify-center text-sm uppercase tracking-widest md:w-auto">
               ${t('home.hero.exploreProducts')}
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
               </svg>
             </a>
-            <a href="#/about" class="btn-outline btn-lg text-sm uppercase tracking-widest">
+            <a href="#/about" class="btn-outline btn-lg w-full justify-center text-sm uppercase tracking-widest md:w-auto">
               ${t('home.hero.learnMore')}
             </a>
           </div>
@@ -81,19 +81,19 @@ export function homePage() {
     </section>
 
     <!-- About Preview -->
-    <section class="section-dark">
+    <section class="section-dark py-16">
       <div class="container-custom">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
-          <div class="reveal-left">
+          <div class="reveal-left text-center md:text-left">
             <span class="badge-gold mb-4 text-base">${t('home.about.badge')}</span>
             <h2 class="heading-lg text-white mt-4 mb-6">
               ${t('home.about.heading1')} <span class="text-gradient-gold inline-block mb-3 py-1">${t('home.about.headingHighlight')}</span>,<br/>
               ${t('home.about.heading2')}
             </h2>
-            <p class="text-brand-gray-light leading-relaxed mb-6">
+            <p class="text-brand-gray-light leading-relaxed mb-6 text-justify">
               ${t('home.about.p1')}
             </p>
-            <p class="text-brand-gray-light leading-relaxed mb-8">
+            <p class="text-brand-gray-light leading-relaxed mb-8 text-justify">
               ${t('home.about.p2')}
             </p>
             <a href="#/about" class="btn-outline text-sm uppercase tracking-widest">
@@ -114,7 +114,7 @@ export function homePage() {
     </section>
 
     <!-- Principle Banner -->
-    <section class="relative py-24 overflow-hidden">
+    <section class="relative overflow-hidden md:pb-16">
       <div class="absolute inset-0">
         <div class="absolute inset-0 bg-gradient-to-r from-brand-gold/20 via-brand-gold/10 to-brand-gold/20"></div>
         <div class="absolute inset-0 bg-brand-black/90"></div>
@@ -124,7 +124,7 @@ export function homePage() {
           <svg class="w-12 h-12 text-brand-gold mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
           </svg>
-          <h2 class="heading-lg text-white mb-4">
+          <h2 class="heading-lg text-balance leading-relaxed md:leading-tight mb-4">
             <span class="text-gradient-gold">${t('home.principle.heading')}</span>
           </h2>
           <div class="w-20 h-1 bg-brand-gold mx-auto mb-6 rounded-full"></div>
@@ -136,7 +136,7 @@ export function homePage() {
     </section>
 
     <!-- Product Categories -->
-    <section class="section-darker">
+    <section class="section-darker py-16">
       <div class="container-custom">
         <div class="text-center mb-16 reveal">
           <span class="badge-gold mb-4 text-base">${t('home.products.badge')}</span>
@@ -180,7 +180,7 @@ export function homePage() {
     </section>
 
     <!-- Why Choose Us -->
-    <section class="section-dark">
+    <section class="section-dark py-16">
       <div class="container-custom">
         <div class="text-center mb-16 reveal">
           <span class="badge-gold mb-4 text-base">${t('home.why.badge')}</span>
@@ -254,7 +254,7 @@ export function homePage() {
     </section>
 
     <!-- Recent News -->
-    <section class="section-darker">
+    <section class="section-darker py-16">
       <div class="container-custom">
         <div class="text-center mb-16 reveal">
           <span class="badge-gold mb-4 text-base">${t('home.news.badge')}</span>
@@ -325,7 +325,7 @@ export function homePage() {
     </section>
 
     <!-- CTA Section -->
-    <section class="section-dark">
+    <section class="section-dark py-16">
       <div class="container-custom">
         <div class="relative bg-gradient-to-br from-brand-gold/10 via-brand-gray-dark to-brand-gray-dark
                     border border-brand-gold/20 rounded-3xl p-6 sm:p-12 md:p-20 text-center overflow-hidden reveal-scale">

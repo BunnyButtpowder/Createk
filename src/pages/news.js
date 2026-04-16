@@ -32,15 +32,15 @@ export function newsPage() {
              alt="News" class="w-full h-full object-cover opacity-15" />
         <div class="absolute inset-0 bg-gradient-to-b from-brand-black via-brand-black/95 to-brand-black"></div>
       </div>
-      <div class="container-custom relative z-10 pt-12">
-        <div class="reveal">
+      <div class="container-custom relative z-10">
+        <div class="reveal text-center md:text-left">
           <span class="badge-gold mb-4 text-base">${t('news.hero.badge')}</span>
           <h1 class="heading-xl text-white mt-4 mb-6">
             ${t('news.hero.heading1')}<br/>
             <div class="mt-5"/>
             <span class="text-gradient-gold">${t('news.hero.headingHighlight')}</span>
           </h1>
-          <p class="text-brand-gray-light text-lg max-w-2xl leading-relaxed">
+          <p class="text-brand-gray-light text-lg max-w-2xl leading-relaxed text-balance">
             ${t('news.hero.subtitle')}
           </p>
         </div>
@@ -48,7 +48,7 @@ export function newsPage() {
     </section>
 
     <!-- Featured Article -->
-    <section class="section-darker">
+    <section class="section-darker py-12">
       <div class="container-custom">
         <div class="reveal-scale">
           <a href="#/news/featured" class="card-hover group block overflow-hidden">
@@ -86,7 +86,7 @@ export function newsPage() {
     </section>
 
     <!-- Articles Grid -->
-    <section class="section-dark">
+    <section class="section-dark py-12">
       <div class="container-custom">
         <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-12 reveal">
           <h2 class="heading-md text-white">${t('news.articles.heading')}</h2>
@@ -150,7 +150,7 @@ export function newsPage() {
     </section>
 
     <!-- Newsletter -->
-    <section class="section-darker">
+    <section class="section-darker py-12">
       <div class="container-custom">
         <div class="bg-gradient-to-br from-brand-gold/10 via-brand-gray-dark to-brand-gray-dark
                     border border-brand-gold/20 rounded-3xl p-6 sm:p-10 md:p-16 text-center reveal-scale">
