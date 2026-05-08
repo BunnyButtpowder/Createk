@@ -66,10 +66,10 @@ export function productsDetailPage() {
           </div>
 
           <div class="reveal-right">
-            <span class="bg-brand-gold/10 text-brand-gold text-sm font-mono px-3 py-1.5 rounded-lg border border-brand-gold/20">
+            <span class="product-code-badge block w-fit mx-auto text-center sm:mx-0 sm:inline-block sm:text-left bg-brand-gold/10 text-brand-gold text-sm font-mono px-3 py-1.5 rounded-lg border border-brand-gold/20">
               ${child.code}
             </span>
-            <h1 class="heading-lg text-white mt-4 mb-6">${t(`products.items.${child.key}.name`)}</h1>
+            <h1 class="heading-lg text-white text-center sm:text-left mt-4 mb-6">${t(`products.items.${child.key}.name`)}</h1>
 
             <div class="space-y-6">
               <div>
@@ -84,8 +84,13 @@ export function productsDetailPage() {
             </div>
 
             <a href="#/contact"
-               class="btn-primary btn-lg text-sm uppercase tracking-widest mt-8 inline-flex">
+               class="btn-primary btn-lg text-sm uppercase tracking-widest mt-8 w-full sm:w-auto">
               ${t('products.ui.contactQuote')}
+            </a>
+
+            <a href="https://zalo.me/2822820424446155302" target="_blank"
+               class="btn-outline btn-lg text-sm uppercase mt-4 sm:mt-0 sm:ms-2 w-full sm:w-auto">
+              ${t('products.ui.viewAllProducts')}
             </a>
           </div>
         </div>

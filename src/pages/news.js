@@ -37,7 +37,7 @@ export function newsPage() {
           <span class="badge-gold mb-4 text-base">${t('news.hero.badge')}</span>
           <h1 class="heading-xl text-white mt-4 mb-6">
             ${t('news.hero.heading1')}<br/>
-            <div class="mt-5"/>
+            <div class="mt-5 lg:mt-8"/>
             <span class="text-gradient-gold">${t('news.hero.headingHighlight')}</span>
           </h1>
           <p class="text-brand-gray-light text-lg max-w-2xl leading-relaxed text-balance">
@@ -54,7 +54,7 @@ export function newsPage() {
           <a href="#/news/featured" class="card-hover group block overflow-hidden">
             <div class="grid lg:grid-cols-2">
               <div class="relative h-64 lg:h-auto overflow-hidden img-hover-zoom">
-                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&h=600&fit=crop" alt="${t('news.featured.title')}"
+                <img src="/news/featured/2.jpg" alt="${t('news.featured.title')}"
                      class="w-full h-full object-cover transition-transform duration-500" />
                 <div class="absolute top-4 left-4">
                   <span class="badge ${categoryColorMap[featuredCategoryId]}">

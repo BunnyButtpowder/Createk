@@ -15,7 +15,7 @@ export function contactPage() {
         <div class="reveal text-center md:text-left">
           <h1 class="heading-xl text-white mt-4 mb-6">
             ${t('contact.hero.heading1')} <span class="text-gradient-gold">${t('contact.hero.headingHighlight')}</span><br/>
-            <div class="mt-3"/>
+            <div class="mt-5 lg:mt-8"/>
             ${t('contact.hero.heading2')}
           </h1>
           <p class="text-brand-gray-light text-lg max-w-2xl leading-relaxed text-balance">
@@ -34,7 +34,7 @@ export function contactPage() {
                  class="an-thai-hero-image w-full h-full object-cover" />
           </div>
           <div class="an-thai-info-section flex flex-col justify-center py-12 lg:py-16 px-4 sm:px-6 lg:pl-12 lg:pr-8 reveal-right">
-            <h2 class="font-heading text-2xl lg:text-3xl font-bold uppercase text-white leading-tight mb-8">
+            <h2 class="font-heading text-2xl lg:text-3xl font-bold uppercase text-white leading-relaxed md:leading-tight mb-8">
               ${t('contact.anThai.title')}
             </h2>
             <div class="space-y-5">

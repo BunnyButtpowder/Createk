@@ -79,7 +79,7 @@ export default {
       heading1: 'Lợi thế',
       headingHighlight: 'Createk',
       heading2: '',
-      premiumQuality: { title: 'Nghiên cứu & Phát triển (R&D)', desc: 'Nghiên cứu phát triển giải pháp phụ tùng thay thế hoàn hảo, tối ưu hóa dựa trên điều kiện sử dụng thực tế của khách hàng.' },
+      premiumQuality: { title: 'Nghiên cứu & Phát triển', desc: 'Nghiên cứu phát triển giải pháp phụ tùng thay thế hoàn hảo, tối ưu hóa dựa trên điều kiện sử dụng thực tế của khách hàng.' },
       globalReach: { title: 'Sản xuất & Chế tạo', desc: 'Gia công chính xác, kiểm soát chặt chẽ các quy trình trọng yếu nhằm đảm bảo chất lượng sản phẩm đầu ra.' },
       wideRange: { title: 'Lắp ráp', desc: 'Nắm vững các tiêu chuẩn kỹ thuật về dung sai lắp dôi (lắp chặt) và lắp lỏng, đảm bảo độ chính xác tuyệt đối cho các khe hở quan trọng của những bộ phận chủ chốt.' },
       expertSupport: { title: 'Quản lý Chất lượng', desc: 'Kiểm soát nghiêm ngặt độ chính xác của từng sản phẩm xuyên suốt từ khâu nghiên cứu phát triển đến sản xuất hàng loạt.' },
@@ -162,6 +162,7 @@ export default {
       subtitle: 'Mọi thứ đội xe hạng nặng cần từ một nguồn đáng tin cậy',
     },
     ui: {
+      viewAllProducts: 'Xem tất cả các mã sản phẩm',
       detail: 'Chi tiết',
       back: 'Quay lại',
       contactQuote: 'Liên hệ nhận báo giá',
@@ -233,6 +234,7 @@ export default {
       cabinTiltCylinder: 'Kích cabin',
       cabinSpringBushing: 'Bạc nhíp cabin',
       relays: 'Rơ le các loại',
+      desc: 'Khám phá các mã sản phẩm nổi bật của chúng tôi. Để nhận danh sách toàn bộ các mã sản phẩm, Quý khách vui lòng liên hệ trực tiếp với Createk Việt Nam.'
     },
     items: {
       // Động cơ - Trục cơ
@@ -431,10 +433,25 @@ export default {
     },
     featured: {
       badge: 'Nổi bật',
-      title: 'Createk mở rộng mạng lưới phân phối tới Bắc Phi',
-      date: '15 tháng 1, 2026',
-      excerpt: 'Createk đã ký các thỏa thuận phân phối mới bao phủ Morocco, Tunisia và Ai Cập, nâng tổng phạm vi thị trường lên hơn 85 quốc gia. Sự mở rộng này củng cố vị thế nhà cung cấp phụ tùng xe hạng nặng hàng đầu toàn cầu.',
+      title: 'Createk - Chuyên gia phụ tùng xe tải Trung Quốc',
+      date: '3 tháng 2, 2026',
+      excerpt: 'Giữa "trái tim" của ngành công nghiệp ô tô tải đất nước tỷ dân, áp lực cạnh tranh giữa hàng ngàn xưởng sản xuất phụ tùng là cực kỳ khốc liệt. Để tồn tại và phát triển, Createk đã chọn một lối đi riêng: Không chạy theo cuộc đua giá rẻ, mà tập trung vào chiều sâu công nghệ.',
       readMore: 'Đọc thêm',
+      intro: 'Createk tự hào là chuyên gia phụ tùng xe tải Trung Quốc, đó không chỉ là lời giới thiệu hoa mỹ, mà được chứng minh từ sự thấu hiểu kỹ thuật và năng lực làm chủ quy trình sản xuất của chúng tôi.',
+      section1Title: '1. Làm chủ công nghệ R&D',
+      section1P1: 'Tại Createk, chúng tôi tin rằng chất lượng không chỉ được tạo ra trên dây chuyền sản xuất, mà nó phải được định hình ngay từ trong bản vẽ. Đó là lý do sự khác biệt lớn nhất của Createk nằm ở tư duy gốc: Làm chủ hoàn toàn công nghệ Nghiên cứu & Phát triển (R&D).',
+      section1P2: 'Thay vì sao chép máy móc theo hình dáng bên ngoài, Createk đi sâu vào phân tích "DNA" của từng linh kiện. Chúng tôi mổ xẻ cấu trúc vật liệu, tính toán khả năng chịu nhiệt và chịu lực của từng chi tiết - từ những bộ phận "trái tim" như Thân máy động cơ đến những chi tiết yêu cầu độ kín khít tuyệt đối như Thân máy nén khí.',
+      section1P3: 'Với hệ thống phòng thí nghiệm độc lập, Createk có thể chủ động kiểm soát những tham số kỹ thuật tinh vi nhất. Mục tiêu của Createk không chỉ là tạo ra một phụ tùng "lắp vừa", mà là tạo ra một sản phẩm có độ tương thích cao nhất với hệ thống xe, đảm bảo sự vận hành đồng bộ như nguyên bản, phù hợp cho các dòng xe: Howo, Shacman….',
+      section2Title: '2. Hệ thống sản xuất hiện đại',
+      section2P1: 'Để tạo ra những phụ tùng có độ chính xác cao (tính bằng micromet), nhà máy Createk đã từ chối các phương pháp gia công đại trà để trang bị những dây chuyền sản xuất đáp ứng tiêu chuẩn quốc tế:',
+      section2Machining: 'Gia công: Với trung tâm gia công ngang Heckert nhập khẩu từ Đức và hệ thống máy CNC để xử lý bề mặt cắt gọt.',
+      section2Assembly: 'Lắp ráp: Ứng dụng hệ thống siết ATLAS COPCO và máy ép KISTLER để đảm bảo lực siết đồng đều, loại bỏ sai số thủ công.',
+      section2Balancing: 'Cân bằng: Sử dụng máy SCHENCK để triệt tiêu rung động cho các chi tiết quay.',
+      section2P2: 'Chúng tôi coi việc đầu tư hàng triệu USD cho hệ thống này là tiêu chuẩn bắt buộc. Bởi với xe tải hạng nặng, sự ổn định của động cơ chính là sự an toàn của tài xế.',
+      section3Title: '3. Kiểm soát chất lượng, không thỏa hiệp với rủi ro',
+      section3P1: 'Trong vận tải, cái giá của một chi tiết hỏng không dừng lại ở chi phí thay thế. Nó là nỗi ám ảnh về việc xe nằm đường, chậm chuyến và mất uy tín với đối tác. Thấu hiểu rủi ro đó, Createk thiết lập hàng rào kiểm soát chất lượng nghiêm ngặt cho 100% sản phẩm. Chúng tôi kiên quyết không để bất kỳ linh kiện lỗi nào lọt ra thị trường, dù là sai số nhỏ nhất.',
+      section3P2: 'Tại Createk, mọi công nghệ tân tiến hay máy móc hiện đại cũng chỉ là công cụ để thực hiện một tôn chỉ duy nhất: Chất lượng là trên hết (Quality First).',
+      closing: 'Chúng tôi kiên quyết từ chối sự dễ dãi để theo đuổi những chuẩn mực khắt khe hơn. Bởi Createk hiểu rằng, đằng sau việc làm chủ công nghệ không chỉ là chuyện tạo ra một phụ tùng tốt cho xe tải Trung Quốc, mà là trao gửi sự an tâm tuyệt đối. Với chúng tôi, chất lượng của sản phẩm chính là sự thịnh vượng bền vững của khách hàng.',
     },
     articles: {
       heading: 'Tất cả bài viết',

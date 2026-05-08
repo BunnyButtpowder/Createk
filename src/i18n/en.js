@@ -79,7 +79,7 @@ export default {
       heading1: 'The',
       headingHighlight: 'Createk',
       heading2: 'Advantage',
-      premiumQuality: { title: 'Research & Development (R&D)', desc: 'Developing perfect replacement solutions, optimizing based on actual customer usage conditions.' },
+      premiumQuality: { title: 'Research & Development', desc: 'Developing perfect replacement solutions, optimizing based on actual customer usage conditions.' },
       globalReach: { title: 'Production & Manufacturing', desc: 'Precision-engineered, strictly controlled manufacturing processes to ensure product quality.' },
       wideRange: { title: 'Assembly', desc: 'Mastering technical standards for tight (tight) and loose (loose) tolerances to ensure absolute precision for critical gaps.' },
       expertSupport: { title: 'Quality Management', desc: 'Strict control of product accuracy throughout the entire development and production process.' },
@@ -162,6 +162,7 @@ export default {
       subtitle: 'Everything your heavy-duty fleet needs from a single trusted source',
     },
     ui: {
+      viewAllProducts: 'View All Product Codes',
       detail: 'Details',
       back: 'Go Back',
       contactQuote: 'Contact for Quote',
@@ -233,6 +234,7 @@ export default {
       cabinTiltCylinder: 'Cabin Tilt Cylinder',
       cabinSpringBushing: 'Cabin Spring Bushing',
       relays: 'Relays',
+      desc: 'Discover our top product codes. For the complete list of all product codes, please contact Createk Vietnam directly.'
     },
     items: {
       // Engine - Crankshaft
@@ -431,10 +433,25 @@ export default {
     },
     featured: {
       badge: 'Featured',
-      title: 'Createk Expands Distribution Network to North Africa',
-      date: 'January 15, 2026',
-      excerpt: 'Createk has signed new distribution agreements covering Morocco, Tunisia, and Egypt, bringing our total market coverage to over 85 countries. This expansion solidifies our position as a leading global supplier of heavy-duty auto parts.',
+      title: 'Createk - Chinese Truck Parts Expert',
+      date: 'February 3, 2026',
+      excerpt: 'In the heart of China\'s truck industry, competition among thousands of parts manufacturers is fierce. To survive and thrive, Createk chose a different path: instead of racing to the bottom on price, we focus on technological depth.',
       readMore: 'Read More',
+      intro: 'Createk is proud to be a Chinese truck parts expert — this is not just a fancy tagline, but a claim proven by our deep technical understanding and mastery of the manufacturing process.',
+      section1Title: '1. Mastering R&D Technology',
+      section1P1: 'At Createk, we believe that quality is not only created on the production line — it must be defined right from the drawing board. That is why Createk\'s greatest differentiator lies in our foundational mindset: complete mastery of Research & Development (R&D) technology.',
+      section1P2: 'Rather than mechanically copying external appearances, Createk delves deep into analyzing the "DNA" of each component. We dissect material structures, calculate heat resistance and load-bearing capacity of every detail — from "heart" components like Engine Blocks to parts demanding absolute sealing precision like Air Compressor Bodies.',
+      section1P3: 'With an independent laboratory system, Createk can proactively control the most sophisticated technical parameters. Createk\'s goal is not just to create a part that "fits," but to produce a product with the highest compatibility with the vehicle system, ensuring synchronized operation like the original — suitable for Howo, Shacman, and more.',
+      section2Title: '2. Modern Manufacturing System',
+      section2P1: 'To produce parts with high precision (measured in micrometers), Createk\'s factory rejected mass-production methods in favor of production lines meeting international standards:',
+      section2Machining: 'Machining: With the Heckert horizontal machining center imported from Germany and CNC machine systems for surface cutting and milling.',
+      section2Assembly: 'Assembly: Applying ATLAS COPCO tightening systems and KISTLER press machines to ensure uniform torque, eliminating manual errors.',
+      section2Balancing: 'Balancing: Using SCHENCK machines to eliminate vibrations in rotating components.',
+      section2P2: 'We consider the multi-million-dollar investment in this system a mandatory standard. Because for heavy-duty trucks, engine stability is driver safety.',
+      section3Title: '3. Quality Control — No Compromise with Risk',
+      section3P1: 'In transportation, the cost of a failed component goes far beyond replacement expenses. It is the nightmare of roadside breakdowns, delayed shipments, and lost credibility with partners. Understanding this risk, Createk established strict quality control barriers for 100% of products. We are determined not to let any defective component reach the market, no matter how small the deviation.',
+      section3P2: 'At Createk, all advanced technology and modern machinery are merely tools to fulfill a single principle: Quality First.',
+      closing: 'We firmly reject complacency in pursuit of higher standards. Because Createk understands that behind mastering technology is not just about creating a good part for Chinese trucks — it is about delivering absolute peace of mind. For us, product quality is the foundation of our customers\' lasting prosperity.',
     },
     articles: {
       heading: 'All Articles',

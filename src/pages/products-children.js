@@ -48,7 +48,8 @@ export function productsChildrenPage() {
         </a>
 
         <div class="mb-10 reveal">
-          <h2 class="heading-lg text-white mb-4">${t(`products.mothers.${mother.id}`)}</h2>
+          <h2 class="heading-lg text-white text-center md:text-left mb-4">${t(`products.mothers.${mother.id}`)}</h2>
+          <p class="text-brand-gray-light text-center md:text-left text-balance">${t(`products.mothers.desc`)}</p>
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8" data-stagger>

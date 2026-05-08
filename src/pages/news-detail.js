@@ -34,7 +34,7 @@ export function newsDetailPage() {
       categoryId: featuredCategoryId,
       excerpt: t('news.featured.excerpt'),
     };
-    img = 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&h=600&fit=crop';
+    img = '/news/featured/2.jpg';
   } else {
     const index = parseInt(slug);
     article = articles[index];
@@ -87,20 +87,78 @@ export function newsDetailPage() {
             <img src="${img}" alt="${article.title}" class="w-full aspect-video sm:aspect-[21/9] object-cover" />
           </div>
 
+          ${isFeatured ? `
           <div class="reveal">
             <p class="text-brand-gray-light text-lg leading-relaxed mb-6">
               ${article.excerpt}
             </p>
+            <p class="text-brand-gray-light leading-relaxed mb-10">
+              ${t('news.featured.intro')}
+            </p>
+
+            <h2 class="heading-sm text-white mb-6">${t('news.featured.section1Title')}</h2>
             <p class="text-brand-gray-light leading-relaxed mb-6">
-              This development represents a significant milestone in Createk's ongoing commitment to delivering high-quality heavy-duty vehicle components to markets worldwide. Our engineering team has been working closely with regional partners to ensure seamless integration and support.
+              ${t('news.featured.section1P1')}
+            </p>
+            <div class="rounded-xl overflow-hidden mb-8">
+              <img src="/news/featured/image1.jpg" alt="${t('news.featured.section1Title')}"
+                   class="w-full object-cover" />
+            </div>
+            <p class="text-brand-gray-light leading-relaxed mb-6">
+              ${t('news.featured.section1P2')}
             </p>
             <p class="text-brand-gray-light leading-relaxed mb-6">
-              As the heavy-duty vehicle industry continues to evolve, Createk remains at the forefront of innovation and quality. Our dedication to rigorous testing, precision manufacturing, and customer satisfaction drives every decision we make. We look forward to sharing more updates as this initiative progresses.
+              ${t('news.featured.section1P3')}
+            </p>
+            <div class="rounded-xl overflow-hidden mb-10 bg-white p-4">
+              <img src="/news/featured/2.jpg" alt="${t('news.featured.title')}"
+                   class="w-full object-contain" />
+            </div>
+
+            <h2 class="heading-sm text-white mb-6">${t('news.featured.section2Title')}</h2>
+            <p class="text-brand-gray-light leading-relaxed mb-6">
+              ${t('news.featured.section2P1')}
+            </p>
+            <ul class="space-y-3 mb-6 pl-4">
+              <li class="text-brand-gray-light leading-relaxed flex gap-3">
+                <span class="text-brand-gold font-bold mt-0.5">&#9670;</span>
+                <span><strong class="text-white">${t('news.featured.section2Machining').split(':')[0]}:</strong> ${t('news.featured.section2Machining').split(':').slice(1).join(':').trim()}</span>
+              </li>
+              <li class="text-brand-gray-light leading-relaxed flex gap-3">
+                <span class="text-brand-gold font-bold mt-0.5">&#9670;</span>
+                <span><strong class="text-white">${t('news.featured.section2Assembly').split(':')[0]}:</strong> ${t('news.featured.section2Assembly').split(':').slice(1).join(':').trim()}</span>
+              </li>
+              <li class="text-brand-gray-light leading-relaxed flex gap-3">
+                <span class="text-brand-gold font-bold mt-0.5">&#9670;</span>
+                <span><strong class="text-white">${t('news.featured.section2Balancing').split(':')[0]}:</strong> ${t('news.featured.section2Balancing').split(':').slice(1).join(':').trim()}</span>
+              </li>
+            </ul>
+            <p class="text-brand-gray-light leading-relaxed mb-10">
+              ${t('news.featured.section2P2')}
+            </p>
+
+            <h2 class="heading-sm text-white mb-6">${t('news.featured.section3Title')}</h2>
+            <p class="text-brand-gray-light leading-relaxed mb-6">
+              ${t('news.featured.section3P1')}
+            </p>
+            <div class="rounded-xl overflow-hidden mb-8">
+              <img src="/news/featured/image3.jpg" alt="${t('news.featured.section3Title')}"
+                   class="w-full object-cover" />
+            </div>
+            <p class="text-brand-gray-light leading-relaxed mb-6 text-lg font-medium text-white italic border-l-4 border-brand-gold pl-6">
+              ${t('news.featured.section3P2')}
             </p>
             <p class="text-brand-gray-light leading-relaxed">
-              For more information about this topic or to discuss how Createk products can benefit your fleet operations, please do not hesitate to contact our technical support team. We are always ready to assist with product selection, technical specifications, and distributor inquiries.
+              ${t('news.featured.closing')}
             </p>
           </div>
+          ` : `
+          <div class="reveal">
+            <p class="text-brand-gray-light text-lg leading-relaxed mb-6">
+              ${article.excerpt}
+            </p>
+          </div>
+          `}
         </div>
       </div>
     </section>

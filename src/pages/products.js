@@ -295,8 +295,8 @@ export function productsPage() {
       <section class="section-dark py-12">
         <div class="container-custom">
           <div class="mb-12 reveal">
-            <h2 class="heading-lg text-white mb-4 text-center md:text-left text-balance">${t(`products.categories.${cat.id}.title`)}</h2>
-            <p class="text-brand-gray-light max-w-2xl text-center md:text-left text-balance">${t(`products.categories.${cat.id}.desc`)}</p>
+            <h2 class="heading-lg text-white mb-4 text-center md:text-left text-balance leading-relaxed md:leading-tight">${t(`products.categories.${cat.id}.title`)}</h2>
+            <p class="text-brand-gray-light text-center md:text-left text-balance">${t(`products.categories.${cat.id}.desc`)}</p>
           </div>
 
           <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" data-stagger>
@@ -386,12 +386,12 @@ export function productsPage() {
         <img src="/banner-product-mobile.jpg"
              alt="Auto parts" class="w-full h-full object-cover block md:hidden" />
       </div>
-      <div class="container-custom relative z-10 pt-12 mt-20 md:mt-0">
+      <div class="container-custom relative z-10 pt-12 mt-32 md:mt-0">
         <div class="reveal mt-5 md:mt-0 text-center md:text-left">
           <span class="badge-gold mb-4 text-base">${t('products.hero.badge')}</span>
           <h1 class="heading-xl text-white mt-4 mb-6">
             ${t('products.hero.heading1')}<br/>
-            <div class="mt-5"/>
+            <div class="mt-5 lg:mt-8"/>
             <span class="text-gradient-gold">${t('products.hero.headingHighlight')}</span>
           </h1>
           <p class="text-white text-lg max-w-xl leading-relaxed text-balance">
@@ -442,8 +442,8 @@ export function productsPage() {
     <!-- CTA -->
     <section class="section-darker">
       <div class="container-custom text-center reveal">
-        <h2 class="heading-lg text-white mb-4">${t('products.cta.heading1')} <span class="text-gradient-gold">${t('products.cta.headingHighlight')}</span> 
-        <div class="mt-3"/>
+        <h2 class="heading-lg text-white mb-4 leading-relaxed md:leading-tight">${t('products.cta.heading1')} <span class="text-gradient-gold">${t('products.cta.headingHighlight')}</span> 
+        <div class="mt-0 md:mt-3"/>
         ${t('products.cta.heading2')}
         </h2>
         <p class="text-brand-gray-light max-w-xl mx-auto mb-8">

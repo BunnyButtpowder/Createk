@@ -62,7 +62,7 @@ export function aboutPage() {
           <span class="badge-gold mb-4 text-base">${t('about.hero.badge')}</span>
           <h1 class="heading-xl text-white mt-4 mb-6">
             ${t('about.hero.heading1')}<br/>
-            <div class="mt-5"/>
+            <div class="mt-5 lg:mt-8"/>
             <span class="text-gradient-gold">${t('about.hero.headingHighlight')}</span>
           </h1>
           <p class="text-white text-lg max-w-3xl leading-relaxed text-balance">
@@ -109,10 +109,17 @@ export function aboutPage() {
     <section class="section-darker pt-0 pb-12">
       <div class="container-custom reveal">
         <div class="rd-video-wrapper relative rounded-2xl overflow-hidden">
-          <video class="rd-process-video w-full h-[220px] sm:h-[300px] lg:h-full object-cover rounded-2xl"
-                 autoplay loop muted playsinline preload="auto" poster="/1.jpg">
-            <source src="/R&D-createk-process.mp4" type="video/mp4" />
-          </video>
+          <div class="rd-process-video-wrapper aspect-video w-full">
+            <iframe
+              class="rd-process-video w-full h-full rounded-2xl"
+              src="https://www.youtube.com/embed/0yJht8kEfjc?si=2-KPnfP_YCt2X7jd"
+              title="Createk R&D process"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
       </div>
     </section>
@@ -122,7 +129,7 @@ export function aboutPage() {
       <div class="container-custom">
         <div class="text-center mb-16 reveal">
           <span class="badge-gold mb-4 text-base">${t('home.products.badge')}</span>
-          <h2 class="heading-lg text-white mt-4 mb-4">
+          <h2 class="heading-lg text-white mt-4 mb-4 leading-relaxed md:leading-tight">
             ${t('home.products.heading1')} <span class="text-gradient-gold">${t('home.products.headingHighlight')}</span>
           </h2>
           <p class="text-brand-gray-light max-w-2xl mx-auto">
@@ -167,8 +174,8 @@ export function aboutPage() {
     <!-- CTA -->
     <section class="section-darker pt-0 pb-12 md:py-12">
       <div class="container-custom text-center reveal">
-        <h2 class="heading-lg text-white mb-6">${t('about.cta.heading1')} <span class="text-gradient-gold">${t('about.cta.headingHighlight')}</span> 
-        <div class="mt-3"/>
+        <h2 class="heading-lg text-white mb-6 leading-relaxed md:leading-tight">${t('about.cta.heading1')} <span class="text-gradient-gold">${t('about.cta.headingHighlight')}</span> 
+        <div class="mt-0 md:mt-3"/>
         ${t('about.cta.heading2')}</h2>
         <a href="#/contact" class="btn-primary btn-lg text-sm uppercase tracking-widest">
           ${t('about.cta.button')}
