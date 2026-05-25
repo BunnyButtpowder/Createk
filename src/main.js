@@ -18,10 +18,14 @@ import { contactPage } from './pages/contact.js';
 import { privacyPage } from './pages/privacy.js';
 import { termsPage } from './pages/terms.js';
 import { initI18n, setLang } from './i18n/index.js';
+import { initAPI, resetAPI } from './api/index.js';
 import { getCurrentRoute } from './router.js';
 
 // Initialize i18n before anything renders
 initI18n();
+
+// Prefetch site settings from CMS
+initAPI();
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -109,6 +113,8 @@ initRouter();
 window.addEventListener('lang-change', (e) => {
   const { lang } = e.detail;
   setLang(lang);
+  resetAPI(); // Clear API cache so new language data is fetched
+  initAPI();  // Prefetch settings in new language
   renderAppShell();
   initScrollToTop();
   handleRoute();

@@ -1,0 +1,21 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # SPA routes that conflict with real directories (e.g. public/products/, public/news/)
+  RewriteRule ^products/?$ /index.html [L]
+  RewriteRule ^products/children/?$ /index.html [L]
+  RewriteRule ^products/detail/?$ /index.html [L]
+  RewriteRule ^news/?$ /index.html [L]
+
+  # All other client-side routes
+  RewriteRule ^about/?$ /index.html [L]
+  RewriteRule ^contact/?$ /index.html [L]
+  RewriteRule ^privacy/?$ /index.html [L]
+  RewriteRule ^terms/?$ /index.html [L]
+
+  # Static files under /products/* and /news/* still served normally; only exact paths above rewrite
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>

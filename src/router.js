@@ -6,19 +6,17 @@ export function registerRoute(path, handler) {
 }
 
 export function navigate(path) {
-  window.location.hash = path;
+  window.history.pushState(null, '', path);
+  handleRoute();
 }
 
 export function getCurrentRoute() {
-  const hash = window.location.hash.slice(1) || '/';
-  return hash.split('?')[0];
+  const path = window.location.pathname || '/';
+  return path.split('?')[0];
 }
 
 export function getRouteParam(key) {
-  const hash = window.location.hash.slice(1) || '/';
-  const qs = hash.split('?')[1];
-  if (!qs) return null;
-  const params = new URLSearchParams(qs);
+  const params = new URLSearchParams(window.location.search);
   return params.get(key);
 }
 
@@ -57,7 +55,7 @@ export async function handleRoute() {
 
     // Update active nav (prefix match so /news/5 highlights /news)
     document.querySelectorAll('[data-nav-link]').forEach(link => {
-      const linkPath = link.getAttribute('href').slice(1).split('?')[0];
+      const linkPath = link.getAttribute('href').split('?')[0];
       const isActive = linkPath === path || (linkPath !== '/' && path.startsWith(linkPath + '/'));
       if (isActive) {
         link.classList.add('text-brand-gold');
@@ -71,10 +69,27 @@ export async function handleRoute() {
 }
 
 export function initRouter() {
-  window.addEventListener('hashchange', handleRoute);
-  // Set default hash if none
-  if (!window.location.hash) {
-    window.location.hash = '/';
-  }
+  // Handle browser back/forward
+  window.addEventListener('popstate', handleRoute);
+
+  // Intercept internal link clicks for SPA navigation
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href]');
+    if (!link) return;
+
+    const href = link.getAttribute('href');
+    // Skip external links, new-tab links, and non-path links
+    if (!href || href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:') ||
+        link.target === '_blank' || e.ctrlKey || e.metaKey || e.shiftKey) {
+      return;
+    }
+
+    // Only intercept internal paths starting with /
+    if (href.startsWith('/')) {
+      e.preventDefault();
+      navigate(href);
+    }
+  });
+
   handleRoute();
 }

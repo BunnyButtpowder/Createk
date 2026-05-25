@@ -18,7 +18,6 @@ export function renderHeader() {
   ];
 
   const mobileNavLinks = [
-    { label: t('header.home'), path: '/' },
     ...navLinks,
   ];
 
@@ -56,7 +55,7 @@ export function renderHeader() {
     if (link.subLinks) {
       return `
         <div class="products-nav-dropdown relative group">
-          <a href="#${link.path}" data-nav-link
+          <a href="${link.path}" data-nav-link
              class="text-white px-4 py-2 text-sm font-medium uppercase tracking-widest
                     hover:text-brand-gold transition-colors duration-300 relative flex items-center gap-1.5 cursor-pointer">
             ${link.label}
@@ -73,7 +72,7 @@ export function renderHeader() {
             <div class="bg-brand-dark/95 backdrop-blur-md border border-white/10 rounded-xl
                         shadow-2xl shadow-black/50 py-2 min-w-[280px]">
               ${link.subLinks.map(sub => `
-                <a href="#${sub.path}" data-nav-link
+                <a href="${sub.path}" data-nav-link
                    class="dropdown-sublink flex items-center gap-3 px-5 py-3 text-sm text-brand-gray-light
                           hover:text-brand-gold hover:bg-white/5 transition-all duration-200 cursor-pointer">
                   <span class="w-1.5 h-1.5 rounded-full bg-brand-gold/40 shrink-0"></span>
@@ -86,7 +85,7 @@ export function renderHeader() {
       `;
     }
     return `
-      <a href="#${link.path}" data-nav-link
+      <a href="${link.path}" data-nav-link
          class="text-white px-4 py-2 text-sm font-medium uppercase tracking-widest
                 hover:text-brand-gold transition-colors duration-300 relative group cursor-pointer">
         ${link.label}
@@ -101,7 +100,7 @@ export function renderHeader() {
       return `
         <div class="products-mobile-dropdown flex flex-col items-center">
           <div class="flex items-center gap-3">
-            <a href="#${link.path}" data-nav-link data-mobile-link
+            <a href="${link.path}" data-nav-link data-mobile-link
                class="text-white font-heading text-2xl sm:text-3xl uppercase tracking-widest
                       hover:text-brand-gold transition-colors duration-300">
               ${link.label}
@@ -116,7 +115,7 @@ export function renderHeader() {
           </div>
           <div id="mobile-products-submenu" class="flex-col items-center gap-1 mt-3 hidden">
             ${link.subLinks.map(sub => `
-              <a href="#${sub.path}" data-nav-link data-mobile-link
+              <a href="${sub.path}" data-nav-link data-mobile-link
                  class="mobile-product-sublink text-brand-gray-light text-base sm:text-lg py-2 px-4
                         hover:text-brand-gold transition-colors duration-300 cursor-pointer">
                 ${sub.label}
@@ -127,7 +126,7 @@ export function renderHeader() {
       `;
     }
     return `
-      <a href="#${link.path}" data-nav-link data-mobile-link
+      <a href="${link.path}" data-nav-link data-mobile-link
          class="text-white font-heading text-2xl sm:text-3xl uppercase tracking-widest
                 hover:text-brand-gold transition-colors duration-300">
         ${link.label}
@@ -137,15 +136,15 @@ export function renderHeader() {
 
   return `
     <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
-      <div class="mx-5">
+      <div>
         <nav class="flex items-center justify-between h-16 sm:h-20 lg:h-24">
           <!-- Logo -->
-          <a href="#/" class="relative z-50 flex items-center gap-3 group">
-            <img src="/logo.png" alt="Createk" class="h-16 lg:h-20 transition-transform duration-300 group-hover:scale-105" />
+          <a href="/" class="relative z-50 flex items-center gap-3 group px-4 lg:px-20 xl:px-10 2xl:px-28">
+            <img src="/logo.png" alt="Createk" class="w-full h-8 lg:h-10 transition-transform duration-300 group-hover:scale-105" />
           </a>
 
           <!-- Desktop Nav -->
-          <div class="hidden lg:flex items-center gap-1">
+          <div class="hidden lg:flex items-center gap-1 px-4 lg:px-20 xl:px-10 2xl:px-28">
             ${navLinks.map(renderDesktopLink).join('')}
             <div class="ml-3">
               ${langToggleDesktop}
@@ -153,7 +152,7 @@ export function renderHeader() {
           </div>
 
           <!-- Mobile Hamburger -->
-          <button id="hamburger-btn" class="lg:hidden relative z-50 p-2 -mr-2 cursor-pointer" aria-label="Toggle menu">
+          <button id="hamburger-btn" class="lg:hidden relative z-50 px-4 lg:px-20 xl:px-10 2xl:px-28 cursor-pointer" aria-label="Toggle menu">
             <div class="flex flex-col gap-1.5">
               <span class="hamburger-line"></span>
               <span class="hamburger-line"></span>
@@ -253,7 +252,7 @@ export function initHeader() {
   const onHashChange = () => {
     if (isOpen) closeMobileMenu();
   };
-  window.addEventListener('hashchange', onHashChange);
+  window.addEventListener('popstate', onHashChange);
 
   // Language switch — close menu first to restore scroll before re-render
   document.querySelectorAll('[data-lang-switch]').forEach(btn => {
@@ -267,7 +266,7 @@ export function initHeader() {
   // Return cleanup function
   return () => {
     window.removeEventListener('scroll', updateHeader);
-    window.removeEventListener('hashchange', onHashChange);
+    window.removeEventListener('popstate', onHashChange);
     // Ensure scroll is restored if header is cleaned up while menu is open
     if (isOpen) {
       document.body.style.overflow = '';

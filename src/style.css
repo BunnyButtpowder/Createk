@@ -116,6 +116,133 @@
     @apply w-16 h-1 bg-brand-gold rounded-full;
   }
 
+  /* Prose: styles for WordPress editor content (headings, lists, blockquotes, etc.) */
+  .prose {
+    @apply text-brand-gray-light text-base sm:text-lg leading-relaxed;
+  }
+
+  .prose h1 {
+    @apply font-heading text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-white mt-12 mb-6;
+  }
+
+  .prose h2 {
+    @apply font-heading text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight text-white mt-10 mb-5;
+  }
+
+  .prose h3 {
+    @apply font-heading text-xl sm:text-2xl font-semibold uppercase tracking-tight text-white mt-8 mb-4;
+  }
+
+  .prose h4 {
+    @apply font-heading text-lg sm:text-xl font-semibold uppercase text-white mt-6 mb-3;
+  }
+
+  .prose h5 {
+    @apply font-heading text-base sm:text-lg font-semibold uppercase text-white mt-5 mb-2;
+  }
+
+  .prose h6 {
+    @apply font-heading text-sm sm:text-base font-semibold uppercase text-brand-gold mt-4 mb-2;
+  }
+
+  .prose p {
+    @apply mb-6;
+  }
+
+  .prose strong, .prose b {
+    @apply text-white font-semibold;
+  }
+
+  .prose em, .prose i {
+    @apply italic;
+  }
+
+  .prose a {
+    @apply text-brand-gold underline underline-offset-2 decoration-brand-gold/40
+           hover:decoration-brand-gold transition-colors;
+  }
+
+  .prose ul {
+    @apply list-disc list-inside mb-6 space-y-2;
+  }
+
+  .prose ol {
+    @apply list-decimal list-inside mb-6 space-y-2;
+  }
+
+  .prose li {
+    @apply text-brand-gray-light;
+  }
+
+  .prose blockquote {
+    @apply border-l-4 border-brand-gold pl-6 py-2 my-8 italic text-white/80 bg-white/5 rounded-r-lg;
+  }
+
+  .prose pre {
+    @apply bg-brand-gray-dark border border-white/10 rounded-lg p-4 overflow-x-auto mb-6
+           text-sm text-brand-gray-light font-mono;
+  }
+
+  .prose code {
+    @apply bg-brand-gray-dark text-brand-gold px-1.5 py-0.5 rounded text-sm font-mono;
+  }
+
+  .prose pre code {
+    @apply bg-transparent p-0 rounded-none text-brand-gray-light;
+  }
+
+  .prose hr {
+    @apply border-white/10 my-10;
+  }
+
+  .prose table {
+    @apply w-full border-collapse mb-6;
+  }
+
+  .prose th {
+    @apply text-left text-white font-semibold border-b border-brand-gold/30 px-4 py-3 text-sm uppercase tracking-wider;
+  }
+
+  .prose td {
+    @apply border-b border-white/10 px-4 py-3 text-brand-gray-light;
+  }
+
+  .prose figure {
+    @apply my-8;
+  }
+
+  .prose figcaption {
+    @apply text-center text-sm text-brand-gray-mid mt-3 italic;
+  }
+
+  .prose > *:first-child {
+    @apply mt-0;
+  }
+
+  .prose > *:last-child {
+    @apply mb-0;
+  }
+
+  /* Alias for legal pages (privacy, terms) */
+  .prose-policy {
+    @apply text-brand-gray-light text-base sm:text-lg leading-relaxed;
+  }
+
+  .prose-policy h1 { @apply font-heading text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-white mt-12 mb-6; }
+  .prose-policy h2 { @apply font-heading text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight text-white mt-10 mb-5; }
+  .prose-policy h3 { @apply font-heading text-xl sm:text-2xl font-semibold uppercase tracking-tight text-white mt-8 mb-4; }
+  .prose-policy h4 { @apply font-heading text-lg sm:text-xl font-semibold uppercase text-white mt-6 mb-3; }
+  .prose-policy p { @apply mb-6; }
+  .prose-policy strong, .prose-policy b { @apply text-white font-semibold; }
+  .prose-policy a { @apply text-brand-gold underline underline-offset-2 decoration-brand-gold/40 hover:decoration-brand-gold transition-colors; }
+  .prose-policy ul { @apply list-disc list-inside mb-6 space-y-2; }
+  .prose-policy ol { @apply list-decimal list-inside mb-6 space-y-2; }
+  .prose-policy li { @apply text-brand-gray-light; }
+  .prose-policy blockquote { @apply border-l-4 border-brand-gold pl-6 py-2 my-8 italic text-white/80 bg-white/5 rounded-r-lg; }
+  .prose-policy hr { @apply border-white/10 my-10; }
+  .prose-policy > *:first-child { @apply mt-0; }
+  .prose-policy > *:last-child { @apply mb-0; }
+
   /* Reveal animation classes */
   .reveal {
     opacity: 0;

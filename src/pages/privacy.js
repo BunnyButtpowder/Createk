@@ -1,5 +1,6 @@
 import { initPageAnimations } from '../animations.js';
 import { t } from '../i18n/index.js';
+import { getLegalContent } from '../api/settings.js';
 
 export function privacyPage() {
   const html = `
@@ -17,7 +18,7 @@ export function privacyPage() {
     <!-- Content -->
     <section class="bg-brand-dark py-5 md:py-20">
       <div class="container-custom">
-        <div class="max-w-4xl mx-auto prose-policy reveal">
+        <div class="max-w-4xl mx-auto prose-policy reveal" id="privacy-content">
 
           <p class="text-brand-gray-light text-base leading-relaxed mb-8">
             ${t('privacy.intro')}
@@ -55,7 +56,14 @@ export function privacyPage() {
   `;
 
   function init() {
-    return initPageAnimations();
+    initPageAnimations();
+
+    // Override with CMS content if available
+    getLegalContent('privacy').then(content => {
+      if (!content) return;
+      const el = document.getElementById('privacy-content');
+      if (el) el.innerHTML = content;
+    });
   }
 
   return { html, init };

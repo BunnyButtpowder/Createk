@@ -1,5 +1,6 @@
 import { initPageAnimations, animateImageHover } from '../animations.js';
 import { t } from '../i18n/index.js';
+import { getPageSettings } from '../api/settings.js';
 
 export function aboutPage() {
   const milestoneYears = ['1998', '2005', '2012', '2018', '2023'];
@@ -49,23 +50,28 @@ export function aboutPage() {
 
   const html = `
     <!-- Hero -->
-    <section class="relative pt-32 pb-12 sm:pb-20 overflow-hidden">
-      <div class="absolute max-h-[30vh] md:max-h-none inset-0">
-        <img src="/banner-about.jpg"
-             alt="Workshop" class="w-full h-full object-cover hidden md:block" />
-        <img src="/banner-about-mobile.jpg"
-             alt="Workshop" class="w-full h-full object-cover block md:hidden" />
-        <div class="absolute hidden md:block inset-0 bg-gradient-to-r from-brand-black/60 via-brand-black/30 to-brand-black/0"></div>
+    <section class="relative pt-16 sm:pt-20 lg:pt-24 sm:max-h-[45vh] xl:min-h-[85vh] 2xl:min-h-[85vh] flex items-center justify-center md:justify-start lg:overflow-hidden">
+      <!-- Background Image -->
+      <div class="absolute inset-0 mt-10 2xl:mt-0">
+        <img src="/banner-about.png"
+             alt="Workshop" class="hero-banner-image w-full h-full object-cover" data-parallax="0.2" />
       </div>
-      <div class="container-custom relative z-10 pt-12 mt-40 md:mt-0">
-        <div class="reveal text-center md:text-left">
-          <span class="badge-gold mb-4 text-base">${t('about.hero.badge')}</span>
-          <h1 class="heading-xl text-white mt-4 mb-6">
+
+      <div class="hero-content relative z-10 w-full px-4 py-6 sm:px-8 lg:max-w-3xl lg:px-20 xl:px-10 2xl:px-28">
+        <div class="hero-headline-block lg:max-w-none">
+          <div class="hero-badge inline-flex items-center gap-1.5 lg:gap-2 bg-black/50 lg:bg-brand-gold/10 border border-brand-gold/30
+                      rounded-full px-2.5 py-1 lg:px-4 lg:py-2 mb-3 lg:mb-8">
+            <span class="hero-badge-dot w-1.5 h-1.5 lg:w-2 lg:h-2 rounded-full bg-brand-gold animate-pulse"></span>
+            <span class="hero-badge-text text-brand-gold text-sm sm:text-base font-medium">${t('about.hero.badge')}</span>
+          </div>
+
+          <h1 class="hero-title heading-xl text-black text-lg sm:text-3xl lg:text-7xl mb-3 lg:mb-6 py-1 lg:py-3 text-left">
             ${t('about.hero.heading1')}<br/>
-            <div class="mt-5 lg:mt-8"/>
+            <div class="mt-1.5 lg:mt-8"/>
             <span class="text-gradient-gold">${t('about.hero.headingHighlight')}</span>
           </h1>
-          <p class="text-white text-lg max-w-3xl leading-relaxed text-balance">
+
+          <p class="hero-subtitle text-black text-sm sm:text-base lg:text-lg leading-relaxed text-balance max-w-xs lg:max-w-3xl mt-3 lg:mt-6">
             ${t('about.hero.subtitle')}
           </p>
         </div>
@@ -109,17 +115,10 @@ export function aboutPage() {
     <section class="section-darker pt-0 pb-12">
       <div class="container-custom reveal">
         <div class="rd-video-wrapper relative rounded-2xl overflow-hidden">
-          <div class="rd-process-video-wrapper aspect-video w-full">
-            <iframe
-              class="rd-process-video w-full h-full rounded-2xl"
-              src="https://www.youtube.com/embed/0yJht8kEfjc?si=2-KPnfP_YCt2X7jd"
-              title="Createk R&D process"
-              loading="lazy"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-          </div>
+            <video class="rd-process-video w-full h-[220px] sm:h-[300px] lg:h-full object-cover rounded-2xl"
+              controls loop playsinline preload="auto" poster="/1.jpg">
+            <source src="/CREATEK Crankshaft Inspection - YouTube.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
     </section>
@@ -139,7 +138,7 @@ export function aboutPage() {
 
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-6" data-stagger>
         ${productCategories.map(cat => `
-          <a href="#/products" class="card-hover group block cursor-pointer">
+          <a href="/products" class="card-hover group block cursor-pointer">
             <div class="relative h-44 overflow-hidden img-hover-zoom">
               <img src="${cat.img}" alt="${t(cat.titleKey)}"
                    class="w-full h-full object-cover transition-transform duration-500" />
@@ -161,7 +160,7 @@ export function aboutPage() {
         </div>
 
         <div class="text-center mt-12 reveal">
-          <a href="#/products" class="btn-primary btn-lg text-sm uppercase tracking-widest">
+          <a href="/products" class="btn-primary btn-lg text-sm uppercase tracking-widest">
             ${t('home.products.viewAll')}
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -177,7 +176,7 @@ export function aboutPage() {
         <h2 class="heading-lg text-white mb-6 leading-relaxed md:leading-tight">${t('about.cta.heading1')} <span class="text-gradient-gold">${t('about.cta.headingHighlight')}</span> 
         <div class="mt-0 md:mt-3"/>
         ${t('about.cta.heading2')}</h2>
-        <a href="#/contact" class="btn-primary btn-lg text-sm uppercase tracking-widest">
+        <a href="/contact" class="btn-primary btn-lg text-sm uppercase tracking-widest">
           ${t('about.cta.button')}
         </a>
       </div>
@@ -189,6 +188,13 @@ export function aboutPage() {
     init() {
       initPageAnimations();
       animateImageHover();
+
+      // Overlay CMS content if available
+      getPageSettings('about').then(settings => {
+        if (!settings) return;
+        // Settings will progressively override t() content as CMS is populated
+        // Team, values, milestones can be dynamically updated here when CMS data is available
+      });
     },
   };
 }

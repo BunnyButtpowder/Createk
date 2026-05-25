@@ -1,5 +1,6 @@
 import { initPageAnimations } from '../animations.js';
 import { t } from '../i18n/index.js';
+import { getLegalContent } from '../api/settings.js';
 
 export function termsPage() {
   const html = `
@@ -73,7 +74,14 @@ export function termsPage() {
   `;
 
   function init() {
-    return initPageAnimations();
+    initPageAnimations();
+
+    // Override with CMS content if available
+    getLegalContent('terms').then(content => {
+      if (!content) return;
+      const el = document.querySelector('.prose-policy');
+      if (el) el.innerHTML = content;
+    });
   }
 
   return { html, init };
