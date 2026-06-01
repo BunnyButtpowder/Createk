@@ -340,9 +340,14 @@ export function productsPage() {
         }
 
         // Set active category from URL or default to first system
+        // Supports base-slug matching: "engine" matches "engine-vi" or "engine-en"
         if (data?.systems) {
           if (!data.systems.some(s => s.slug === activeCategory)) {
-            activeCategory = data.systems[0]?.slug || 'engine';
+            const base = activeCategory.replace(/-(vi|en)$/, '');
+            const match = data.systems.find(s =>
+              s.slug === base || s.slug.replace(/-(vi|en)$/, '') === base
+            );
+            activeCategory = match?.slug || data.systems[0]?.slug || 'engine';
           }
         }
 
