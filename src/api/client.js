@@ -52,6 +52,16 @@ export async function fetchAPI(endpoint, params = {}, options = {}) {
       return null;
     }
 
+    const contentType = response.headers.get('content-type') || '';
+    if (!contentType.includes('application/json')) {
+      const preview = (await response.text()).slice(0, 200).replace(/\s+/g, ' ').trim();
+      console.error(
+        `API error: expected JSON but got "${contentType || 'unknown'}" for ${endpoint}. ` +
+        `Check VITE_API_BASE (${API_BASE}). Response preview: ${preview}`
+      );
+      return null;
+    }
+
     const data = await response.json();
 
     // Store in cache
@@ -87,6 +97,21 @@ export async function postAPI(endpoint, body = {}) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body),
     });
+
+    if (!response.ok) {
+      console.error(`API POST error: ${response.status} ${response.statusText} for ${endpoint}`);
+      return null;
+    }
+
+    const contentType = response.headers.get('content-type') || '';
+    if (!contentType.includes('application/json')) {
+      const preview = (await response.text()).slice(0, 200).replace(/\s+/g, ' ').trim();
+      console.error(
+        `API POST error: expected JSON but got "${contentType || 'unknown'}" for ${endpoint}. ` +
+        `Check VITE_API_BASE (${API_BASE}). Response preview: ${preview}`
+      );
+      return null;
+    }
 
     return await response.json();
   } catch (error) {

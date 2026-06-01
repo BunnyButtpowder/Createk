@@ -75,7 +75,7 @@ export function newsDetailPage() {
 
           <div class="max-w-4xl mx-auto">
             <div class="prose prose-invert prose-gold max-w-none reveal">
-              ${article.content || `<p class="text-brand-gray-light text-lg leading-relaxed">${article.excerpt}</p>`}
+              ${article.content || `<p class="text-white text-lg leading-relaxed">${article.excerpt}</p>`}
             </div>
           </div>
 

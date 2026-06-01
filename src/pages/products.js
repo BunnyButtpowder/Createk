@@ -1,7 +1,7 @@
 import { initPageAnimations, animateImageHover } from '../animations.js';
 import { t } from '../i18n/index.js';
 import { getRouteParam, navigate } from '../router.js';
-import { getProducts, searchProducts } from '../api/index.js';
+import { getProducts, getProduct, searchProducts } from '../api/index.js';
 import { getPageSettings } from '../api/settings.js';
 import { renderSkeleton } from '../components/loading.js';
 
@@ -18,21 +18,46 @@ export async function getProductData() {
 }
 
 /**
- * Find a system by slug from cached data
+ * Find a system by slug from cached data.
+ * Falls back to searching all systems if the exact slug isn't found
+ * (handles cross-language system slugs like "engine-vi" vs "engine-en").
  */
 export async function findSystem(systemSlug) {
   const data = await getProductData();
   if (!data?.systems) return null;
-  return data.systems.find(s => s.slug === systemSlug) || null;
+
+  // Exact match first
+  const exact = data.systems.find(s => s.slug === systemSlug);
+  if (exact) return exact;
+
+  // Cross-language fallback: strip language suffix and match by base slug
+  // e.g. "engine-vi" → "engine", matches "engine-en" or "engine"
+  const base = systemSlug.replace(/-(vi|en)$/, '');
+  return data.systems.find(s => s.slug === base || s.slug.replace(/-(vi|en)$/, '') === base) || null;
 }
 
 /**
- * Find a product by slug within a system
+ * Find a product by slug within a system.
+ * If not found in cached data (e.g. slug is from another language),
+ * falls back to the single-product API endpoint which resolves cross-language slugs.
  */
 export async function findProduct(systemSlug, productSlug) {
   const system = await findSystem(systemSlug);
   if (!system) return null;
-  return system.products.find(p => p.slug === productSlug) || null;
+
+  // Exact match in current language data
+  const exact = system.products.find(p => p.slug === productSlug);
+  if (exact) return exact;
+
+  // Cross-language fallback: ask the API to resolve the slug
+  try {
+    const product = await getProduct(productSlug);
+    if (product && !product.message) return product;
+  } catch (e) {
+    // API returned 404 or error
+  }
+
+  return null;
 }
 
 /**
@@ -91,7 +116,7 @@ export function productsPage() {
         <div class="container-custom">
           <div class="mb-12 reveal">
             <h2 class="heading-lg text-white mb-4 text-center md:text-left text-balance leading-relaxed md:leading-tight">${system.name}</h2>
-            <p class="text-brand-gray-light text-center md:text-left text-balance">${system.description}</p>
+            <p class="mx-auto md:mx-0 rounded-xl border border-brand-gold/25 bg-brand-gold/10 px-5 py-4 text-brand-gold text-base sm:text-lg font-medium leading-relaxed text-center md:text-left">${system.description}</p>
           </div>
 
           <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" data-stagger>
@@ -102,11 +127,11 @@ export function productsPage() {
                        class="w-full h-full object-cover transition-transform duration-500" />
                 </div>
                 <div class="p-5">
-                  <h3 class="font-heading text-lg uppercase text-white
+                  <h3 class="font-heading text-xl uppercase text-white
                              group-hover:text-brand-gold transition-colors">
                     ${p.title}
                   </h3>
-                  <p class="text-brand-gray-light text-xs mt-2 line-clamp-2">
+                  <p class="text-brand-gray-light text-base mt-2 line-clamp-2">
                     ${p.description ? p.description.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim() : p.variants.map(v => v.name).join(', ')}
                   </p>
                 </div>
@@ -205,7 +230,7 @@ export function productsPage() {
              alt="Auto parts" class="hero-banner-image w-full h-full object-cover" data-parallax="0.2" />
       </div>
 
-      <div class="hero-content relative z-10 w-full px-4 py-3 sm:px-8 lg:w-auto lg:max-w-3xl lg:py-32 lg:px-20 xl:px-10 2xl:px-28">
+      <div class="hero-content relative z-10 w-full px-4 py-3 sm:px-8 lg:w-auto lg:max-w-4xl lg:py-32 lg:px-20 xl:px-10 2xl:px-28">
         <div class="hero-headline-block lg:max-w-none">
           <div class="hero-badge inline-flex items-center gap-1.5 lg:gap-2 bg-black/50 lg:bg-brand-gold/10 border border-brand-gold/30
                       rounded-full px-2.5 py-1 lg:px-4 lg:py-2 mb-3 lg:mb-8">

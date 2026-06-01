@@ -8,24 +8,28 @@ export function homePage() {
     {
       titleKey: 'home.categories.engine.title',
       descKey: 'home.categories.engine.desc',
+      href: '/products?cat=engine',
       icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>`,
       img: '/engine-assemblies-and-components.jpg',
     },
     {
       titleKey: 'home.categories.chassis.title',
       descKey: 'home.categories.chassis.desc',
+      href: '/products?cat=chassis',
       icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>`,
       img: '/chassis-system.jpg',
     },
     {
       titleKey: 'home.categories.break.title',
       descKey: 'home.categories.break.desc',
+      href: '/products?cat=brake',
       icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>`,
       img: 'break-system.jpg',
     },
     {
       titleKey: 'home.categories.cabin.title',
       descKey: 'home.categories.cabin.desc',
+      href: '/products?cat=cabin',
       icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>`,
       img: 'cabin-system.jpg',
     },
@@ -50,7 +54,7 @@ export function homePage() {
              class="object-cover" data-parallax="0.2" />
       </div>
 
-      <div class="hero-content relative z-10 w-full px-4 py-3 sm:px-8 lg:w-auto lg:max-w-3xl lg:py-20 lg:px-20 xl:px-10 2xl:px-28">
+      <div class="hero-content relative z-10 w-full px-4 py-3 sm:px-8 lg:w-auto lg:max-w-4xl lg:py-20 lg:px-20 xl:px-10 2xl:px-28">
         <div class="hero-headline-block lg:max-w-none">
           <div class="hero-badge inline-flex items-center gap-1.5 lg:gap-2 bg-black/50 lg:bg-brand-gold/10 border border-brand-gold/30
                       rounded-full px-2.5 py-1 lg:px-4 lg:py-2 mb-3 lg:mb-8">
@@ -160,7 +164,7 @@ export function homePage() {
 
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6" data-stagger>
           ${productCategories.map(cat => `
-            <a href="/products" class="card-hover group block cursor-pointer">
+            <a href="${cat.href}" class="card-hover group block cursor-pointer">
               <div class="relative h-44 overflow-hidden img-hover-zoom">
                 <img src="${cat.img}" alt="${t(cat.titleKey)}"
                      class="w-full h-full object-cover transition-transform duration-500" />

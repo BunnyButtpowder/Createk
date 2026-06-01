@@ -57,7 +57,7 @@ export function aboutPage() {
              alt="Workshop" class="hero-banner-image w-full h-full object-cover" data-parallax="0.2" />
       </div>
 
-      <div class="hero-content relative z-10 w-full px-4 py-6 sm:px-8 lg:max-w-3xl lg:px-20 xl:px-10 2xl:px-28">
+      <div class="hero-content relative z-10 w-full px-4 py-6 sm:px-8 lg:max-w-4xl lg:px-20 xl:px-10 2xl:px-28">
         <div class="hero-headline-block lg:max-w-none">
           <div class="hero-badge inline-flex items-center gap-1.5 lg:gap-2 bg-black/50 lg:bg-brand-gold/10 border border-brand-gold/30
                       rounded-full px-2.5 py-1 lg:px-4 lg:py-2 mb-3 lg:mb-8">
@@ -65,7 +65,7 @@ export function aboutPage() {
             <span class="hero-badge-text text-brand-gold text-sm sm:text-base font-medium">${t('about.hero.badge')}</span>
           </div>
 
-          <h1 class="hero-title heading-xl text-black text-lg sm:text-3xl lg:text-7xl mb-3 lg:mb-6 py-1 lg:py-3 text-left">
+          <h1 class="hero-title heading-xl text-black text-balance text-lg sm:text-3xl lg:text-7xl mb-3 lg:mb-6 py-1 lg:py-3 text-left">
             ${t('about.hero.heading1')}<br/>
             <div class="mt-1.5 lg:mt-8"/>
             <span class="text-gradient-gold">${t('about.hero.headingHighlight')}</span>

@@ -140,7 +140,7 @@ export function newsPage() {
               </div>
               <div class="p-8 lg:p-12 flex flex-col justify-center">
                 <span class="badge-gold mb-4 self-start">${t('news.featured.badge')}</span>
-                <h2 class="heading-md text-white mb-4 group-hover:text-brand-gold transition-colors">
+                <h2 class="heading-md text-white mb-4 leading-relaxed group-hover:text-brand-gold transition-colors">
                   ${featured.title}
                 </h2>
                 <p class="text-brand-gray-light leading-relaxed mb-6">${featured.excerpt}</p>
@@ -205,7 +205,7 @@ export function newsPage() {
                   <div class="p-6">
                     <span class="text-brand-gray-mid text-sm">${article.dateFormatted}</span>
                     <h3 class="font-heading text-xl uppercase text-white mt-2 mb-3
-                               group-hover:text-brand-gold transition-colors leading-tight">${article.title}</h3>
+                               group-hover:text-brand-gold transition-colors leading-relaxed">${article.title}</h3>
                     <span class="text-brand-gold text-sm font-semibold uppercase tracking-wider
                                  flex items-center gap-1 group-hover:gap-2 transition-all">
                       ${t('news.articles.readArticle')}

@@ -93,14 +93,14 @@ export function productsDetailPage() {
                 ${variant.specs ? `
                   <div>
                     <h3 class="text-brand-gold text-xs font-semibold uppercase tracking-widest mb-2">${t('products.ui.productSpecs')}</h3>
-                    <p class="text-brand-gray-light">${variant.specs}</p>
+                    <p class="text-white">${variant.specs}</p>
                   </div>
                 ` : ''}
 
                 ${variant.intro ? `
                   <div>
                     <h3 class="text-brand-gold text-xs font-semibold uppercase tracking-widest mb-2">${t('products.ui.productIntro')}</h3>
-                    <p class="text-brand-gray-light leading-relaxed">${variant.intro}</p>
+                    <p class="text-white leading-relaxed">${variant.intro}</p>
                   </div>
                 ` : ''}
               </div>
@@ -109,7 +109,7 @@ export function productsDetailPage() {
                  class="btn-primary btn-lg text-sm uppercase tracking-widest mt-8 w-full sm:w-auto">
                 ${t('products.ui.contactQuote')}
               </a>
-              <a href="https://zalo.me/2822820424446155302" target="_blank" class="btn-outline btn-lg text-sm uppercase mt-4 sm:mt-0 sm:ms-2 w-full sm:w-auto">
+              <a href="/contact" class="btn-outline btn-lg text-sm uppercase mt-4 sm:mt-0 sm:ms-2 w-full sm:w-auto">
                 ${t('products.ui.viewAllProducts')}
               </a>
             </div>
@@ -138,11 +138,11 @@ export function productsDetailPage() {
                         </div>
                       </div>
                       <div class="p-4">
-                        <h4 class="text-white text-sm font-heading uppercase
+                        <h4 class="text-white text-xl font-heading uppercase
                                    group-hover:text-brand-gold transition-colors">
                           ${s.name}
                         </h4>
-                        <p class="text-brand-gray-light text-xs mt-1">${s.specs}</p>
+                        <p class="text-brand-gray-light text-base mt-1">${s.specs}</p>
                       </div>
                     </a>
                   `;

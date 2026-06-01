@@ -57,7 +57,7 @@ export function productsChildrenPage() {
 
           <div class="mb-10 reveal">
             <h2 class="heading-lg text-white text-center md:text-left mb-4">${product.title}</h2>
-            ${product.excerpt ? `<p class="product-excerpt-highlight max-w-3xl mx-auto md:mx-0 rounded-xl border border-brand-gold/25 bg-brand-gold/10 px-5 py-4 text-brand-gold text-base sm:text-lg font-medium leading-relaxed text-center md:text-left text-balance">${product.excerpt}</p>` : ''}
+            ${product.excerpt ? `<p class="product-excerpt-highlight max-w-3xl mx-auto md:mx-0 rounded-xl border border-brand-gold/25 bg-brand-gold/10 px-5 py-4 text-brand-gold text-base sm:text-lg font-medium leading-relaxed text-center md:text-left">${product.excerpt}</p>` : ''}
           </div>
 
           <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8" data-stagger>
@@ -74,7 +74,7 @@ export function productsChildrenPage() {
                   </div>
                 </div>
                 <div class="p-5">
-                  <h3 class="font-heading text-lg uppercase text-white mb-1
+                  <h3 class="font-heading text-xl uppercase text-white mb-1
                              group-hover:text-brand-gold transition-colors">
                     ${variant.name}
                   </h3>
