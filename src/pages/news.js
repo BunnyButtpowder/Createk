@@ -19,7 +19,7 @@ export function newsPage() {
     <!-- Hero -->
     <section class="relative pt-32 pb-12 sm:pb-20 overflow-hidden">
       <div class="absolute inset-0">
-        <img src="https://images.unsplash.com/photo-1504711434969-e33886168d5c?w=1920&h=600&fit=crop"
+        <img id="news-hero-img" src="https://images.unsplash.com/photo-1504711434969-e33886168d5c?w=1920&h=600&fit=crop"
              alt="News" class="w-full h-full object-cover opacity-15" />
         <div class="absolute inset-0 bg-gradient-to-b from-brand-black via-brand-black/95 to-brand-black"></div>
       </div>
@@ -270,6 +270,7 @@ export function newsPage() {
         if (h.heading1) { const el = document.getElementById('news-hero-h1'); if (el) el.textContent = h.heading1; }
         if (h.heading2) { const el = document.getElementById('news-hero-h2'); if (el) el.textContent = h.heading2; }
         if (h.subtitle) { const el = document.getElementById('news-hero-sub'); if (el) el.textContent = h.subtitle; }
+        if (h.image) { const el = document.getElementById('news-hero-img'); if (el) el.src = h.image; }
       });
 
       // Initial load

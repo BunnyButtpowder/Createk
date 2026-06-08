@@ -2,24 +2,25 @@ import { initPageAnimations, animateImageHover } from '../animations.js';
 import { t } from '../i18n/index.js';
 import gsap from 'gsap';
 import { postAPI } from '../api/client.js';
+import { getSettings } from '../api/settings.js';
 
 export function contactPage() {
   const html = `
     <!-- Hero -->
     <section class="relative pt-32 pb-12 sm:pb-20 overflow-hidden">
       <div class="absolute inset-0">
-        <img src="/anthai.jpg"
+        <img id="contact-hero-image" src="/anthai.jpg"
              alt="An Thai - Createk Distributor" class="w-full h-full object-cover opacity-15" />
         <div class="absolute inset-0 bg-gradient-to-b from-brand-black via-brand-black/95 to-brand-black"></div>
       </div>
       <div class="container-custom relative z-10">
         <div class="reveal text-center md:text-left">
           <h1 class="heading-xl text-white mt-4 mb-6">
-            ${t('contact.hero.heading1')} <span class="text-gradient-gold">${t('contact.hero.headingHighlight')}</span><br/>
+            <span id="contact-hero-heading1">${t('contact.hero.heading1')}</span> <span id="contact-hero-heading2" class="text-gradient-gold">${t('contact.hero.headingHighlight')}</span><br/>
             <div class="mt-5 lg:mt-8"/>
-            ${t('contact.hero.heading2')}
+            <span id="contact-hero-heading3">${t('contact.hero.heading2')}</span>
           </h1>
-          <p class="text-brand-gray-light text-lg max-w-2xl leading-relaxed text-balance">
+          <p id="contact-hero-subtitle" class="text-brand-gray-light text-lg max-w-2xl leading-relaxed text-balance">
             ${t('contact.hero.subtitle')}
           </p>
         </div>
@@ -31,15 +32,15 @@ export function contactPage() {
       <div class="container-custom py-10">
         <div class="grid lg:grid-cols-[3fr_2fr] items-stretch">
           <div class="an-thai-image-wrapper relative h-[320px] lg:h-auto lg:my-16 overflow-hidden reveal-left rounded-2xl">
-            <img src="/anthai.jpg" alt="An Thai - Createk Distributor"
+            <img id="contact-distributor-image" src="/anthai.jpg" alt="An Thai - Createk Distributor"
                  class="an-thai-hero-image w-full h-full object-cover" />
           </div>
           <div class="an-thai-info-section flex flex-col justify-center py-12 lg:py-16 px-0 lg:pl-12 lg:pr-8 min-w-0 reveal-right">
-            <h2 class="font-heading text-2xl lg:text-3xl font-bold uppercase text-white leading-relaxed md:leading-tight mb-8">
+            <h2 id="contact-distributor-title" class="font-heading text-2xl lg:text-3xl font-bold uppercase text-white leading-relaxed md:leading-tight mb-8">
               ${t('contact.anThai.title')}
             </h2>
             <div class="space-y-5">
-              <a href="tel:0817821821" class="an-thai-phone flex items-center gap-5 group cursor-pointer
+              <a id="contact-phone-link" href="tel:0817821821" class="an-thai-phone flex items-center gap-5 group cursor-pointer
                         bg-brand-gold/5 border border-brand-gold/15 rounded-2xl p-5
                         hover:bg-brand-gold/10 hover:border-brand-gold/30 transition-all duration-300">
                 <div class="w-14 h-14 rounded-xl bg-brand-gold/15 flex items-center justify-center text-brand-gold shrink-0
@@ -50,7 +51,7 @@ export function contactPage() {
                 </div>
                 <div>
                   <div class="text-brand-gray-light text-xs uppercase tracking-wider mb-1">${t('contact.info.phone')}</div>
-                  <span class="text-brand-gold font-heading text-2xl font-bold group-hover:text-white transition-colors">
+                  <span id="contact-phone-text" class="text-brand-gold font-heading text-2xl font-bold group-hover:text-white transition-colors">
                     ${t('contact.anThai.phone')}
                   </span>
                 </div>
@@ -65,12 +66,13 @@ export function contactPage() {
                   </div>
                   <div>
                     <div class="text-brand-gray-light text-xs uppercase tracking-wider mb-1">${t('contact.info.viewMap')}</div>
-                    <span class="text-white text-base font-medium leading-relaxed">
+                    <span id="contact-address-text" class="text-white text-base font-medium leading-relaxed">
                       ${t('contact.anThai.address')}
                     </span>
                   </div>
                 </div>
                 <iframe
+                  id="contact-maps-embed"
                   src="https://maps.google.com/maps?ll=20.450371,106.334039&z=15&t=m&hl=en&gl=US&mapclient=embed&cid=3950152260773286403&output=embed"
                   class="w-full h-48 border-t border-white/10"
                   allowfullscreen=""
@@ -78,7 +80,7 @@ export function contactPage() {
                   referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
               </div>
-              <a href="mailto:marketing@anthaiautoparts.com"
+              <a id="contact-email-link" href="mailto:marketing@anthaiautoparts.com"
                  class="an-thai-email flex items-center gap-5 group cursor-pointer
                         bg-white/[0.02] border border-white/10 rounded-2xl p-5
                         hover:bg-brand-gold/10 hover:border-brand-gold/30 transition-all duration-300">
@@ -90,12 +92,12 @@ export function contactPage() {
                 </div>
                 <div>
                   <div class="text-brand-gray-light text-xs uppercase tracking-wider mb-1">Email</div>
-                  <span class="text-white text-base font-medium group-hover:text-brand-gold transition-colors break-all">
+                  <span id="contact-email-text" class="text-white text-base font-medium group-hover:text-brand-gold transition-colors break-all">
                     marketing@anthaiautoparts.com
                   </span>
                 </div>
               </a>
-              <a href="https://www.facebook.com/createkvietnam"
+              <a id="contact-facebook-link" href="https://www.facebook.com/createkvietnam"
                  target="_blank" rel="noopener noreferrer"
                  class="an-thai-facebook flex items-center gap-5 group cursor-pointer
                         bg-white/[0.02] border border-white/10 rounded-2xl p-5
@@ -108,12 +110,12 @@ export function contactPage() {
                 </div>
                 <div>
                   <div class="text-brand-gray-light text-xs uppercase tracking-wider mb-1">Facebook</div>
-                  <span class="text-white text-base font-medium group-hover:text-brand-gold transition-colors">
+                  <span id="contact-facebook-text" class="text-white text-base font-medium group-hover:text-brand-gold transition-colors">
                     Createk Vietnam
                   </span>
                 </div>
               </a>
-              <a href="https://zalo.me/2822820424446155302"
+              <a id="contact-zalo-link" href="https://zalo.me/2822820424446155302"
                  target="_blank" rel="noopener noreferrer"
                  class="contact-zalo-button btn-primary btn-lg text-sm uppercase tracking-widest w-full justify-center cursor-pointer rounded-2xl">
                 ${t('contact.info.contactUs')}
@@ -130,7 +132,7 @@ export function contactPage() {
 
   return {
     html,
-    init() {
+    async init() {
       initPageAnimations();
       animateImageHover();
 
@@ -178,6 +180,118 @@ export function contactPage() {
             submitBtn.textContent = t('contact.form.sendMessage');
           }
         });
+      }
+
+      // Overlay CMS settings onto the DOM
+      try {
+        const settings = await getSettings();
+        if (!settings) return;
+
+        const pageSettings = settings.pages?.contact;
+        const contact = settings.contact;
+        const distributor = settings.distributor;
+
+        // Hero section
+        if (pageSettings?.hero) {
+          const hero = pageSettings.hero;
+          if (hero.image) {
+            const heroImg = document.getElementById('contact-hero-image');
+            if (heroImg) heroImg.src = hero.image;
+          }
+          if (hero.heading1) {
+            const el = document.getElementById('contact-hero-heading1');
+            if (el) el.textContent = hero.heading1;
+          }
+          if (hero.heading2) {
+            const el = document.getElementById('contact-hero-heading2');
+            if (el) el.textContent = hero.heading2;
+          }
+          if (hero.heading3) {
+            const el = document.getElementById('contact-hero-heading3');
+            if (el) el.textContent = hero.heading3;
+          }
+          if (hero.subtitle) {
+            const el = document.getElementById('contact-hero-subtitle');
+            if (el) el.textContent = hero.subtitle;
+          }
+        }
+
+        // Distributor image
+        if (pageSettings?.distributorImage) {
+          const distImg = document.getElementById('contact-distributor-image');
+          if (distImg) distImg.src = pageSettings.distributorImage;
+        }
+
+        // Distributor name/title
+        if (distributor?.name) {
+          const titleEl = document.getElementById('contact-distributor-title');
+          if (titleEl) titleEl.textContent = distributor.name;
+        }
+
+        // Distributor phone
+        if (distributor?.phone) {
+          const phoneLink = document.getElementById('contact-phone-link');
+          const phoneText = document.getElementById('contact-phone-text');
+          if (phoneLink) phoneLink.href = 'tel:' + distributor.phone.replace(/\s+/g, '');
+          if (phoneText) phoneText.textContent = distributor.phone;
+        }
+
+        // Distributor address
+        if (distributor?.address) {
+          const addressText = document.getElementById('contact-address-text');
+          if (addressText) addressText.textContent = distributor.address;
+        }
+
+        // Contact email
+        if (contact?.email) {
+          const emailLink = document.getElementById('contact-email-link');
+          const emailText = document.getElementById('contact-email-text');
+          if (emailLink) emailLink.href = 'mailto:' + contact.email;
+          if (emailText) emailText.textContent = contact.email;
+        }
+
+        // Contact phone (fallback to distributor phone already handled above)
+        if (contact?.phone) {
+          const phoneLink = document.getElementById('contact-phone-link');
+          const phoneText = document.getElementById('contact-phone-text');
+          if (phoneLink) phoneLink.href = 'tel:' + contact.phone.replace(/\s+/g, '');
+          if (phoneText) phoneText.textContent = contact.phone;
+        }
+
+        // Facebook
+        if (contact?.facebook) {
+          const fbLink = document.getElementById('contact-facebook-link');
+          const fbText = document.getElementById('contact-facebook-text');
+          if (fbLink) fbLink.href = contact.facebook;
+          if (fbText) {
+            // Extract page name from URL or use the URL itself
+            try {
+              const url = new URL(contact.facebook);
+              const pageName = url.pathname.replace(/^\//, '').replace(/\/$/, '');
+              if (fbText && pageName) fbText.textContent = pageName;
+            } catch (_) {
+              // leave fallback text
+            }
+          }
+        }
+
+        // Zalo
+        if (contact?.zalo) {
+          const zaloLink = document.getElementById('contact-zalo-link');
+          if (zaloLink) zaloLink.href = contact.zalo;
+        }
+
+        // Maps embed
+        if (contact?.mapsEmbed) {
+          const iframe = document.getElementById('contact-maps-embed');
+          if (iframe) iframe.src = contact.mapsEmbed;
+        } else if (contact?.mapsUrl) {
+          const iframe = document.getElementById('contact-maps-embed');
+          if (iframe) iframe.src = contact.mapsUrl;
+        }
+      } catch (err) {
+        // Settings fetch failed — hardcoded fallbacks remain visible
+        console.warn('Failed to load contact settings:', err);
       }
     },
   };

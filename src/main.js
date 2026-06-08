@@ -6,7 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import { registerRoute, initRouter, handleRoute } from './router.js';
 import { renderHeader, initHeader } from './components/header.js';
-import { renderFooter } from './components/footer.js';
+import { renderFooter, initFooter } from './components/footer.js';
 import { homePage } from './pages/home.js';
 import { aboutPage } from './pages/about.js';
 import { productsPage } from './pages/products.js';
@@ -66,6 +66,7 @@ function renderAppShell() {
   `;
 
   headerCleanup = initHeader();
+  initFooter();
 }
 
 // Initial render

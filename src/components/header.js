@@ -139,8 +139,8 @@ export function renderHeader() {
       <div>
         <nav class="flex items-center justify-between h-16 sm:h-20 lg:h-24">
           <!-- Logo -->
-          <a href="/" class="relative z-50 flex items-center gap-3 group px-4 lg:px-20 xl:px-10 2xl:px-28">
-            <img src="/logo.png" alt="Createk" class="w-full h-8 lg:h-10 transition-transform duration-300 group-hover:scale-105" />
+          <a href="/" class="relative z-50 flex shrink-0 items-center gap-3 group px-4 lg:px-20 xl:px-10 2xl:px-28">
+            <img src="/logo.png" alt="Createk" class="h-8 w-auto max-h-8 lg:h-10 lg:max-h-10 object-contain shrink-0 transition-transform duration-300 group-hover:scale-105" />
           </a>
 
           <!-- Desktop Nav -->

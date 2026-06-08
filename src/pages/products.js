@@ -226,7 +226,7 @@ export function productsPage() {
     <!-- Hero -->
     <section class="relative pt-16 sm:pt-20 lg:pt-24 sm:max-h-[45vh] xl:min-h-[85vh] 2xl:min-h-[85vh] flex items-center justify-center md:justify-start lg:overflow-hidden">
       <div class="absolute inset-0 mt-10 2xl:mt-0">
-        <img src="/banner-product.png"
+        <img id="products-hero-img" src="/banner-product.png"
              alt="Auto parts" class="hero-banner-image w-full h-full object-cover" data-parallax="0.2" />
       </div>
 
@@ -337,6 +337,7 @@ export function productsPage() {
             const el = document.getElementById('hero-subtitle');
             if (el) el.textContent = h.subtitle;
           }
+          if (h.image) { const el = document.getElementById('products-hero-img'); if (el) el.src = h.image; }
         }
 
         // Set active category from URL or default to first system
